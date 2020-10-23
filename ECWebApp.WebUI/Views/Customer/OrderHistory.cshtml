@@ -1,0 +1,125 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.OrderHistoryViewModel
+@using System.Globalization
+
+<div class="user-sub-detail">    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/starrating.css?v=1">
+    <h1>My Order</h1>
+    
+    <div class="">
+        @if (Model.OrderRecords.Count != 0)
+        {
+            <table id="cart-table">
+                <tr class="Header-Row">
+                    <th width="30">Order ID</th>
+                    <th width="30">Title</th>
+                    <th width="50">Image</th>
+                    <th width="30">Date</th>
+                    <th width="30">Quantity</th>
+                    <th width="30">Amount</th>
+                    <th width="30">Status</th>
+                </tr>
+                @foreach (var orderreccord in Model.OrderRecords)
+                {
+                    @Html.Hidden("OrderID", @orderreccord.OrderNo, new { @class = "order-id" })
+                    <tr class="itemrow-row-add">
+                        <td width="30">@orderreccord.OrderNo</td>
+                        <td width="30" >@orderreccord.Title</td>
+                        <td width="50">
+                            <img class="image-2-quarter" src="@orderreccord.ProductImageToBase64" />
+                        </td>
+                        <td width="30">@orderreccord.OrderDate</td>
+                        <td width="30">@orderreccord.OrderQuantity</td>
+                        <td width="30">@orderreccord.Amount</td>
+                        <td width="30" id="order-status-@orderreccord.OrderNo">
+                            <span>@orderreccord.OrderStatus</span>
+                            @if (@orderreccord.OrderStatus == "Delivered")
+                            {
+                                <a class="review-product black-tile" id="review-product-@orderreccord.OrderNo" data-id="@orderreccord.OrderNo">(Waiting for review)</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="Center pad-20-all">
+                <label>You have not place any order......</label>
+            </div>
+        }
+    </div> 
+</div>
+
+<div id="review-dialog">
+    <p>Review this product...</p>
+    <input id="review-textbox" type="text"><br>
+    <div class="starrating">
+        <form action="">
+            <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
+            <label class="star star-5" for="star-5"></label>
+            <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+            <label class="star star-4" for="star-4"></label>
+            <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+            <label class="star star-3" for="star-3"></label>
+            <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+            <label class="star star-2" for="star-2"></label>
+            <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+            <label class="star star-1" for="star-1"></label>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    $(document).on("click", ".review-product", function () {
+        var orderNo = $(this).data('id');
+        $('#review-dialog').data('id', orderNo);
+        $("#review-dialog").dialog("open");
+        return false;
+    });
+
+    $("#review-dialog").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 480,
+        height: 280,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Submit": function () {
+                var url = '../../Customer/Review/' + $(".order-id").val()
+                var orderNo = $(this).data('id');
+                var comments = $('#review-textbox').val();
+                var rates = $("input[name=star]:checked").val();
+                if (!$('input[name=star]').is(':checked')) {
+                    rates = 0;
+                }
+                console.log(url);
+                $.ajax({
+                    url: 'Customer/Review',
+                    data: { 'OrderID': orderNo, 'Comment': comments, 'Rating': rates },
+                    type: "get",
+                    cache: false,
+                    success: function (data) {
+                        $('#star-' + rates).prop('checked', false);
+                        $('#review-textbox').val('');
+                        $("#review-dialog").dialog("close");
+                        $('#review-product-' + orderNo).remove();
+                        $('#order-status-' + orderNo +' span').text("Done");
+                        //$("#complete-order").close;
+                        //$('#lblCommentsNotification').text(savingStatus);
+                    },
+                    error: function (err) {
+                        $("#review-dialog").html(err);
+                    }
+                });
+            },
+            "Cancel": function () {
+                $("#review-dialog").dialog("close");
+                $('#review-textbox').val('');
+                $('input:radio[name=star]:checked').prop('checked', false).checkboxradio("refresh");
+            }
+        }
+    });
+</script>

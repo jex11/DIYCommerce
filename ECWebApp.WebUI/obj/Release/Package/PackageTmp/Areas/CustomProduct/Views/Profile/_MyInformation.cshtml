@@ -1,0 +1,50 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+
+
+<img class="card-profile-image card-image-round" src="@Model.CustomerImgBase64" />
+    <div class="card-content">
+        <p class="card-normal">
+            <span>@Html.LabelFor(x => x.CustomerCode) </span>
+            <span>@Model.CustomerCode</span>
+        </p>
+        <p class="card-normal">
+            <span>@Html.LabelFor(x => x.CustomerFirstName) </span>
+            <span>@Model.CustomerFirstName</span>
+        </p>
+        <p class="card-normal">
+            <span>@Html.LabelFor(x => x.CustomerLastName) </span>
+            <span>@Model.CustomerLastName</span>
+        </p>
+        <p class="card-normal">
+            <span>@Html.LabelFor(x => x.CustomerNRIC) </span>
+            <span>@Model.CustomerNRIC</span>
+        </p>
+        <p class="card-normal">
+            <span>@Html.LabelFor(x => x.CustomerContact) </span>
+            <span>@Model.CustomerContact</span>
+        </p>
+
+    </div>
+<div class="card-content">
+    <p class="card-normal">
+        <span>@Html.LabelFor(x => x.CustomerAddress) </span>
+        <span>@Model.CustomerAddress</span>
+    </p>
+    <p class="card-normal">
+        <span>@Html.LabelFor(x => x.CustomerCity) </span>
+        <span>@Model.CustomerCity</span>
+    </p>
+    <p class="card-normal">
+        <span>@Html.LabelFor(x => x.CustomerState) </span>
+        <span>@Model.CustomerState</span>
+    </p>
+    <p class="card-normal">
+        <span>@Html.LabelFor(x => x.CustomerPostcode) </span>
+        <span>@Model.CustomerPostcode</span>
+    </p>
+    <p class="card-normal">
+        <span>@Html.LabelFor(x => x.CustomerCountry) </span>
+        <span>@Model.CustomerCountry</span>
+    </p>
+
+</div>

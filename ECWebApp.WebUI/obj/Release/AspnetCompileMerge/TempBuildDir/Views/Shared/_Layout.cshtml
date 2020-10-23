@@ -1,0 +1,135 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!--Styles-->
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    
+
+    <!--Scripts-->
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/owl.carousel.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/countries.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    
+        </head>
+        <body>
+            <div class="Page">
+                <header>
+                    <div class="nav-bar nav-stacked Header">
+                        <div id="auth-link">
+
+                        </div>
+                        <div id="logo">
+                            <img class="Center" src="~/images/newlogo.png"/>
+                        </div>
+
+
+                    </div>
+                </header>
+                <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" id="Menu" role="banner">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+                        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="/">HOME</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">THE CATEGORIES <b class="caret"></b></a>
+                                    <ul id="menu-category" class="dropdown-menu">
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    @Html.ActionLink("PROMOTION", "Promotion", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("ABOUT US", "AboutUs", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("CONTACT US", "ContactUs", "Home")
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="Body">
+                    @RenderBody()
+                    <div class="scroll-top-wrapper ">
+                        <span class="scroll-top-inner">
+                            <i class="fa fa-2x fa-arrow-circle-up"></i>
+                        </span>
+                    </div>
+                </div>
+                <footer>
+                    <div class="footer-inline border-right">
+                        <label>STAY IN THE LOOP</label><br />
+                        <div class="footer-box">
+                            <input id="email-txt" type="email" placeholder="Email Address"/>
+                            <button type="button" class="button button-30">SIGN UP</button>
+                        </div>
+
+                    </div>
+                    <div class="footer-inline Center border-right">
+                        <label class="eushopria-label">DIY Commerce</label>
+                        <p>
+                            A Malaysian E-Commerce for traditional dresses. A whole new web system that unites all native designers to share and earn using their designs only.
+                        </p>
+
+                    </div>
+                    <div class="footer-inline">
+                        <label>CONNECT ONLINE</label><br />
+                        <div class="footer-social">
+                            <div class="icon-facebook-share"></div>
+                            <div class="icon-insta-share"></div>
+                            <div class="icon-twitter-share"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-next">
+                        @*<nav>
+                            <ul>
+                                <li><a>FAQ</a></li><span>.</span>
+                                <li><a>Terms of Service</a></li><span>.</span>
+                                <li><a>Return Policy</a></li><span>.</span>
+                                <li><a>Order Status Lookup</a></li>
+                            </ul>
+                        </nav>*@
+                        <p class="copyright-lbl">COPYRIGHT DIY-Commerce 2015</p>
+                        <p class ="copyright-lbl">All Rights Reserved</p>
+                        <img src="~/Content/images/header-blue-point.png" />
+                    </div>
+                </footer>
+            </div>
+
+
+
+        </body>
+        </html>
+
+

@@ -1,0 +1,167 @@
+﻿@model ECWebApp.WebUI.Models.ProductInfo
+@using ECWebApp.WebUI.Models;
+@using (Html.BeginForm("CreateProduct", "Admin_Product", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.FolderID)
+    <div class="Center">
+        <div class="Center">
+            <div class="card">
+                <img id="preview" class="card-img-preview" src="~/images/item.jpg" />
+
+                <div class="context context-bar-bottom">
+                    @Html.LabelFor(x => x.ProductImage)
+                    
+                    <img class="btn-upload" src="~/Content/images/upload-icon.png" onclick="$('.img-upload').click();" />
+                </div>
+                @Html.TextBoxFor(x => x.ProductImage,
+                new
+                {
+                    @type = "file",
+                    @class = "hidden img-upload",
+                    @onchange = "readURL(this,'#preview');",
+                    @accept = "image/*"
+                })
+                @Html.ValidationMessageFor(x => x.ProductImage)
+            </div>
+
+        </div>
+        <div class="circleDiv">
+            <div class="circle_left">
+                <label class="lbl_in_circle">Product</label>
+            </div>
+            <div class="circle_right">
+                <label class="lbl_in_circle" onclick="$('#submit-btn').click();">Save</label>
+                <input type="submit" id="submit-btn" class="hidden lbl_in_circle" value="Save" />
+            </div>
+            <div class="circle_right">
+                <label class="lbl_in_circle" onclick="window.location.href = '/Admin/Admin_Product';">Cancel</label>
+            </div>
+        </div>
+
+        <table class="form">
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductCode)
+                    
+                </td>
+                <td class="space-20">
+                    @Html.TextBoxFor(x => x.ProductCode)
+                    @Html.ValidationMessageFor(x => x.ProductCode)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductHeight)
+                </td>
+                <td class="space-10">
+                    @Html.TextBoxFor(x => x.ProductHeight)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductName)
+                </td>
+                <td class="space-20">
+                    @Html.TextBoxFor(x => x.ProductName)
+                    @Html.ValidationMessageFor(x => x.ProductName)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductWidth)
+                </td>
+                <td class="space-10">
+                    @Html.TextBoxFor(x => x.ProductWidth)
+                </td>
+                <td class="space-5">
+                    @Html.DropDownListFor(x => x.ProductScale, Model.ScaleList)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductCategory)
+                </td>
+                <td class="space-20">
+                    @Html.DropDownListFor(x => x.ProductCategory, Model.CategoryList, "-- Select Category --")
+                    @Html.ValidationMessageFor(x => x.ProductCategory)
+                </td>
+                <td class="space-10"><span class="glyphicon glyphicon-plus add-category"></span></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductLength)
+                </td>
+                <td class="space-10">
+                    @Html.TextBoxFor(x => x.ProductLength)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductOriginalPrice)
+                </td>
+                <td class="space-20">
+                    @Html.TextBoxFor(x => x.ProductOriginalPrice)
+                    @Html.ValidationMessageFor(x => x.ProductOriginalPrice)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductWeight)
+                </td>
+                <td class="space-10">
+                    @Html.TextBoxFor(x => x.ProductWeight)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductRetailPrice)
+                </td>
+                <td class="space-20">
+                    @Html.TextBoxFor(x => x.ProductRetailPrice)
+                    @Html.ValidationMessageFor(x => x.ProductRetailPrice)
+                </td>
+                <td class="space-10"></td>
+              
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductDescription)
+                </td>
+                <td colspan="5" class="space-20">
+                    @Html.TextAreaFor(x => x.ProductDescription, new { @rows = "5" })
+                </td>
+
+            </tr>
+
+        </table>
+        <div>
+
+        </div>
+    </div>
+
+}
+@*Add /Update Category*@
+<div id="dialog-form" title="Create new Category">
+    @{
+        CategoryInfo category = new CategoryInfo();
+        category.FolderID = @Model.FolderID;
+        Html.RenderPartial("AddCategory", category);
+    }
+</div>
+<script>
+
+    $(function () {
+        var createDialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            height: 300,
+            width: 700,
+            modal: true,
+        });
+
+        $('.add-category').on('click', function () {
+            createDialog.dialog("open");
+        });
+        //****************breadcrumb function *************************
+        var Newhref = $("<a id = 'AddProduct' class= 'breadCrumb' href =''></a>").text(" > Add Product ");
+        $('#AdminHome').after(Newhref);
+    });
+</script>
+
+

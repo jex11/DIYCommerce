@@ -1,0 +1,10 @@
+﻿@ViewBag.Message
+<br/>
+
+@{
+    if (@ViewBag.Result == false)
+    {
+        
+    <a href="@Url.Action("RequestConfirmationEmail", "Customer", new { CustomerID = Model })">Request Token</a>
+    }
+}

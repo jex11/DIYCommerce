@@ -1,0 +1,106 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+@using ECWebApp.Domain
+
+
+@{
+    ViewBag.Title = "Member - Sign Up";
+}
+
+<div class="content-page">
+    <div id="SignupForm" class="pad-30-horizontal">
+        <div>
+            <h3 class="title-center">CREATE ACCOUNT</h3>
+
+            @using (Html.BeginForm("Signup", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <label>@ViewBag.ErrorMessage</label>
+
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerFirstName)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerFirstName)
+                    @Html.ValidationMessageFor(x => x.CustomerFirstName)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerLastName)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerLastName)
+                    @Html.ValidationMessageFor(x => x.CustomerLastName)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerNRIC)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerNRIC)
+                    @Html.ValidationMessageFor(x => x.CustomerNRIC)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerEmail)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerEmail)
+                    @Html.ValidationMessageFor(x => x.CustomerEmail)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerContact)
+                    @Html.TextBoxFor(x => x.CustomerContact)
+                    @Html.ValidationMessageFor(x => x.CustomerContact)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerPassword)<span class="reminder">*</span>
+                    @Html.PasswordFor(x => x.CustomerPassword)<br />
+                    @Html.ValidationMessageFor(x => x.CustomerPassword)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerConfirmPassword)<span class="reminder">*</span>
+                    @Html.PasswordFor(x => x.CustomerConfirmPassword)<br />
+                    @Html.ValidationMessageFor(x => x.CustomerConfirmPassword)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerAddress)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerAddress)
+                    @Html.ValidationMessageFor(x => x.CustomerAddress)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerCity)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerCity)
+                    @Html.ValidationMessageFor(x => x.CustomerCity)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerPostcode)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerPostcode)
+                    @Html.ValidationMessageFor(x => x.CustomerPostcode)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerState)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerState)
+                    @Html.ValidationMessageFor(x => x.CustomerState)
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(x => x.CustomerCountry)<span class="reminder">*</span>
+                    @Html.TextBoxFor(x => x.CustomerCountry)
+                    @Html.ValidationMessageFor(x => x.CustomerCountry)
+                    <span class="reminder">*Required Fields</span>
+                </div>
+
+
+                <div class="button-30 padding-no Center ">
+                    <input type="submit" class="button-submit black-tile" value="Sign Up" />
+                </div>
+
+
+            }
+
+    </div>
+    <div>
+
+       
+    </div>
+</div>
+</div>

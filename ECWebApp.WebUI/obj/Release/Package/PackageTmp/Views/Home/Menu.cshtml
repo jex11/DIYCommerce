@@ -1,0 +1,25 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.ProductCategoryViewModel
+
+
+@foreach (var link in Model.Categories)
+{
+    <li>
+        @Html.RouteLink(
+        link.CategoryName,
+        new
+        {
+            controller = "Product",
+            category =  link.ProductCategory,
+            page = 1
+        },
+        new
+        {
+            @class = "category"
+            
+        })
+    </li>
+}
+<li>
+    @Html.ActionLink("Create Myself", "Index", "Custom", new { Area = "CustomProduct" }, null)
+</li>
+                       

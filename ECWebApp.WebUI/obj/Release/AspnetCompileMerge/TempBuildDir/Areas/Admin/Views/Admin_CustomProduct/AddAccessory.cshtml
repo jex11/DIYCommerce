@@ -1,0 +1,134 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.AccessoriesTemplateInfo
+
+@using (Html.BeginForm("AddAccessory", "Admin_CustomProduct", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add Accessory</h4>
+        @Html.ActionLink(" ", "Index", null, new { @class = "right glyphicon glyphicon-remove form-close" })
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="left">
+            <div class="card">
+                @if (Model.AccessoriesThumbnailBase64 == null)
+                {
+                    <img id="preview" class="card-img-preview" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8IS0tIENyZWF0ZWQgd2l0aCBNZXRob2QgRHJhdyAtIGh0dHA6Ly9naXRodWIuY29tL2R1b3BpeGVsL01ldGhvZC1EcmF3LyAtLT4KCiA8Zz4KICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+CiAgPHJlY3QgZmlsbD0iI2VkZWRlZCIgaWQ9ImNhbnZhc19iYWNrZ3JvdW5kIiBoZWlnaHQ9IjIwMyIgd2lkdGg9IjIwMiIgeT0iLTEiIHg9Ii0xIi8+CiA8L2c+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPGcgc3Ryb2tlPSJudWxsIiBpZD0ic3ZnXzYiPgogICA8cGF0aCBzdHJva2U9Im51bGwiIGZpbGw9IiM3ZjdiN2IiIGlkPSJzdmdfNSIgZD0ibTEzNS44NTkwODUsNzMuODAwNzEzYzAuMTM1MTYyLC0xLjAyNTU3NCAwLjMxNzc0OSwtMi4wMzk1MiAwLjMxNzc0OSwtMy4wOTk1NDhjMCwtMTMuMDMxNDc5IC0xMC43OTI5MzgsLTIzLjU5NzA3NiAtMjQuMTE3ODU5LC0yMy41OTcwNzZjLTcuODc4NTEsMCAtMTQuODA4ODA3LDMuNzUwNDg4IC0xOS4yMDczMDYsOS40NzExM2MtMS41ODM4OTMsLTAuMzc0NDA5IC0zLjIxNDc4MywtMC42MjIxOTIgLTQuOTEwNTc2LC0wLjYyMjE5MmMtMTEuNjU4NjA3LDAgLTIxLjEwMzIxLDkuMjQwNjMxIC0yMS4xMDMyMSwyMC42NDc0MTVjMCwwLjMyMjYwMSAwLjA4MjQ4OSwwLjYxMDc1NiAwLjA5NDIwOCwwLjkzMzM5NWMtOC43NDM5NjUsMi41MTc0ODcgLTE1LjE2Nzk0NiwxMC4zNDA4MiAtMTUuMTY3OTQ2LDE5LjcxNDAwNWMwLDExLjQwNjc4NCA5LjQ0NDYxMSwyMC42NDc0NDYgMjEuMTAzMjE4LDIwLjY0NzQ0Nmw1MS4yNTA1NDIsMGMxMy4zMjUwMTIsMCAyNC4xMTc5NSwtMTAuNTU5ODc1IDI0LjExNzk1LC0yMy41OTcwNzZjMCwtOC44MzcyNSAtNS4wMjI1ODMsLTE2LjQ1MzM2OSAtMTIuMzc2NzcsLTIwLjQ5NzQ5OHptLTI5LjgyOTU5LDE0LjU5ODIzNmwwLDE3LjY5NzgxNWwtMTIuMDU4OTI5LDBsMCwtMTcuNjk3ODE1bC0xMi4wNTkwMjEsMGwxOC4wODg1MDEsLTE3LjY5Nzc4NGwxOC4wODgzNzksMTcuNjk3Nzg0bC0xMi4wNTg5MjksMHoiLz4KICA8L2c+CiAgPHRleHQgc3Ryb2tlPSIjMDAwIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1NTA0MDQyNDQ0NzUyNTgsMCwwLDEuMzM4Nzc5ODEzNzMxNDQ1NywtNDQuOTE3MjM1MTI1OTE0MzQ1LC0yMTcuNTEyNjEyOTE3MTIyNSkgIiB4bWw6c3BhY2U9InByZXNlcnZlIiB0ZXh0LWFuY2hvcj0ibGVmdCIgZm9udC1mYW1pbHk9IkhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGlkPSJzdmdfNyIgeT0iMjcwLjAwNjMzMiIgeD0iOTIuNjY4MTEyIiBzdHJva2Utb3BhY2l0eT0ibnVsbCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjNzI3MDcwIj5VcGxvYWQgYW4gaW1hZ2U8L3RleHQ+CiA8L2c+Cjwvc3ZnPg==" />
+                }
+                else
+                {
+                    <img id="preview" class="card-img-preview" src="@Model.AccessoriesThumbnailBase64" />
+                }
+                
+
+                <div class="context context-bar-bottom">
+                    @Html.LabelFor(x => x.AccessoriesTemplateImage)
+
+                    <img class="btn-upload" src="~/Content/images/upload-icon.png" onclick="$('.img-upload').click();" />
+                </div>
+                @Html.TextBoxFor(x => x.AccessoriesTemplateImage,
+                new
+                {
+                    @type = "file",
+                    @class = "hidden img-upload",
+                    @onchange = "readURL(this,'#preview');",
+                    @accept = "image/*"
+                })
+                @Html.ValidationMessageFor(x => x.AccessoriesTemplateImage)
+            </div>
+
+        </div>
+
+        <div class="right width-77">
+    <div class="form-group">
+        @Html.LabelFor(model => model.AccessoriesTemplateCode, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AccessoriesTemplateCode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccessoriesTemplateCode, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AccessoriesTemplateName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AccessoriesTemplateName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccessoriesTemplateName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AccessoriesTemplatePrice, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AccessoriesTemplatePrice, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccessoriesTemplatePrice, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AccessoriesTemplateCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.AccessoriesTemplateCategory, Model.CategoryList)
+                @Html.ValidationMessageFor(x => x.AccessoriesTemplateCategory)
+                <p class="glyphicon glyphicon-plus add-category right"></p>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AccessoriesTemplateDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AccessoriesTemplateDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AccessoriesTemplateDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="right btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+}
+
+
+<div id="subdialog-form">
+
+</div>
+<script>
+    $(function () {
+        var categoryDialog = $("#subdialog-form").dialog({
+            autoOpen: false,
+            height: 600,
+            width: 800,
+            modal: true,
+        });
+
+        $('.add-category').on('click', function () {
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/AddAccessoryCategory",
+                cache: false,
+                success: function (data) {
+                    $("#subdialog-form").empty();
+                    $("#subdialog-form").append(data);
+                    categoryDialog.dialog("open");
+                }
+            });
+        });
+
+
+
+    });
+
+</script>
+

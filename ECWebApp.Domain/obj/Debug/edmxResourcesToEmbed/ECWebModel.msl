@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ECWebSecModelStoreContainer" CdmEntityContainer="ECWebSecEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Address)">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="AddressCreatedOn" ColumnName="AddressCreatedOn" />
+          <ScalarProperty Name="AddressCreatedBy" ColumnName="AddressCreatedBy" />
+          <ScalarProperty Name="AddressUpdatedOn" ColumnName="AddressUpdatedOn" />
+          <ScalarProperty Name="AddressUpdatedBy" ColumnName="AddressUpdatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CartLists">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.CartList)">
+        <MappingFragment StoreEntitySet="CartLists">
+          <ScalarProperty Name="CartListId" ColumnName="CartListId" />
+          <ScalarProperty Name="CartId" ColumnName="CartId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CartListTotalQuantity" ColumnName="CartListTotalQuantity" />
+          <ScalarProperty Name="CartListTotalPrice" ColumnName="CartListTotalPrice" />
+          <ScalarProperty Name="CartListTotalWeight" ColumnName="CartListTotalWeight" />
+          <ScalarProperty Name="CartListCreatedOn" ColumnName="CartListCreatedOn" />
+          <ScalarProperty Name="CartListCreatedBy" ColumnName="CartListCreatedBy" />
+          <ScalarProperty Name="CartListUpdatedOn" ColumnName="CartListUpdatedOn" />
+          <ScalarProperty Name="CartListUpdatedBy" ColumnName="CartListUpdatedBy" />
+          <ScalarProperty Name="ProductColorId" ColumnName="ProductColorId" />
+          <ScalarProperty Name="CustomProductID" ColumnName="CustomProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Cart)">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="PaymentTotal" ColumnName="PaymentTotal" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="PaymentCreatedOn" ColumnName="PaymentCreatedOn" />
+          <ScalarProperty Name="PaymentCreatedBy" ColumnName="PaymentCreatedBy" />
+          <ScalarProperty Name="CartCreatedOn" ColumnName="CartCreatedOn" />
+          <ScalarProperty Name="CartCreatedBy" ColumnName="CartCreatedBy" />
+          <ScalarProperty Name="CartUpdatedOn" ColumnName="CartUpdatedOn" />
+          <ScalarProperty Name="CartUpdatedBy" ColumnName="CartUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Class)">
+        <MappingFragment StoreEntitySet="Classes">
+          <ScalarProperty Name="CustomerCategoryId" ColumnName="CustomerCategoryId" />
+          <ScalarProperty Name="CustomerCategoryName" ColumnName="CustomerCategoryName" />
+          <ScalarProperty Name="CustomerCategoryPointGiven" ColumnName="CustomerCategoryPointGiven" />
+          <ScalarProperty Name="CustomerCategoryStatus" ColumnName="CustomerCategoryStatus" />
+          <ScalarProperty Name="CustomerCategoryCreatedOn" ColumnName="CustomerCategoryCreatedOn" />
+          <ScalarProperty Name="CustomerCategoryCreatedBy" ColumnName="CustomerCategoryCreatedBy" />
+          <ScalarProperty Name="CustomerCategoryUpdatedOn" ColumnName="CustomerCategoryUpdatedOn" />
+          <ScalarProperty Name="CustomerCategoryUpdatedBy" ColumnName="CustomerCategoryUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerImg" ColumnName="CustomerImg" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerNRIC" ColumnName="CustomerNRIC" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPostcode" ColumnName="CustomerPostcode" />
+          <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+          <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+          <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+          <ScalarProperty Name="CustomerContact" ColumnName="CustomerContact" />
+          <ScalarProperty Name="CustomerPoint" ColumnName="CustomerPoint" />
+          <ScalarProperty Name="CustomerCategoryID" ColumnName="CustomerCategoryID" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="CustomerCreatedOn" ColumnName="CustomerCreatedOn" />
+          <ScalarProperty Name="CustomerCreatedBy" ColumnName="CustomerCreatedBy" />
+          <ScalarProperty Name="CustomerUpdatedOn" ColumnName="CustomerUpdatedOn" />
+          <ScalarProperty Name="CustomerUpdatedBy" ColumnName="CustomerUpdatedBy" />
+          <ScalarProperty Name="CustomerImgType" ColumnName="CustomerImgType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailConfirms">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.EmailConfirm)">
+        <MappingFragment StoreEntitySet="EmailConfirms">
+          <ScalarProperty Name="EmailConfirmId" ColumnName="EmailConfirmId" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="ConfirmationCode" ColumnName="ConfirmationCode" />
+          <ScalarProperty Name="ConfirmationStatus" ColumnName="ConfirmationStatus" />
+          <ScalarProperty Name="EmailConfirmCreatedOn" ColumnName="EmailConfirmCreatedOn" />
+          <ScalarProperty Name="EmailConfirmEndOn" ColumnName="EmailConfirmEndOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastAccesses">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.LastAccess)">
+        <MappingFragment StoreEntitySet="LastAccesses">
+          <ScalarProperty Name="LastAccessId" ColumnName="LastAccessId" />
+          <ScalarProperty Name="LastAccessLocation" ColumnName="LastAccessLocation" />
+          <ScalarProperty Name="LastAccessDevice" ColumnName="LastAccessDevice" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="LastAccessCreatedOn" ColumnName="LastAccessCreatedOn" />
+          <ScalarProperty Name="LastAccessCreatedBy" ColumnName="LastAccessCreatedBy" />
+          <ScalarProperty Name="LastAccessUpdatedOn" ColumnName="LastAccessUpdatedOn" />
+          <ScalarProperty Name="LastAccessUpdatedBy" ColumnName="LastAccessUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleAssigns">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.RoleAssign)">
+        <MappingFragment StoreEntitySet="RoleAssigns">
+          <ScalarProperty Name="RoleAssignId" ColumnName="RoleAssignId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleAssignCreatedOn" ColumnName="RoleAssignCreatedOn" />
+          <ScalarProperty Name="RoleAssignCreatedBy" ColumnName="RoleAssignCreatedBy" />
+          <ScalarProperty Name="RoleAssignUpdatedOn" ColumnName="RoleAssignUpdatedOn" />
+          <ScalarProperty Name="RoleAssignUpdatedBy" ColumnName="RoleAssignUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="RoleStatus" ColumnName="RoleStatus" />
+          <ScalarProperty Name="RoleCreatedOn" ColumnName="RoleCreatedOn" />
+          <ScalarProperty Name="RoleCreatedBy" ColumnName="RoleCreatedBy" />
+          <ScalarProperty Name="RoleUpdatedOn" ColumnName="RoleUpdatedOn" />
+          <ScalarProperty Name="RoleUpdatedBy" ColumnName="RoleUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.C__MigrationHistory)">
+        <MappingFragment StoreEntitySet="C__MigrationHistory">
+          <ScalarProperty Name="MigrationID" ColumnName="MigrationID" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.sysdiagram)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="SCC_FIPS" ColumnName="SCC_FIPS" />
+          <ScalarProperty Name="CC_ISO" ColumnName="CC_ISO" />
+          <ScalarProperty Name="TLD" ColumnName="TLD" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Region)">
+        <MappingFragment StoreEntitySet="Regions">
+          <ScalarProperty Name="REGION1" ColumnName="REGION1" />
+          <ScalarProperty Name="REGION_NAME" ColumnName="REGION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubRegions">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.SubRegion)">
+        <MappingFragment StoreEntitySet="SubRegions">
+          <ScalarProperty Name="SUBREGION1" ColumnName="SUBREGION1" />
+          <ScalarProperty Name="SUBREGION_NAME" ColumnName="SUBREGION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accessories">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Accessory)">
+        <MappingFragment StoreEntitySet="Accessories">
+          <ScalarProperty Name="AccessoriesID" ColumnName="AccessoriesID" />
+          <ScalarProperty Name="AccessoriesTemplateID" ColumnName="AccessoriesTemplateID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="AccessoriesX" ColumnName="AccessoriesX" />
+          <ScalarProperty Name="AccessoriesY" ColumnName="AccessoriesY" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AccessoriesCreatedOn" ColumnName="AccessoriesCreatedOn" />
+          <ScalarProperty Name="AccessoriesCreatedBy" ColumnName="AccessoriesCreatedBy" />
+          <ScalarProperty Name="AccessoriesUpdatedOn" ColumnName="AccessoriesUpdatedOn" />
+          <ScalarProperty Name="AccessoriesUpdatedBy" ColumnName="AccessoriesUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessoriesTemplates">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.AccessoriesTemplate)">
+        <MappingFragment StoreEntitySet="AccessoriesTemplates">
+          <ScalarProperty Name="AccssoriesTemplateID" ColumnName="AccssoriesTemplateID" />
+          <ScalarProperty Name="AccessoriesTemplateName" ColumnName="AccessoriesTemplateName" />
+          <ScalarProperty Name="AccessoriesTemplateCategory" ColumnName="AccessoriesTemplateCategory" />
+          <ScalarProperty Name="AccessoriesTemplateDescription" ColumnName="AccessoriesTemplateDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AccessoriesTemplateCreatedOn" ColumnName="AccessoriesTemplateCreatedOn" />
+          <ScalarProperty Name="AccessoriesTemplateCreatedBy" ColumnName="AccessoriesTemplateCreatedBy" />
+          <ScalarProperty Name="AccessoriesTemplateUpdatedOn" ColumnName="AccessoriesTemplateUpdatedOn" />
+          <ScalarProperty Name="AccessoriesTemplateUpdatedBy" ColumnName="AccessoriesTemplateUpdatedBy" />
+          <ScalarProperty Name="AccessoriesTemplateSource" ColumnName="AccessoriesTemplateSource" />
+          <ScalarProperty Name="AccessoriesTemplateType" ColumnName="AccessoriesTemplateType" />
+          <ScalarProperty Name="AccessoriesTemplatePrice" ColumnName="AccessoriesTemplatePrice" />
+          <ScalarProperty Name="AccessoriesTemplateCode" ColumnName="AccessoriesTemplateCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessoriesTemplateCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.AccessoriesTemplateCategory)">
+        <MappingFragment StoreEntitySet="AccessoriesTemplateCategories">
+          <ScalarProperty Name="AccessoriesTemplateCategoryID" ColumnName="AccessoriesTemplateCategoryID" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryName" ColumnName="AccessoriesTemplateCategoryName" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryDescription" ColumnName="AccessoriesTemplateCategoryDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryCreatedOn" ColumnName="AccessoriesTemplateCategoryCreatedOn" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryCreatedBy" ColumnName="AccessoriesTemplateCategoryCreatedBy" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryUpdatedOn" ColumnName="AccessoriesTemplateCategoryUpdatedOn" />
+          <ScalarProperty Name="AccessoriesTemplateCategoryUpdatedBy" ColumnName="AccessoriesTemplateCategoryUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Category)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CategoryStatus" ColumnName="CategoryStatus" />
+          <ScalarProperty Name="CategoryCreateOn" ColumnName="CategoryCreateOn" />
+          <ScalarProperty Name="CategoryCreatedBy" ColumnName="CategoryCreatedBy" />
+          <ScalarProperty Name="CategoryUpdatedOn" ColumnName="CategoryUpdatedOn" />
+          <ScalarProperty Name="CategoryUpdatedBy" ColumnName="CategoryUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Color)">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="ProductColorId" ColumnName="ProductColorId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="IsOutOfStock" ColumnName="IsOutOfStock" />
+          <ScalarProperty Name="ProductColorCreatedOn" ColumnName="ProductColorCreatedOn" />
+          <ScalarProperty Name="ProductColorCreatedBy" ColumnName="ProductColorCreatedBy" />
+          <ScalarProperty Name="ProductColorUpdatedOn" ColumnName="ProductColorUpdatedOn" />
+          <ScalarProperty Name="ProductColorUpdatedBy" ColumnName="ProductColorUpdatedBy" />
+          <ScalarProperty Name="ProductColorValue" ColumnName="ProductColorValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.CustomProduct)">
+        <MappingFragment StoreEntitySet="CustomProducts">
+          <ScalarProperty Name="CustomProductId" ColumnName="CustomProductId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CustomProductCreatedOn" ColumnName="CustomProductCreatedOn" />
+          <ScalarProperty Name="CustomProductCreatedBy" ColumnName="CustomProductCreatedBy" />
+          <ScalarProperty Name="CustomProductUpdatedOn" ColumnName="CustomProductUpdatedOn" />
+          <ScalarProperty Name="CustomProductUpdatedBy" ColumnName="CustomProductUpdatedBy" />
+          <ScalarProperty Name="Specifications" ColumnName="Specifications" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Folders">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Folder)">
+        <MappingFragment StoreEntitySet="Folders">
+          <ScalarProperty Name="ProductFolderId" ColumnName="ProductFolderId" />
+          <ScalarProperty Name="ProductFolderName" ColumnName="ProductFolderName" />
+          <ScalarProperty Name="ProductFolderDescription" ColumnName="ProductFolderDescription" />
+          <ScalarProperty Name="ProductFolderCreatedOn" ColumnName="ProductFolderCreatedOn" />
+          <ScalarProperty Name="ProductFolderCreatedBy" ColumnName="ProductFolderCreatedBy" />
+          <ScalarProperty Name="ProductFolderUpdatedOn" ColumnName="ProductFolderUpdatedOn" />
+          <ScalarProperty Name="ProductFolderUpdatedBy" ColumnName="ProductFolderUpdatedBy" />
+          <ScalarProperty Name="ProductFolderFrom" ColumnName="ProductFolderFrom" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="ProductImgId" ColumnName="ProductImgId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductImageCreatedOn" ColumnName="ProductImageCreatedOn" />
+          <ScalarProperty Name="ProductImageCreatedBy" ColumnName="ProductImageCreatedBy" />
+          <ScalarProperty Name="ProductImageUpdatedOn" ColumnName="ProductImageUpdatedOn" />
+          <ScalarProperty Name="ProductImageUpdatedBy" ColumnName="ProductImageUpdatedBy" />
+          <ScalarProperty Name="ProductColorId" ColumnName="ProductColorId" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="ProductImageType" ColumnName="ProductImageType" />
+          <ScalarProperty Name="ProductImageSource" ColumnName="ProductImageSource" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ProductImageName" ColumnName="ProductImageName" />
+          <ScalarProperty Name="CustomProductID" ColumnName="CustomProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="ProductOriginalPrice" ColumnName="ProductOriginalPrice" />
+          <ScalarProperty Name="ProductRetailPrice" ColumnName="ProductRetailPrice" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductWeight" ColumnName="ProductWeight" />
+          <ScalarProperty Name="ProductWidth" ColumnName="ProductWidth" />
+          <ScalarProperty Name="ProductHeight" ColumnName="ProductHeight" />
+          <ScalarProperty Name="ProductLength" ColumnName="ProductLength" />
+          <ScalarProperty Name="ProductScale" ColumnName="ProductScale" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="ProductFolderId" ColumnName="ProductFolderId" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductCreatedOn" ColumnName="ProductCreatedOn" />
+          <ScalarProperty Name="ProductCreatedBy" ColumnName="ProductCreatedBy" />
+          <ScalarProperty Name="ProductUpdatedOn" ColumnName="ProductUpdatedOn" />
+          <ScalarProperty Name="ProductUpdatedBy" ColumnName="ProductUpdatedBy" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="TemplateTextureId" ColumnName="TemplateTextureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promotions">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Promotion)">
+        <MappingFragment StoreEntitySet="Promotions">
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="PromotionDescription" ColumnName="PromotionDescription" />
+          <ScalarProperty Name="PromotionImage" ColumnName="PromotionImage" />
+          <ScalarProperty Name="PromotionBanner" ColumnName="PromotionBanner" />
+          <ScalarProperty Name="PromotionDiscountRate" ColumnName="PromotionDiscountRate" />
+          <ScalarProperty Name="PromotionStart" ColumnName="PromotionStart" />
+          <ScalarProperty Name="PromotionEnd" ColumnName="PromotionEnd" />
+          <ScalarProperty Name="PromotionStatus" ColumnName="PromotionStatus" />
+          <ScalarProperty Name="PromotionCreatedOn" ColumnName="PromotionCreatedOn" />
+          <ScalarProperty Name="PromotionCreatedBy" ColumnName="PromotionCreatedBy" />
+          <ScalarProperty Name="PromotionUpdatedOn" ColumnName="PromotionUpdatedOn" />
+          <ScalarProperty Name="PromotionUpdatedBy" ColumnName="PromotionUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Review)">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="ProductReviewId" ColumnName="ProductReviewId" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductReview" ColumnName="ProductReview" />
+          <ScalarProperty Name="ProductReviewRate" ColumnName="ProductReviewRate" />
+          <ScalarProperty Name="ProductReviewCreatedOn" ColumnName="ProductReviewCreatedOn" />
+          <ScalarProperty Name="ProductReviewCreatedBy" ColumnName="ProductReviewCreatedBy" />
+          <ScalarProperty Name="ProductReviewUpdatedOn" ColumnName="ProductReviewUpdatedOn" />
+          <ScalarProperty Name="ProductReviewUpdatedBy" ColumnName="ProductReviewUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Templates">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Template)">
+        <MappingFragment StoreEntitySet="Templates">
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateSource" ColumnName="TemplateSource" />
+          <ScalarProperty Name="TemplateDescription" ColumnName="TemplateDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TemplateCreatedOn" ColumnName="TemplateCreatedOn" />
+          <ScalarProperty Name="TemplateCreatedBy" ColumnName="TemplateCreatedBy" />
+          <ScalarProperty Name="TemplatedUpdatedOn" ColumnName="TemplatedUpdatedOn" />
+          <ScalarProperty Name="TemplateUpdatedBy" ColumnName="TemplateUpdatedBy" />
+          <ScalarProperty Name="TemplatePrice" ColumnName="TemplatePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Textures">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.Texture)">
+        <MappingFragment StoreEntitySet="Textures">
+          <ScalarProperty Name="TextureId" ColumnName="TextureId" />
+          <ScalarProperty Name="TextureName" ColumnName="TextureName" />
+          <ScalarProperty Name="TextureSource" ColumnName="TextureSource" />
+          <ScalarProperty Name="TextureType" ColumnName="TextureType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TextureCreatedOn" ColumnName="TextureCreatedOn" />
+          <ScalarProperty Name="TextureCreatedBy" ColumnName="TextureCreatedBy" />
+          <ScalarProperty Name="TextureUpdatedOn" ColumnName="TextureUpdatedOn" />
+          <ScalarProperty Name="TextureUpdatedBy" ColumnName="TextureUpdatedBy" />
+          <ScalarProperty Name="TextureThumbnail" ColumnName="TextureThumbnail" />
+          <ScalarProperty Name="TextureCode" ColumnName="TextureCode" />
+          <ScalarProperty Name="TextureDescription" ColumnName="TextureDescription" />
+          <ScalarProperty Name="TexturePrice" ColumnName="TexturePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_CustomerAuthentication">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.vw_CustomerAuthentication)">
+        <MappingFragment StoreEntitySet="vw_CustomerAuthentication">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="CustomerCategoryName" ColumnName="CustomerCategoryName" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerNRIC" ColumnName="CustomerNRIC" />
+          <ScalarProperty Name="CustomerImg" ColumnName="CustomerImg" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="CustomerCreatedOn" ColumnName="CustomerCreatedOn" />
+          <ScalarProperty Name="CustomerCreatedBy" ColumnName="CustomerCreatedBy" />
+          <ScalarProperty Name="CustomerContact" ColumnName="CustomerContact" />
+          <ScalarProperty Name="ConfirmationStatus" ColumnName="ConfirmationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ProductList">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.vw_ProductList)">
+        <MappingFragment StoreEntitySet="vw_ProductList">
+          <ScalarProperty Name="ProductColor" ColumnName="ProductColor" />
+          <ScalarProperty Name="ProductFolderName" ColumnName="ProductFolderName" />
+          <ScalarProperty Name="ProductImg" ColumnName="ProductImg" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ProductOriginalPrice" ColumnName="ProductOriginalPrice" />
+          <ScalarProperty Name="ProductRetailPrice" ColumnName="ProductRetailPrice" />
+          <ScalarProperty Name="IsOutOfStock" ColumnName="IsOutOfStock" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductWeight" ColumnName="ProductWeight" />
+          <ScalarProperty Name="ProductWidth" ColumnName="ProductWidth" />
+          <ScalarProperty Name="ProductHeight" ColumnName="ProductHeight" />
+          <ScalarProperty Name="ProductLength" ColumnName="ProductLength" />
+          <ScalarProperty Name="ProductScale" ColumnName="ProductScale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PopularAuthor">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.vw_PopularAuthor)">
+        <MappingFragment StoreEntitySet="vw_PopularAuthor">
+          <ScalarProperty Name="DesignerID" ColumnName="DesignerID" />
+          <ScalarProperty Name="ProductCount" ColumnName="ProductCount" />
+          <ScalarProperty Name="SoldCount" ColumnName="SoldCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PopularProduct">
+      <EntityTypeMapping TypeName="IsTypeOf(ECWebSecModel.vw_PopularProduct)">
+        <MappingFragment StoreEntitySet="vw_PopularProduct">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="DesignerID" ColumnName="DesignerID" />
+          <ScalarProperty Name="DesignerFirstName" ColumnName="DesignerFirstName" />
+          <ScalarProperty Name="DesignerLastName" ColumnName="DesignerLastName" />
+          <ScalarProperty Name="SoldCount" ColumnName="SoldCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

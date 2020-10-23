@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECWebApp.Domain", "..\ECWebApp.Domain\ECWebApp.Domain.csproj", "{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECWebApp.WebUI", "..\ECWebApp.WebUI\ECWebApp.WebUI.csproj", "{B4C90728-29E2-4099-8BE0-D6798C021D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECWebApp.UnitTests", "..\ECWebApp.UnitTests\ECWebApp.UnitTests.csproj", "{20AE3317-FC8B-4D30-9317-009F94F8C411}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ddwwseng.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\ECWebApp.Domain\\ECWebApp.Domain.csproj
+		SccProjectName1 = ../ECWebApp.Domain
+		SccLocalPath1 = ..\\ECWebApp.Domain
+		SccProjectUniqueName2 = ..\\ECWebApp.WebUI\\ECWebApp.WebUI.csproj
+		SccProjectName2 = ../ECWebApp.WebUI
+		SccLocalPath2 = ..\\ECWebApp.WebUI
+		SccProjectUniqueName3 = ..\\ECWebApp.UnitTests\\ECWebApp.UnitTests.csproj
+		SccProjectName3 = ../ECWebApp.UnitTests
+		SccLocalPath3 = ..\\ECWebApp.UnitTests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C90728-29E2-4099-8BE0-D6798C021D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C90728-29E2-4099-8BE0-D6798C021D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C90728-29E2-4099-8BE0-D6798C021D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C90728-29E2-4099-8BE0-D6798C021D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AE3317-FC8B-4D30-9317-009F94F8C411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AE3317-FC8B-4D30-9317-009F94F8C411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AE3317-FC8B-4D30-9317-009F94F8C411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AE3317-FC8B-4D30-9317-009F94F8C411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

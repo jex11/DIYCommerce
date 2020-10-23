@@ -1,0 +1,93 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.TailorViewModel
+
+<div class="user-sub-detail">
+    <h1>Specialization And Performance</h1>
+
+    <div class="user-group-detail">
+        <div class="form-group row">
+            <div class="info-col-90 fll">
+                <div class="sub-content-title current fll">
+                    <label>Specialization:</label>
+                </div>
+                <div class="sub-content-detail fll">
+                    <p class="user-account-info fll">@Model.Specialization</p>
+                    @*<a id="UpdateSpecialization" class="direct-detail-link fll">Change</a>*@
+                    @*<p class="user-account-info fll">@Model.CustomerFirstName @Model.CustomerLastName</p>*@
+                    @*<a id="ChangeUserName" class="direct-detail-link fll">Change</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="info-col-90 fll">
+                <div class="sub-content-title current fll">
+                    <label>Average Rating:</label>
+                </div>
+                <div class="sub-content-detail fll">
+                    <p class="user-account-info fll">@Model.AverageRating</p>
+                    @*<p class="user-account-info fll">@Model.CustomerFirstName @Model.CustomerLastName</p>*@
+                    @*<a id="ChangeUserName" class="direct-detail-link fll">Change</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="info-col-90 fll">
+                <div class="sub-content-title current fll">
+                    <label>Average Complete Time:</label>
+                </div>
+                <div class="sub-content-detail fll">
+                    <p class="user-account-info fll">@Model.AverageElapsedDay Day(s)</p>
+                    @*<p class="user-account-info fll">@Model.CustomerFirstName @Model.CustomerLastName</p>*@
+                    @*<a id="ChangeUserName" class="direct-detail-link fll">Change</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="info-col-90 fll">
+                <div class="sub-content-title fll">
+                    <label>Tasks at hand:</label>
+                </div>
+                <div class="sub-content-detail fll">
+                    <p class="user-account-info fll">@Model.OrderInHand</p>
+                    @*<a id="ChangeEmail" class="direct-detail-link fll">Change</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="info-col-90 fll">
+                <div class="sub-content-title fll">
+                    <label>Task Done:</label>
+                </div>
+                <div class="sub-content-detail fll">
+                    <p class="user-account-info fll">@Model.OrderDone</p>
+                    @*<p class="user-account-info fll">@Model.CustomerContact</p>*@
+                </div>
+            </div>
+        </div>
+        @*<div>
+                <label>Ranking: </label>
+            </div>
+            <div>
+                <label>Task completed on time: </label>
+            </div>
+            <div>
+                <label>Tasks at hand: </label>
+            </div>*@
+        @*<table id="cart-table">
+                <tr class="Header-Row">
+                    <th>Order #</th>
+                    <th>Date</th>
+                    <th>Item Purchased</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                <tr class="itemrow-row-add">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>*@
+    </div>
+</div>
+

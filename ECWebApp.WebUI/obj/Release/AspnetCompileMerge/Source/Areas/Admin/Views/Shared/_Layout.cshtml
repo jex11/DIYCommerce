@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Page</title>
+
+    <!--Styles-->
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+    <link href="~/Content/colpick.css" rel="stylesheet" />
+
+    <!--Scripts-->
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/owl.carousel.js"></script>
+    <script src="~/Areas/Admin/Scripts/admin.js"></script>
+    <script src="~/Scripts/colpick.js"></script>
+
+
+
+
+</head>
+<body>
+    <div class="body">
+        <div class="header">
+            <div class="nav">
+                <div class="nav-right">
+                    <img class="ImgIcon" src="~/images/icons/search-icon.png">
+                    <a class="a-header" href="/CustomProduct">CUSTOMIZATION SITE</a>
+                </div>
+                <div class="nav-right">
+                    <img class="ImgIcon" src="~/images/icons/home-icon.png">
+                    <a class="a-header" href="/">HOME SITE</a>
+                </div>
+            </div>
+            <div class="sub-nav">
+                <div class="nav-right">
+                    <nav>
+                        @Html.ActionLink("Product Management |", "Index", "Admin_Product", null, new { @class = "nav-link"})
+                        @Html.ActionLink("Custom Product Management |", "Index", "Admin_CustomProduct", null, new { @class = "nav-link" })
+                    </nav>
+                </div>
+            </div>
+            @*<div class="sub-nav nav-white">
+                <div class="nav-left"> <a class="breadCrumb" id="AdminHome" href="#">Product</a></div>
+                <div class="nav-right">
+                    <select class="nav-input">
+                        <option value=NULL>Sort By</option>
+                        <option value=NULL>Category</option>
+                        <option value=NULL>Color</option>
+                        <option value=NULL>Date Created</option>
+                        <option value=NULL>Price</option>
+                        <option value=NULL>Product Code</option>
+                    </select>
+                </div>
+                <div class="nav-right">
+                    <img class="nav-icon" src="~/images/icons/search-icon---blue.png" width="20" height="20">
+                    <input class="nav-input"  />
+                </div>
+            </div>*@
+        </div>
+        <div class="AdminBody">
+            @RenderBody()
+        </div>
+        <div class="AdminFooter">
+            <div class="Footer_Icon_Div">
+                <div class="Center_Hidden">
+                    <img class="FooterImg" src="~/images/icons/mark-white.png" />
+                    <img class="FooterImg" src="~/images/icons/move-white.png" />
+                    <img class="FooterImg" src="~/images/icons/trash-line)white).png" />
+                </div>
+            </div>
+            <div class="Footer_Logo_Div"></div>
+        </div>
+    </div>
+</body>
+</html>

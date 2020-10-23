@@ -1,0 +1,89 @@
+﻿@using System.Globalization
+
+@model ECWebApp.WebUI.Models.ViewModel.ProductViewModel 
+@using ECWebApp.Domain
+
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<div class="product-detail">
+    <div class="product-image-full">
+        <link href="~/Content/starrating.css" rel="stylesheet" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <img class="image-full" src="#"/>
+        <div class="stars">
+            <form action="">
+                <input class="star star-5" id="star-5" type="radio" name="star" />
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="star" />
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="star" />
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="star" />
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="star" />
+                <label class="star star-1" for="star-1"></label>
+            </form>
+        </div>
+        </div>
+         <div class="product-detail-full">
+             <div class="product-desc">
+                 @Html.Hidden("Product Code", @Model.Product.ProductID, new { @class = "product-id" })
+                 <p class="product-title-big">@Model.Product.ProductName</p>
+                 <p class="product-price-big">
+                     @{
+                         var culture = new CultureInfo("ms-MY");
+                         @String.Format(culture, "{0 :C2}", @Model.Product.ProductRetailPrice);
+                     }
+                 </p>
+                 <p>@Model.Product.ProductDescription</p>
+                 <p>Colour: </p>
+                 @{
+                     foreach (var color in @Model.ProductColor)
+                     {
+                         <div class="popup-color-options"  style="background-color: @color.ProductColorValue">
+                             @Html.Hidden("Color Code", color.ProductColorValue, new { @class = "color-id" })
+                         </div>
+                     }
+                 }
+
+                 <p></p>
+             </div> 
+
+             <a id="AddToCart" class="button-35 grey-tile">Add to Cart</a>
+
+               <div class="product-share">
+                   <p class="share-title">Share: </p>
+                        <a class="icon-facebook-share" target="_blank" href="#"></a>
+                        <a class="icon-twitter-share" target="_blank" href="#"></a>
+                        <a class="icon-insta-share" target="_blank" href="#"></a>
+               
+    </div>
+</div>
+</div>
+<script>
+    //var CustomerID = ;
+
+    $('.popup-color-options').on('click', function () {
+        $('.popup-color-options').removeClass('active');
+        $(this).addClass('active');
+        var ColorID = $(this).find('.color-id').val();
+        
+    });
+
+    $('#AddToCart').on('click', function () {
+        $.post('../Product/AddToCart',
+            {
+                ProductID:  $('.product-id').val(),
+                CustomerID: $('.customer-id').val(),
+                ColorID: $('.active .color-id').val()
+            },
+            function (data, status){
+                
+            });
+
+    });
+</script>
+

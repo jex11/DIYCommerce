@@ -1,0 +1,46 @@
+﻿@using System.Globalization
+@model ECWebApp.WebUI.Models.ViewModel.ProductViewModel
+
+<div class="ui-dialog-actionbar"><p class="Right close"/></div>
+<div class="Left">
+    <img class="popup-image" src="@Model.Product.ProductImageToBase64" />
+</div>
+
+<div class="Right-5 popup-description">
+    <h4>@Model.Product.ProductName </h4>
+    <p>
+        @{
+            var culture = new CultureInfo("ms-MY");
+            @String.Format(culture, "{0 :C2}", @Model.Product.ProductRetailPrice);
+        }
+    </p>
+    <br />
+    <p>@Model.Product.ProductDescription </p>
+    <br />
+    <p><span>@Model.Product.ProductHeight </span>cm x <span>@Model.Product.ProductWidth </span>cm x<span>@Model.Product.ProductLength </span>cm</p>
+    <br />
+    @if (@Model.ProductColor.ToList().Count != 0)
+    {
+        <p>
+            Color:
+            @{
+        foreach (var color in @Model.ProductColor)
+        {
+            <div class="popup-color-options" style="background-color: @color"></div>
+        }
+            }
+        </p>
+    }
+   
+    <br />
+    <a href="/Product/ProductDetails?ProductID=@Model.Product.ProductID">See More Details</a>
+</div>
+
+<!--Popup Event Listener-->
+<script>
+    $('.close').click(function () {
+        $("#product-details").empty();
+        $("#product-details").dialog("close");
+    });
+    
+</script>

@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Contact Us";
+}
+@using ECWebApp.WebUI.App_Common
+@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=@Constant.GOOGLE_API_KEY">
+</script>
+<script type="text/javascript">
+    function initialize() {
+        var location = new google.maps.LatLng( @Constant.GOOGLE_MAP_LAT, @Constant.GOOGLE_MAP_LNG );
+        var contentString = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<h1 id="firstHeading" class="firstHeading">@Constant.COMPANY_NAME</h1>'+
+              '<div id="bodyContent">'+
+              '<p><b>@Constant.COMPANY_PERSON_IN_CHARGE</b>, <br/>'+
+              '@Constant.COMPANY_ADDRESS'+
+              '</p>'+
+              '</div>'+
+              '@Constant.COMPANY_CONTACT'+
+              '</div>';
+        var mapOptions = {
+            center: location,
+            zoom: 18
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: location,
+            animation: google.maps.Animation.BOUNCE,
+            map: map,
+            title: 'Head Office'
+        });
+
+        infowindow.open(map,marker);
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+    
+    <div class="content-page Center">
+        <h2>Our Location</h2>
+        <div id="map-canvas"></div>
+    </div>
+<div class="content-page Center">
+    <h2>Feedbacks</h2>
+    @using (Html.BeginForm("Signup", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group row">
+            @Html.LabelFor(x => x.CustomerFirstName)<span class="reminder">*</span>
+            @Html.TextBoxFor(x => x.CustomerFirstName)
+            @Html.ValidationMessageFor(x => x.CustomerFirstName)
+        </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CustomerEmail)<span class="reminder">*</span>
+        @Html.TextBoxFor(x => x.CustomerFirstName)
+        @Html.ValidationMessageFor(x => x.CustomerFirstName)
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CustomerFirstName)<span class="reminder">*</span>
+        @Html.TextBoxFor(x => x.CustomerFirstName)
+        @Html.ValidationMessageFor(x => x.CustomerFirstName)
+    </div>
+        <input type="submit" value="Send" />
+    }
+</div>
+

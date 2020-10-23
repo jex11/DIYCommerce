@@ -1,0 +1,40 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.ViewModels.CustomerListViewModel
+
+<div>
+    <h1>Customer List</h1>
+    <table class="table">
+        <tr>
+            <th>Customer #</th>
+            <th>Name</th>
+            <th>IC No.</th>
+            <th>Email</th>
+            <th>Contact No.</th>
+            <th>Reward Point</th>
+        </tr>
+
+        @{
+            if (Model.CustomerInfo != null && Model.CustomerInfo.Count != 0)
+            {
+                foreach (var customer in Model.CustomerInfo)
+                {
+                    <tr>
+                        <td>@customer.CustomerId</td>
+                        <td>@customer.CustomerName</td>
+                        <td>@customer.ICNo</td>
+                        <td>@customer.Email</td>
+                        <td>@customer.Contact</td>
+                        <td>@customer.CustomerPoint</td>                        
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" class="Center">
+                        No customer exist.
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

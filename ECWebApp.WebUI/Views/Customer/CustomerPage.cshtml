@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Customer Account Information";
+}
+<div class="content-page">
+     <div class="info-col-30 fll">
+                <div class="margin-5-left">
+                    <h2>My Account</h2>
+                </div>
+                <ul class="tab-list">
+                    <li class="tab-link current">
+                        <span id="AccountInfo">Account Information</span>
+                    </li>
+                    <li class="tab-link">
+                        <span id="AddressBook">Address Book</span>
+                    </li>
+                    <li class="tab-link">
+                        <span id="OrderHistory">Order History</span>
+                    </li>
+                    <li class="tab-link">
+                        <span id="MyCart">My Cart</span>
+                    </li>
+                    @if (User.IsInRole("Tailor"))
+                    {
+                        <li class="tab-link">
+                            <span id="Specialization">Specialization and Performance</span>
+                        </li>
+                        <li class="tab-link">
+                            <span id="TaskHistory">Task History</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+            
+            <div id="tab" class="tab-content border-left">
+                
+            </div>
+
+    </div>

@@ -1,0 +1,47 @@
+﻿@model List<ECWebApp.WebUI.Models.ProductInfo>
+@using System.Globalization
+
+@{
+    Layout = null;
+    var culture = new CultureInfo("ms-MY");
+}
+
+@*<div class="overlay">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>*@
+
+<div flex="100" class="box">
+    <div class="box-title">
+        <span>My Vault</span>
+        <div ui-sref="Template" class="box-button">Create New</div>
+        
+    </div>
+    <div class="box-content">
+        @{
+            if (Model.Count() != 0)
+            {
+                foreach (var Product in Model)
+                {
+                    <div class="card">
+                        <ng-md-icon icon="close" id="@Product.ProductID" class="delete-icon" style="fill: #2a2a2a;" size="20" ng-remove></ng-md-icon>
+                        <img class="card-image" src="@Product.ProductImageToBase64" />
+                        <div class="card-content">
+                            <span class="card-title">@Product.ProductName</span><br />
+                            <span class="card-date">@Product.CustomProductCreatedOn</span>
+                            <span class="card-viewers">@String.Format(culture, "{0 :C2}", Product.ProductRetailPrice)</span><br />
+                            <br />
+                            <a class="card-author" id="@Product.CustomProductAuthorID">@Product.CustomProductAuthorName</a>
+                        </div>
+                    </div>
+                }
+            }
+            else{
+                <p class="center">There is nothing in your vault. Create a design perhaps? </p>
+            }
+        
+        }
+        
+
+      
+    </div>
+</div>

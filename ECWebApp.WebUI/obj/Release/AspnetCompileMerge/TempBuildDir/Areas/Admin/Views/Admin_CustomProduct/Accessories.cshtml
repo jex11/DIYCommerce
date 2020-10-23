@@ -1,0 +1,151 @@
+﻿
+@model ECWebApp.WebUI.Areas.Admin.Models.ViewModels.AccessoriesViewModel
+<div class="table-titlebar">
+    <h3 class="Left">Accessories Management</h3>
+    <label class="right accessories-add btn btn-primary"> Add New</label>
+    @*@Html.ActionLink("Create New", "Accessory_Add", null, new { @class="right accessories-add"})*@
+</div>
+
+
+    
+
+<table class="table">
+    <tr>
+        <th>Code</th>
+        <th width="10%">Thumbnail</th>
+        <th>Name</th>
+        <th >Description</th>
+        <th>Price</th>
+        <th >Category</th>
+        <th >Image Type</th>
+        <th >Actions</th>
+    </tr>
+    @{
+        if (Model.Accessories != null && Model.Accessories.Count != 0)
+        {
+            foreach (var accessory in Model.Accessories)
+            {
+                <tr>
+                    <td><a href="#" pid="@accessory.AccessoriesTemplateId" class="textures-details">@accessory.AccessoriesTemplateCode</a></td>
+                    <td><img src="@accessory.AccessoriesThumbnailBase64" /></td>
+                    <td >@accessory.AccessoriesTemplateName</td>
+                    <td >@accessory.AccessoriesTemplateDescription</td>
+                    <td>@accessory.AccessoriesTemplatePrice</td>
+                    <td >@accessory.AccessoriesTemplateCategoryName</td>
+                    <td >@accessory.AccessoriesTemplateType</td>
+                    <td >
+                        <label pid="@accessory.AccessoriesTemplateId" class="btn accessories-edit">Edit</label> |
+                        
+                        <label pid="@accessory.AccessoriesTemplateId" class="btn accessories-delete">Delete</label> |
+                       
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="Center">
+                    No accesories are added.
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+
+
+<script>
+    $(function(){
+        var createDialog = $("#dialog-form").dialog({
+                                autoOpen: false,
+                                height: 750,
+                                width: 1000,
+                                modal: true,
+        });
+
+        var detailsDialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 1000,
+            modal: true,
+        });
+
+
+        $('.accessories-add').on('click', function () {
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/AddAccessory",
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    createDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.accessories-edit').on('click', function () {
+            var id = $(this).attr('pid')
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/EditAccessory/" + id, 
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    createDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.accessories-details').on('click', function () {
+            $(this).addClass('active');
+            var id = $(this).attr('pid');
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/DetailAccessory/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    detailsDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.accessories-delete').on('click', function () {
+            var id = $(this).attr('pid');
+
+            var deleteDialog = $("#dialog-form").dialog({
+                autoOpen: false,
+                height: 50,
+                width: 400,
+                modal: true,
+                buttons: {
+                    Confirm: function () {
+                        $.ajax({
+                            url: "/Admin/Admin_CustomProduct/DeleteAccessory/" + id,
+                            cache: false
+                        });
+                        window.location.href = '/Admin/Admin_CustomProduct';
+                        $(this).dialog("close");
+                        
+                    },
+                    Cancel: function () {
+                        window.location.href = '/Admin/Admin_CustomProduct';
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/ConfirmationDeleteAccessory/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    deleteDialog.dialog("open");
+                }
+            });
+        });
+    });
+    
+</script>

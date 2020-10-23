@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CBD7B0C-406B-437B-9266-C0D7BFFC995E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECWebApp.Domain</RootNamespace>
+    <AssemblyName>ECWebApp.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Postal">
+      <HintPath>..\packages\Postal.Mvc5.1.2.0\lib\net45\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ICartRepository.cs" />
+    <Compile Include="Abstract\ICustomerRepository.cs" />
+    <Compile Include="Abstract\ICustomProductRepository.cs" />
+    <Compile Include="Abstract\IOrderRepository.cs" />
+    <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="AccessoriesTemplate.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccessoriesTemplateCategory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accessory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CartItem.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOutCart_Result.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\EFCustomProductRepository.cs" />
+    <Compile Include="Concrete\EFOrderRepository.cs" />
+    <Compile Include="Constant\AddressType.cs" />
+    <Compile Include="Constant\AFINNList.cs" />
+    <Compile Include="Constant\CategoryType.cs" />
+    <Compile Include="Constant\RoleAssignment.cs" />
+    <Compile Include="Constant\Status.cs" />
+    <Compile Include="Concrete\EFAccountRepository.cs" />
+    <Compile Include="Concrete\EFCartRepository.cs" />
+    <Compile Include="Concrete\EFCustomerRepository.cs" />
+    <Compile Include="Concrete\EFProductRepository.cs" />
+    <Compile Include="Concrete\EFRoleRepository.cs" />
+    <Compile Include="Country.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomProduct.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIYCommerceV2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DIYCommerceV2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIYCommerceV2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIYCommerceV2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DIYCommerceV2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailConfirm.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Folder.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LastAccess.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderAssignment.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReset.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Review.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAssign.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specialize.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubRegion.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tailor.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Texture.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_CartItemsCategory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_CartItemsTemplateID.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_CartItemTemplateID.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_CustomerAuthentication.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_ExpTailorAssignment.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_OrderHistory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_PopularAuthor.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_PopularProduct.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_ProductList.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_ReviewsDetails.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_TailorDetails.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_TailorPerformance.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_TaskHistory.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_TrialTailor.cs">
+      <DependentUpon>DIYCommerceV2.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DIYCommerceV2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DIYCommerceV2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DIYCommerceV2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DIYCommerceV2.edmx</DependentUpon>
+      <LastGenOutput>DIYCommerceV2.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DIYCommerceV2.edmx.diagram">
+      <DependentUpon>DIYCommerceV2.edmx</DependentUpon>
+    </None>
+    <None Include="DIYCommerceV2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DIYCommerceV2.edmx</DependentUpon>
+      <LastGenOutput>DIYCommerceV2.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ECWebModel.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

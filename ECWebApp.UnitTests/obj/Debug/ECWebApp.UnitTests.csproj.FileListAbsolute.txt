@@ -1,0 +1,4 @@
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.UnitTests\obj\Debug\ECWebApp.UnitTests.csprojResolveAssemblyReference.cache
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.UnitTests\obj\Debug\ECWebApp.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.UnitTests\obj\Debug\ECWebApp.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.UnitTests\obj\Debug\ECWebApp.UnitTests.csprojResolveAssemblyReference.cache

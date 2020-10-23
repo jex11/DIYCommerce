@@ -1,0 +1,18 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.AccessoriesTemplateInfo
+<h4>Delete Accessory</h4> 
+<a href='#' class='right glyphicon glyphicon-remove dialog-close'></a> 
+<hr />
+<p>Do you want to delete @Model.AccessoriesTemplateName ? </p>
+
+<script>
+    $(function () {
+        $('.dialog-close').on('click', function () {
+            var confirmDialog = $(this).parents('.ui-dialog-content');
+
+            confirmDialog.dialog('close');
+
+        });
+
+       
+    });
+</script>

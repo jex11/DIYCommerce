@@ -1,0 +1,66 @@
+﻿
+@using ECWebApp.Domain
+
+
+@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="bannerCarousel">
+    <link href="~/Content/starrating.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <div id="Banner" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#Banner" data-slide-to="0" class=""></li>
+            <li data-target="#Banner" data-slide-to="1" class="active"></li>
+            <li data-target="#Banner" data-slide-to="2" class=""></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">     
+            <div class="item">
+                
+                <img class="banner-image" src="http://www.tonguechic.com/wp-content/uploads/0011/3991/Bernard-bibs_std.jpg" />
+                <div class="carousel-caption">
+                    <h2>A Place where all designers unite.</h2>
+
+                </div>
+            </div>
+            <div class="item active">
+                <img class="banner-image" src="http://40.media.tumblr.com/1ba8d55b4cf706be390c9f5e3201f91a/tumblr_n9faimDoyM1txtiaro1_1280.jpg" />
+                <div class="carousel-caption">
+                    <h2>Where tradition evolves ... A starting spark to fashion</h2>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img class="banner-image" src="http://4.bp.blogspot.com/-j4ptHJzePAU/VXafemH_XBI/AAAAAAAACM8/Is7GZAy6dV4/s1600/nayfana-eid.jpg" />
+                <div class="carousel-caption">
+                    <h2>Bringing traditionalism to a whole new era.</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#Banner" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#Banner" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+<div class="promo-bar">
+    <img src="http://www.thestar.com.my/~/media/Images/TSOL/Photos-Gallery/central/2014/06/23/BAJU%20KURUNG.ashx/?crop=1&w=640&h=480&" class="promo-banner" />
+    <img src="http://www.thestar.com.my/~/media/Images/TSOL/Photos-Gallery/central/2014/05/20/metd_pf_2005_p30a.ashx/" class="promo-banner" />
+    <img src="https://higherlogicdownload.s3.amazonaws.com/AISAP/9240e0fb-b3b1-451a-85f4-ae549c79acf1/UploadedImages/Join%20Now%20button.png" class="promo-banner sign-up" />
+</div>
+
+<script>
+    $(function () {
+        $('.sign-up').click(function () {
+            window.location.href = "/Member/Signup";
+        });
+    });
+</script>

@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+    <div class="input-bar">
+        <i class="glyphicon glyphicon-search"></i>
+        @Html.TextBox("Search Bar", null, new { @class = "input-search", @placeholder = "Enter a keyword.." })
+        <input type="submit" class="input-submit" value="Search" />
+    </div>
+}
+
+<div flex="100" class="box">
+    <div class="box-title">
+        <span>Search Results</span>
+    </div>
+    <div class="box-content">
+        @*repititive items*@
+        <div class="card">
+            <img class="card-image" src="#" />
+            <div class="card-content">
+                <span class="card-title">title 1</span><br />
+                <span class="card-date">13/2/2015</span>
+                <span class="card-viewers">11102 views</span><br />
+                <span class="card-author">Takeshi Nakajima</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="#" />
+            <div class="card-content">
+                <span class="card-title">title 1</span><br />
+                <span class="card-date">13/2/2015</span>
+                <span class="card-viewers">11102 views</span><br />
+                <span class="card-author">Takeshi Nakajima</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="#" />
+            <div class="card-content">
+                <span class="card-title">title 1</span><br />
+                <span class="card-date">13/2/2015</span>
+                <span class="card-viewers">11102 views</span><br />
+                <span class="card-author">Takeshi Nakajima</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-image" src="#" />
+            <div class="card-content">
+                <span class="card-title">title 1</span><br />
+                <span class="card-date">13/2/2015</span>
+                <span class="card-viewers">11102 views</span><br />
+                <span class="card-author">Takeshi Nakajima</span>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-image" src="#" />
+            <div class="card-content">
+                <span class="card-title">title 1</span><br />
+                <span class="card-date">13/2/2015</span>
+                <span class="card-viewers">11102 views</span><br />
+                <span class="card-author">Takeshi Nakajima</span>
+            </div>
+        </div>
+    </div>
+</div>
+

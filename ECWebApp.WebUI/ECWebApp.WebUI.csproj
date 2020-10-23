@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4C90728-29E2-4099-8BE0-D6798C021D29}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECWebApp.WebUI</RootNamespace>
+    <AssemblyName>ECWebApp.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.1.1309.1617\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Postal">
+      <HintPath>..\packages\Postal.Mvc5.1.2.0\lib\net45\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\admin.js" />
+    <Content Include="Areas\Admin\Scripts\webix.js" />
+    <Content Include="Areas\CustomProduct\Scripts\config.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\DialogCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\ExistingProductCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\GalleryCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\HomeCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\ProductCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\ProfileCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\TemplateCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Controllers\VaultCtrl.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Directives\accordion.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Directives\draggable.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Directives\navigation.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Services\GarmentService.js" />
+    <Content Include="Areas\CustomProduct\Scripts\Services\MathService.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-animate.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-aria.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-chart.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-material-icon.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-material.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-messages.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-ui-router.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\aui-min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\bootstrap-colorpicker-module.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\Chart.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\d3.v3.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\hammer.min.js" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\ng-table.min.js" />
+    <Content Include="Content\Admin.css" />
+    <Content Include="Content\angular-chart.css" />
+    <Content Include="Content\angular-material.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colorpicker.min.css" />
+    <Content Include="Content\colpick.css" />
+    <Content Include="Content\fonts\font-license.txt" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\account-icon.png" />
+    <Content Include="Content\images\add-button.png" />
+    <Content Include="Content\images\color-picker.png" />
+    <Content Include="Content\images\cross-icon-in-cart.png" />
+    <Content Include="Content\images\dropdown--big.png" />
+    <Content Include="Content\images\dropdown-icon.png" />
+    <Content Include="Content\images\edit-small-icon.png" />
+    <Content Include="Content\images\logo.old.PNG" />
+    <Content Include="Content\images\newlogo.png" />
+    <Content Include="Content\ng-table.min.css" />
+    <Content Include="Content\starrating.css" />
+    <Content Include="images\logo.PNG" />
+    <Content Include="Content\images\folder.png" />
+    <Content Include="Content\images\home-icon.png" />
+    <Content Include="Content\images\ic_check_18px.svg" />
+    <Content Include="Content\images\ic_expand_less_18px.svg" />
+    <Content Include="Content\images\ic_expand_more_18px.svg" />
+    <Content Include="Content\images\info-small-icon.png" />
+    <Content Include="Content\images\mark-white.png" />
+    <Content Include="Content\images\move-up.png" />
+    <Content Include="Content\images\move-white.png" />
+    <Content Include="Content\images\new-edit-icon.png" />
+    <Content Include="Content\images\new-info-icon.png" />
+    <Content Include="Content\images\plus-icon.png" />
+    <Content Include="Content\images\ajax_loader.gif" />
+    <Content Include="Content\images\cart-shape.png" />
+    <Content Include="Content\images\checkbox.png" />
+    <Content Include="Content\images\eusphoria.png" />
+    <Content Include="Content\images\eye_2-512.png" />
+    <Content Include="Content\images\facebook-icon-blue.png" />
+    <Content Include="Content\images\facebook-icon-grey.png" />
+    <Content Include="Content\images\footer-blue-point.png" />
+    <Content Include="Content\images\header-blue-point.png" />
+    <Content Include="Content\images\insta-icon-blue.png" />
+    <Content Include="Content\images\insta-icon-grey.png" />
+    <Content Include="Content\images\search-icon---blue.png" />
+    <Content Include="Content\images\search-icon.png" />
+    <Content Include="Content\images\thumb.png" />
+    <Content Include="Content\images\trash-line%29white%29.png" />
+    <Content Include="Content\images\twitter-icon-blue.png" />
+    <Content Include="Content\images\twitter-icon-grey.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\images\scroll-up-icon.png" />
+    <Content Include="Content\images\upload-icon.png" />
+    <Content Include="Content\images\x--close-icon.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\customproduct.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\bell.ttf" />
+    <Content Include="fonts\bellb-webfont.eot" />
+    <Content Include="fonts\bellb-webfont.ttf" />
+    <Content Include="fonts\COPRGTL.TTF" />
+    <Content Include="fonts\PAPYRUS.TTF" />
+    <Content Include="Global.asax" />
+    <Content Include="images\icons\account-icon.png" />
+    <Content Include="images\icons\add-button.png" />
+    <Content Include="images\icons\color-picker.png" />
+    <Content Include="images\icons\edit-small-icon.png" />
+    <Content Include="images\icons\folder.png" />
+    <Content Include="images\icons\home-icon.png" />
+    <Content Include="images\icons\info-small-icon.png" />
+    <Content Include="images\icons\mark-white.png" />
+    <Content Include="images\icons\move-up.png" />
+    <Content Include="images\icons\move-white.png" />
+    <Content Include="images\icons\new-edit-icon.png" />
+    <Content Include="images\icons\product.JPG" />
+    <Content Include="images\icons\search-icon---blue.png" />
+    <Content Include="images\icons\search-icon.png" />
+    <Content Include="images\icons\trash-line%29white%29.png" />
+    <Content Include="images\icons\upload-icon.png" />
+    <Content Include="images\icons\x--close-icon.png" />
+    <Content Include="images\newlogo.png" />
+    <Content Include="Log4net.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Product\AddProduct.cshtml" />
+    <Content Include="Areas\EmailTemplate\Views\web.config" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\webix.js" />
+    <Content Include="TextFile\AFINN-111.txt" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+    <Content Include="Views\Emails\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\web.config" />
+    <Content Include="Areas\CustomProduct\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Custom\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-animate.min.js.map" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\PTS-bold.eot" />
+    <Content Include="Content\fonts\PTS-bold.ttf" />
+    <Content Include="Content\fonts\PTS-bold.woff" />
+    <Content Include="Content\fonts\PTS-webfont.eot" />
+    <Content Include="Content\fonts\PTS-webfont.ttf" />
+    <Content Include="Content\fonts\PTS-webfont.woff" />
+    <Content Include="Areas\CustomProduct\Views\Custom\Template.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Custom\Product.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Favourite\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Category\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Gallery\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Vault\Index.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Search\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Product\AddFolder.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Product\UpdateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Product\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\Textures.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\Accessories.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\AddAccessory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\AddAccessoryCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\EditAccessory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\DetailAccessory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\ConfirmationDeleteAccessory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\AddTexture.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\DetailTexture.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\EditTexture.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\ConfirmationDeleteTexture.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Custom\SaveDialog.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Gallery\_MostRecent.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Gallery\_MostPopular.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Gallery\_PopularAuthor.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Custom\ExistingProduct.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Profile\_MyInformation.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Profile\_MySalesDesignRatio.cshtml" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\ng-table.min.js.map" />
+    <Content Include="Areas\CustomProduct\Views\Profile\_SalesHistory.cshtml" />
+    <Content Include="Areas\CustomProduct\Views\Profile\_SalesAnalysis.cshtml" />
+    <Content Include="Areas\CustomProduct\Scripts\_reference\angular-chart.min.js.map" />
+    <Content Include="Content\angular-chart.css.map" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\CustomProducts.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_CustomProduct\DetailCustomProducts.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Tailor\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Customer\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Tailor\GoodReviews.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Tailor\BadReviews.cshtml" />
+    <None Include="Properties\PublishProfiles\diycommerce.com - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\diycommerce.com - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\diycommerce.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\diycommercev2.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\eusphoria.com - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\eusphoria.com - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\eusphoria.com - Web Deploy %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\eusphoria.com - Web Deploy.pubxml" />
+    <Content Include="images\error.png" />
+    <Content Include="images\icons\facebook-icon.png" />
+    <Content Include="images\icons\insta-icon.png" />
+    <Content Include="images\icons\twitter-icon.png" />
+    <Content Include="images\image.jpg" />
+    <Content Include="images\item.jpg" />
+    <None Include="images\logo.PNG.old" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\colpick.js" />
+    <Content Include="Scripts\countries.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Properties\PublishProfiles\fyp2015.com - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Common\Constant.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_CustomerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_CustomProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_TailorController.cs" />
+    <Compile Include="Areas\Admin\Models\AccessoriesTemplateInfo.cs" />
+    <Compile Include="Areas\Admin\Models\AccessoryCategoryInfo.cs" />
+    <Compile Include="Areas\Admin\Models\CustomerDetails.cs" />
+    <Compile Include="Areas\Admin\Models\TailorDetails.cs" />
+    <Compile Include="Areas\Admin\Models\TextureInfo.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\AccessoriesViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\ReviewsViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\TailorViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\TextureViewModel.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\CustomController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\FavouriteController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\GalleryController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\SearchController.cs" />
+    <Compile Include="Areas\CustomProduct\Controllers\VaultController.cs" />
+    <Compile Include="Areas\CustomProduct\CustomProductAreaRegistration.cs" />
+    <Compile Include="Areas\CustomProduct\Models\AccessoryInfo.cs" />
+    <Compile Include="Areas\CustomProduct\Models\AnalysisInfo.cs" />
+    <Compile Include="Areas\CustomProduct\Models\CustomProductSpecViewModel.cs" />
+    <Compile Include="Areas\CustomProduct\Models\TemplateViewModel.cs" />
+    <Compile Include="Areas\EmailTemplate\EmailTemplateAreaRegistration.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Infrastructure\Abstract\IAuthProvider.cs" />
+    <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\CategoryInfo.cs" />
+    <Compile Include="Models\FolderInfo.cs" />
+    <Compile Include="Models\OrderHistory.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\ProductInfo.cs" />
+    <Compile Include="Models\SucceedOrder.cs" />
+    <Compile Include="Models\TailorAssignmnetModel.cs" />
+    <Compile Include="Models\TaskHistory.cs" />
+    <Compile Include="Models\ViewModel\AddressViewModel.cs" />
+    <Compile Include="Models\ViewModel\AuthViewModel.cs" />
+    <Compile Include="Models\ViewModel\CartViewModel.cs" />
+    <Compile Include="Models\ViewModel\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModel\MasterLookupViewModel.cs" />
+    <Compile Include="Models\ViewModel\OrderHistoryViewModel.cs" />
+    <Compile Include="Models\ViewModel\ProductCategoryViewModel.cs" />
+    <Compile Include="Models\ViewModel\ProductsListViewModel.cs" />
+    <Compile Include="Models\ViewModel\ProductViewModel.cs" />
+    <Compile Include="Models\ViewModel\SigninViewModel.cs" />
+    <Compile Include="Models\ViewModel\CustomerViewModel.cs" />
+    <Compile Include="Models\ViewModel\TailorViewModel.cs" />
+    <Compile Include="Models\ViewModel\TaskHistoryViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Product\PopupProduct.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Signup.cshtml" />
+    <Content Include="Views\Product\ProductDetails.cshtml" />
+    <Content Include="Views\Home\Customer.cshtml" />
+    <Content Include="Views\Errors\Error_404.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Errors\Error_505.cshtml" />
+    <Content Include="Views\Customer\CustomerPage.cshtml" />
+    <Content Include="Views\Customer\AccountInfo.cshtml" />
+    <Content Include="Views\Customer\ChangePassword.cshtml" />
+    <Content Include="Views\Customer\AddressBook.cshtml" />
+    <Content Include="Views\Customer\OrderHistory.cshtml" />
+    <Content Include="Views\Customer\MyCart.cshtml" />
+    <Content Include="Views\Customer\ChangeUserName.cshtml" />
+    <Content Include="Views\Customer\UpdateAddressBook.cshtml" />
+    <Content Include="Views\Emails\SignUpConfirmationEmail.cshtml" />
+    <Content Include="Views\Customer\CreateAddressBook.cshtml" />
+    <Content Include="Views\Customer\ConfirmEmail.cshtml" />
+    <Content Include="Views\Customer\ChangeContact.cshtml" />
+    <Content Include="Views\Customer\ChangeEmail.cshtml" />
+    <Content Include="Views\Customer\RequestConfirmationEmail.cshtml" />
+    <Content Include="Scripts\webix.js.map" />
+    <Content Include="Views\Home\SignupSuccess.cshtml" />
+    <Content Include="Views\Home\SignUpPending.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\Promotion.cshtml" />
+    <Content Include="Views\Emails\EnquiryEmail.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Customer\CheckOutCart.cshtml" />
+    <Content Include="Views\Customer\Specialization.cshtml" />
+    <Content Include="Views\Customer\TaskHistory.cshtml" />
+    <Content Include="Views\Customer\UpdateSpecialization.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\EmailTemplate\Controllers\" />
+    <Folder Include="Areas\EmailTemplate\Models\" />
+    <Folder Include="Areas\EmailTemplate\Views\Emails\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECWebApp.Domain\ECWebApp.Domain.csproj">
+      <Project>{4cbd7b0c-406b-437b-9266-c0d7bffc995e}</Project>
+      <Name>ECWebApp.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58768</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58766/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:58766/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,196 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.ViewModels.TailorViewModel
+<div id="myModal">
+    <h1>Tailor List</h1>
+    <table class="table">
+        <tr>            
+            @*<th>Name</th>*@
+            <th>Tailor Email</th>
+            <th>Specialization</th>
+            <th>Average Rating</th>
+            <th>Average Elapsed Time (days)</th>
+            <th>Order In Hand</th>
+            <th>Order Done</th>
+            <th>Good Review</th>
+            <th>Bad Review</th>
+            <th>Commission</th>
+        </tr>
+
+        @{
+            if (Model.TailorsInfo != null && Model.TailorsInfo.Count != 0)
+            {
+                foreach (var tailor in Model.TailorsInfo)
+                {
+                    <tr>
+                        @*<td>@tailor.TailorName</td>*@
+                        <td>@tailor.TailorEmail</td>
+                        <td>@tailor.Specialization</td>
+                        <td align="center">@tailor.AvgRating</td>
+                        <td align="center">@tailor.AvgElapsedTime</td>
+                        <td align="center">@tailor.OrderInHand</td>
+                        <td align="center">@tailor.OrderDone</td>
+                        <td align="center">
+                            @*@Html.ActionLink(" ", "GoodReviews", "Admin_Tailor", null, new { @class = "modal-link", title = "Good Reviews" })*@
+                            <a class="good-review-stat" id="@tailor.TailorId" data-id="@tailor.TailorName" style="color: blue">@tailor.GoodReviews</a>
+                        </td>
+                        <td align="center">
+                            <a class="bad-review-stat" id="@tailor.TailorId" data-id="@tailor.TailorName" style="color: blue">@tailor.BadReviews</a>
+                        </td>
+                        <td align="center">@tailor.Commission</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" class="Center">
+                        No tailor exist.
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+@*<div id="modal-container" class="modal fade" tabindex="-1" role="dialog" style="border: 5px solid #3A87AD;">
+    <script type="text/javascript">
+        $(function () {
+            $('body').on('click', '.modal-link', function (e) {
+                e.preventDefault();
+                $(this).attr('data-target', '#modal-container');
+                $(this).attr('data-toggle', 'modal');
+            });
+
+            $('body').on('click', '.modal-close-btn', function () {
+                $('#modal-container').modal('hide');
+            });
+
+            $('#modal-container').on('hidden.bs.modal', function () {
+                $(this).removeData('bs.modal');
+            });
+        });
+    </script>
+    <a href="#close" title="Close" class="modal-close-btn">X</a>
+    <div class="modal-content" style="width: 500px !important; margin: 10px auto !important;">
+        <div class="modal-body">
+        </div>
+    </div>
+</div>*@
+
+<div id="review-statistics-dialog" style="display: none;">
+    <p id="tailor-title"></p>
+    <p id="review-category"></p>
+    <div id="myModalContent">
+
+
+    </div>
+</div>
+
+<div id="bad-review-statistics-dialog" style="display: none;">
+    <p id="bad-tailor-title"></p>
+    <p id="bad-review-category">Bad Review</p>
+    <div id="bad-myModalContent">
+
+    </div>
+</div>
+
+
+<script type="text/javascript">  
+
+    $(document).on("click", ".good-review-stat", function (e) {
+        var tailorId = e.target.id;
+        var tailorName = $(this).data('id');
+        $('#review-statistics-dialog').data('id', tailorId);
+        $('#review-statistics-dialog').data('content', tailorName);
+        $("#review-statistics-dialog").dialog("open");               
+        document.getElementById("tailor-title").innerHTML = $("#review-statistics-dialog").data('content');
+        document.getElementById("review-category").innerHTML = "Good Review";
+        return false;
+    });
+
+    $("#review-statistics-dialog").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 780,
+        height: 600,
+        resizable: false,
+        modal: true,
+        open: function () {
+            var tailorID = $(this).data('id');
+            var tailorName = $(this).data('content');
+            $.ajax({
+                url: 'Admin_Tailor/GoodReviews',
+                data: { 'TailorID': tailorID },
+                type: "get",
+                cache: false,
+                success: function (data) {
+                    $('#myModalContent').html(data);
+                    //alert(data);
+                    //$('#star-' + rates).prop('checked', false);
+                    //$('#review-textbox').val(data);
+                    //$("#review-dialog").dialog("close");
+                    //$('#review-product-' + orderNo).remove();
+                    //$('#order-status-' + orderNo + ' span').text("Done");
+                    //$("#complete-order").close;
+                    //$('#lblCommentsNotification').text(savingStatus);
+                },
+                error: function (err) {
+                    $("#review-statistics-dialog").html(err);
+                }            
+            });
+        },
+        buttons: {
+
+            "Close": function () {
+                $('#tailor-title').val('');
+                $('myModalContent').html('');
+                $("#review-statistics-dialog").dialog("close");
+            }
+        }
+
+    });  
+
+    $(document).on("click", ".bad-review-stat", function (e) {
+        var tailorId = e.target.id;
+        var tailorName = $(this).data('id');
+        $('#bad-review-statistics-dialog').data('id', tailorId);
+        $('#bad-review-statistics-dialog').data('content', tailorName);
+        $("#bad-review-statistics-dialog").dialog("open");
+        document.getElementById("bad-tailor-title").innerHTML = $("#bad-review-statistics-dialog").data('content');
+        document.getElementById("bad-review-category").innerHTML = "Bad Review";
+        return false;
+    });
+
+    $("#bad-review-statistics-dialog").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 780,
+        height: 600,
+        resizable: false,
+        modal: true,
+        open: function () {
+            var tailorID = $(this).data('id');
+            var tailorName = $(this).data('content');
+            $.ajax({
+                url: 'Admin_Tailor/BadReviews',
+                data: { 'TailorID': tailorID },
+                type: "get",
+                cache: false,
+                success: function (data) {
+                    $('#bad-myModalContent').html(data);
+                },
+                error: function (err) {
+                    $("#bad-review-statistics-dialog").html(err);
+                }
+            });
+        },
+        buttons: {
+
+            "Cancel": function () {
+                $('#bad-tailor-title').val('');
+                $('bad-myModalContent').html('');
+                $("#bad-review-statistics-dialog").dialog("close");
+            }
+        }
+
+    });
+</script>

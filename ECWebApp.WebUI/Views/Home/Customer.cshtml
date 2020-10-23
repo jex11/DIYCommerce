@@ -1,0 +1,114 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.AuthViewModel
+
+<div>
+    @if (Model.IsLogin != null)
+    {
+        if (Model.IsLogin == true)
+        {
+            @Html.Hidden("Customer Code", @Model.Customer.CustomerID, new { @class = "customer-id" })
+            <a href="~/Customer">Welcome, @Model.Customer.CustomerFirstName @Model.Customer.CustomerLastName</a>
+            <a href="~/Home/Signout">(Sign Out)</a>
+
+            <a id="cart-bubble" class="Right-10">
+                <label>CART:</label><br />
+                <label class="cart-count">
+                    @Model.CartCount
+                    @Html.Hidden("CustomerID", @Model.Customer.CustomerID, new { @class = "customer-id" })
+                </label>
+            </a>
+
+            if (Model.IsTailor == true)
+            {
+                <a id="task-bubble" class="Right-5">
+                    <label>TASK:</label><br />
+                    <label class="task-count">
+                        @Model.TaskCount
+                        @Html.Hidden("CustomerID", @Model.Customer.CustomerID, new { @class = "customer-id" })
+                    </label>
+                </a>
+            }
+        }
+        else
+        {
+            <a class="border-right" href="~/Member/Login">LOGIN</a>
+            <a href="~/Member/Signup">CREATE ACCOUNT</a>
+        }
+
+    }
+    else
+    {
+        <a class="border-right" href="~/Member/Login">LOGIN</a>
+        <a href="~/Member/Signup">CREATE ACCOUNT</a>
+    }
+
+</div>
+
+<div id="show-cart-list"></div>
+<div id="show-task-list"></div>
+
+<script>
+    $('#cart-bubble').on('click', function () {
+        $('#cart-bubble').removeClass('active');
+        $(this).addClass('active');
+        $("#show-cart-list").dialog("open");
+    });
+
+    $('#task-bubble').on('click', function () {
+        $('#task-bubble').removeClass('active');
+        $(this).addClass('active');
+        $("#show-task-list").dialog("open");
+    });
+
+    $("#show-cart-list").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 700,
+        resizable: false,
+        modal: true,
+        open: function () {
+            var url = '../../Customer/MyCart/' + $(".customer-id").val()
+            console.log($("#cart-bubble input[type='hidden']").val());
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function (data) {
+                    $("#show-cart-list").html(data);
+                },
+                error: function (err) {
+                    $("#show-cart-list").html(err);
+                },
+                close: function (event, ui) {
+                    $("#show-cart-list").dialog("close");
+                }
+
+            });
+        }
+    });
+
+    $("#show-task-list").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 700,
+        resizable: false,
+        modal: true,
+        open: function () {
+            var url = '../../Customer/TaskHistory/' + $(".customer-id").val()
+            console.log($("#cart-bubble input[type='hidden']").val());
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function (data) {
+                    $("#show-task-list").html(data);
+                },
+                error: function (err) {
+                    $("#show-task-list").html(err);
+                },
+                close: function (event, ui) {
+                    $("#show-task-list").dialog("close");
+                }
+
+            });
+        }
+    });
+
+</script>

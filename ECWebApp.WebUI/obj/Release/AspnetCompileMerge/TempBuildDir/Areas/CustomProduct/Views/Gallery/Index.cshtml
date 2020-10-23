@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<div layout="row" layout-margin>
+    <div flex="6">
+        <div flex="100" class="box">
+            <div class="box-title">
+                <span>Most Recent</span>
+                
+            </div>
+            <div class="box-content">
+                @*repititive items*@
+                
+                @{Html.RenderAction("_MostRecent");}
+                
+            </div>
+        </div>
+
+        <div flex="100" class="box">
+            <div class="box-title">
+                <span>Most Popular</span>
+              
+            </div>
+            <div class="box-content">
+                @{Html.RenderAction("_MostPopular");}
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div flex="33" class="box">
+        <div class="box-title">
+            <span>Designer of the Week</span>
+            
+        </div>
+        <div class="box-content">
+            @*repititive items*@
+            
+            @{Html.RenderAction("_PopularAuthor");}
+
+        </div>
+    </div>
+
+    
+</div>

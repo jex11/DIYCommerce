@@ -1,0 +1,49 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.SigninViewModel
+@using ECWebApp.Domain
+
+
+@{
+    ViewBag.Title = "Member - Login";
+}
+        <div id="LoginForm" class="pad-30-horizontal">
+            <div class="content-page pad-5-all">
+                <div>
+                    <h3 class="title-center">MEMBER LOGIN</h3>
+                    @using (Html.BeginForm("Login", "Home"))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        @Html.ValidationSummary(true, "Email or Password is not in correct form. Please try again.")
+                        <p class="field-validation-error">@ViewBag.ErrorAuthentication</p>
+                        
+                        @Html.LabelFor(m => m.CustomerEmail)
+                        @Html.TextBoxFor(m => m.CustomerEmail)
+                        @Html.ValidationMessageFor(m => m.CustomerEmail)
+                        <br /><br />
+                        @Html.LabelFor(m => m.CustomerPassword)
+                        @Html.PasswordFor(m => m.CustomerPassword)
+                        @Html.ValidationMessageFor(m => m.CustomerPassword)
+
+
+                        @Html.CheckBoxFor(m => m.RememberMe, new { text = "Remember Me", @checked = true })
+                        @Html.LabelFor(m => m.RememberMe)
+                        <div class="button-at-last-row">
+                            <div class="button-30 pull-left padding-no margin-5-horizontal ">
+                                <input type="submit" class="button-submit milky-blue-tile" value="Login" />
+                            </div>
+                            <a id="Forget" class="flr">Forgot Password?</a>
+                        </div>
+                    }
+                </div>
+        </div>
+
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.PasswordFor()
+            @Html.
+            <input type="submit" value="Search" />
+        }*@
+
+</div>

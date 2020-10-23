@@ -1,0 +1,100 @@
+﻿@model List<ECWebApp.WebUI.Models.ProductInfo>
+@using ECWebApp.WebUI.Models;
+@using System.Globalization;
+
+@{
+if (Model.Count() != 0) {
+    foreach (var item in Model)
+    {
+                <div class="BodyDiv" title="@item.ProductDescription">
+                    @Html.Hidden("cpid", item.CustomProductID, new { @class = "cp-id" })
+                    <div class="productDiv">
+                        <div class="Frame">
+                            <label class="product-name">@item.ProductName</label>
+                            <a class="Xbtn glyphicon glyphicon-remove" onclick="$(this).siblings('form').children('.delete-btn').click();"></a>
+
+
+                        </div>
+                        <div class="product-content">
+                            @{
+                                    if (item.ProductImageToBase64 != null)
+                                    {
+                                        <img src="@item.ProductImageToBase64" class="AdminImage">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/icons/product.jpg" class="AdminImage">
+                                    }
+                            }
+                        </div>
+                        <div class="hiddenDiv">
+                            <p class="DescFont">Code:  @item.ProductCode</p>
+                            <p class="DescFont">
+                                Retail Price:
+                                @{
+                                    var culture = new CultureInfo("ms-MY");
+                                    @String.Format(culture, "{0 :C2}", @item.ProductRetailPrice);
+                                }
+                            </p>
+
+                            <p class="DescFont">Description:  @item.ProductDescription</p>
+
+
+                            <div class="buttonDiv">
+                                <a class="button-Infoicon" title="More Info"></a>
+                                @Html.ActionLink(" ", "UpdateProduct", "Admin_Product", new { id = @item.ProductID }, new { @class = "button-Editicon" })
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+    }
+}
+    else
+    {
+        <p>Hooray, Jobs for today are done. More to come! </p>
+    }
+}
+
+<div style="clear: both;"></div>
+
+<div id="dialog" title="View Custom Products">
+
+</div>
+
+<script>
+    $(function () {
+        var createDialog = $("#dialog").dialog({
+            autoOpen: false,
+            height: 800,
+            width: 900,
+            modal: true,
+        });
+
+        $('.BodyDiv').click(function () {
+            $("#dialog").empty();
+            $(this).addClass("active");
+            var CustomProductId = $('.active .cp-id').val();
+            $("#dialog").append("<div id='wait' style='display:block;width:69px;height:89px;border:none;position:absolute;top:30%;left:45%;padding:2px;'><img src='../Content/images/ajax_loader.gif' width='64' height='64' /><br>Loading..</div>");
+            
+            var url = '/Admin/Admin_CustomProduct/DetailCustomProducts/' + CustomProductId;
+            createDialog.dialog("open");
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function (data) {
+                    $("#dialog").empty();
+                    $("#dialog").append(data);
+
+                },
+                error: function (err) {
+                    $("#dialog").append(data);
+                }
+            });
+        });
+
+
+
+
+    });
+</script>

@@ -1,0 +1,69 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.AddressViewModel
+
+<div class="ui-dialog-actionbar header-address"><p class="Left">Edit Your Address Book</p><p class="Right close" /></div>
+<div class="edit-address-detail fll">
+    @using (Html.BeginForm("UpdateAddressBook", "Customer", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group row">
+            <div class="info-col-50 fll">
+                @Html.TextBoxFor(x => x.CustomerAddressName, new { @placeholder = "Full Name" })
+                @Html.ValidationMessageFor(x => x.CustomerAddressName)
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="info-col-100 fll">
+                @Html.TextBoxFor(x => x.CustomerAddress, new { @placeholder = "Address" })
+                @Html.ValidationMessageFor(x => x.CustomerAddress)
+            </div>
+
+        </div>
+        <script language="javascript">
+            populateCountries("CustomerCountry", "CustomerState");
+        </script>
+        <div class="form-group row">
+            <div class="info-col-50 fll">
+                @Html.TextBoxFor(x => x.CustomerPostcode, new { @placeholder = "Postcode" })
+                @Html.ValidationMessageFor(x => x.CustomerPostcode)
+            </div>
+            <div class="info-col-50 fll">
+                @Html.TextBoxFor(x => x.CustomerCity, new { @placeholder = "City" })
+                @Html.ValidationMessageFor(x => x.CustomerCity)
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="info-col-50 fll">
+                <select name="CustomerState" id="CustomerState"></select>
+                @Html.ValidationMessageFor(x => x.CustomerState)
+
+            </div>
+            <div class="info-col-50 fll">
+                <select id="CustomerCountry" name="CustomerCountry"></select>
+                @Html.ValidationMessageFor(x => x.CustomerCountry)
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="info-col-100 fll">
+                @Html.TextBoxFor(x => x.CustomerContact, new { @placeholder = "Contact" })
+                @Html.ValidationMessageFor(x => x.CustomerContact)
+            </div>
+        </div>
+    <div class="form-group button-at-last-row">
+        <div class="button-45 pull-left padding-no margin-5-right "><input type="submit" class="button-submit green-tile" value="Confirm" /></div>
+        <div class="button-45 pull-right padding-no margin-5-left"><input type="reset" class="button-back green-tile" value="Cancel" /></div>
+    </div>
+
+    }
+
+</div>
+<script>
+    $('.close, .button-back').click(function () {
+        $("#address-details").empty();
+        $("#address-details").dialog("close");
+    });
+    
+    
+</script>

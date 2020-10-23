@@ -1,0 +1,43 @@
+﻿@using System.Globalization
+@model ECWebApp.WebUI.Models.ViewModel.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="product-list">
+    @foreach (var product in Model.Products)
+    {
+        
+        <div class="product-item">
+            <img class="product-image" src="@product.ProductImageToBase64" />
+                <a class="product-hoverbox" >
+                    + Quick View
+                    @Html.Hidden("ProductID", @product.ProductID, new { @class = "product-id" })
+                </a>
+            <div class="product-description">
+                
+                <p class="product-title">@product.ProductName</p>
+                <p class="product-price">
+                    @{
+                        var culture = new CultureInfo("ms-MY");
+                        @String.Format(culture, "{0 :C2}", @product.ProductRetailPrice);
+                    }
+                </p>
+
+            </div>
+           
+        </div>
+    }
+    
+</div>
+<div id="product-details"></div>
+
+
+<div>
+    @*@Html.PageLinks(Model.PagingInfo,
+    x =>
+        Url.Action("CategoryList",
+        new { page = x , category = Model.CurrentCategory}))*@
+</div>
+

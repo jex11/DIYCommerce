@@ -1,0 +1,125 @@
+﻿@model ECWebApp.WebUI.Models.ProductInfo
+@using System.Globalization
+
+
+@{
+    ViewBag.Title = "DetailCustomProducts";
+    var culture = new CultureInfo("ms-MY");
+}
+
+<h2>Detail Custom Products</h2>
+<p id="JobDone" class="form-job-done right">Job Done</p>
+@Html.ActionLink(" ", "Index", null, new { @class = "right glyphicon glyphicon-remove form-close" })
+<hr/>
+<div>
+    <div class="left">
+        <h3>Measurements</h3>
+        <br />
+        <p>Name : @Model.ProductName</p>
+        <p> BodyLength : <span id="BodyLength"></span></p>
+        <p> Shoulders : <span id="Shoulders"></span></p>
+        <p> Armpit : <span id="Armpit"></span></p>
+        <p> SleeveOpening : <span id="SleeveOpening"></span></p>
+        <p> Neck : <span id="Neck"></span></p>
+        <p> Sleeve : <span id="Sleeve"></span></p>
+        <p> Breast : <span id="Breast"></span></p>
+        <p> Waist : <span id="Waist"></span></p>
+        <p> Hip : <span id="Hip"></span></p>
+        <br />
+        <p>
+            Price : @{
+
+                @String.Format(culture, "{0 :C2}", @Model.ProductRetailPrice);
+
+            }
+        </p>
+
+
+
+    </div>
+    <div id="CustomerInfo" class="right">
+        <h3>Customer</h3>
+        <br />
+        <p>Name : <span id="CustomerName"></span></p>
+        <p> Address : <span id="CustomerAddress"></span></p>
+        <p> City : <span id="City"></span></p>
+        <p> Post Code : <span id="PostCode"></span></p>
+        <p> State : <span id="State"></span></p>
+        <p> Country : <span id="Country"></span></p>
+        <p> Contact : <span id="Contact"></span></p>
+        <p> Email : <span id="Email"></span></p>
+
+    </div>
+</div>
+
+
+@{
+    if (Model.ProductImageToBase64 != null)
+    {
+        <img src="@Model.ProductImageToBase64">
+    }
+    else
+    {
+        <img src="~/images/icons/product.jpg">
+    }
+}
+
+
+
+
+
+<script>
+    $(function () {
+        var data = '@Model.Measurements'.replace(/&quot;/g, '"');
+        var Measurements = JSON.parse(data);
+        $('#BodyLength').append(Measurements.BodyLength);
+        $('#Shoulders').append(Measurements.Shoulders);
+        $('#Armpit').append(Measurements.Armpit);
+        $('#SleeveOpening').append(Measurements.SleeveOpening);
+        $('#Neck').append(Measurements.Neck);
+        $('#Sleeve').append(Measurements.Sleeve);
+        $('#Breast').append(Measurements.Breast);
+        $('#Waist').append(Measurements.Waist);
+        $('#Hip').append(Measurements.Hip);
+
+        var url = '/Admin/Admin_CustomProduct/CustomProductBuyer/' + '@Model.CustomProductID';
+
+        $.ajax({
+            url: url,
+            cache: false,
+            success: function (data) {
+                console.log(data);
+                $('#CustomerName').append(data.CustomerFirstName + " " + data.CustomerLastName);
+                $('#CustomerAddress').append(data.CustomerAddress);
+                $('#City').append(data.CustomerCity);
+                $('#PostCode').append(data.CustomerPostcode);
+                $('#State').append(data.CustomerState);
+                $('#Country').append(data.CustomerCountry);
+                $('#Contact').append(data.CustomerContact);
+                $('#Email').append(data.CustomerEmail);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+
+        $('#JobDone').click(function () {
+            var url = '/Admin/Admin_CustomProduct/CustomProductDone/' + '@Model.CustomProductID';
+
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function (data) {
+                    
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            var $dialog = $(this).parents('.ui-dialog-content');
+            $dialog.dialog('close');
+        });
+
+
+    });
+</script>

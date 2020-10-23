@@ -1,0 +1,24 @@
+﻿@model List<ECWebApp.WebUI.Models.ProductInfo>
+@using System.Globalization
+@{
+    Layout = null;
+}
+
+
+@foreach (var product in Model)
+{
+    <div class="card" ng-product pid="@product.ProductID">
+        <img class="card-image" src="@product.ProductImageToBase64" />
+        <div class="card-content">
+            <span class="card-title">@product.ProductName</span><br />
+            <span class="card-date">@product.CustomProductCreatedOn</span>
+            <span class="card-viewers">
+                @{
+                var culture = new CultureInfo("ms-MY");
+                @String.Format(culture, "{0 :C2}", product.ProductRetailPrice);
+                }
+            </span><br />
+            <span class="card-author">@product.CustomProductAuthorName</span>
+        </div>
+    </div>
+}

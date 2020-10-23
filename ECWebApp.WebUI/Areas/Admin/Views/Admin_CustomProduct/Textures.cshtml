@@ -1,0 +1,147 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.ViewModels.TextureViewModel
+
+
+<div class="table-titlebar">
+    <h3>Texture Management</h3>
+    <label class="right textures-add btn btn-primary"> Add New</label>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Code</th>
+        <th width="10%">Thumbnail</th>
+        <th>Name</th>
+        <th>Image Type</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    @{
+        if (Model.Textures != null && Model.Textures.Count != 0)
+        {
+            foreach (var texture in Model.Textures)
+            {
+                <tr>
+                    <td><a href="#" pid="@texture.TextureId" class="textures-details">@texture.TextureCode</a></td>
+                    <td><img src="@texture.TextureThumbnailBase64" /></td>
+                    <td>@texture.TextureName</td>
+                    <td>@texture.TextureType</td>
+                    <td>@texture.TextureDescription</td>
+                    <td>@texture.TexturePrice</td>
+                    <td>
+                        <label pid="@texture.TextureId" class="btn textures-edit">Edit |</label> 
+                        @*<label pid="@texture.TextureId" class="btn textures-details">Details |</label>*@  
+                        <label pid="@texture.TextureId" class="btn textures-delete">Delete |</label> 
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="Center">
+                    No textures are added. 
+                </td>
+            </tr>
+        }
+}
+
+
+</table>
+
+<div id="dialog-form"></div>
+
+<script>
+    $(function(){
+        var createDialog = $("#dialog-form").dialog({
+                                autoOpen: false,
+                                height: 750,
+                                width: 1000,
+                                modal: true,
+        });
+
+        var detailsDialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 1000,
+            modal: true,
+        });
+
+
+        $('.textures-add').on('click', function () {
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/AddTexture",
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    createDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.textures-edit').on('click', function () {
+            var id = $(this).attr('pid')
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/EditTexture/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    createDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.textures-details').on('click', function () {
+            $(this).addClass('active');
+            var id = $(this).attr('pid');
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/DetailTexture/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    detailsDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.textures-delete').on('click', function () {
+            var id = $(this).attr('pid');
+
+            var deleteDialog = $("#dialog-form").dialog({
+                autoOpen: false,
+                height: 50,
+                width: 400,
+                modal: true,
+                buttons: {
+                    Confirm: function () {
+                        $.ajax({
+                            url: '/Admin/Admin_CustomProduct/DeleteTexture/' + id,
+                            cache: false
+                        });
+                        window.location.href = '/Admin/Admin_CustomProduct';
+                        $(this).dialog("close");
+
+                    },
+                    Cancel: function () {
+                        window.location.href = '/Admin/Admin_CustomProduct';
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/ConfirmationDeleteTexture/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    deleteDialog.dialog("open");
+                }
+            });
+        });
+    });
+
+</script>

@@ -1,0 +1,135 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+
+<div class="user-sub-detail">
+    <h1>General Information</h1>
+    <div class="user-group-detail">
+@using (Html.BeginForm("ChangeProfileImage", "Customer", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+        <div class="card">
+            @if (Model.CustomerImgBase64 == null)
+            {
+                <img id="preview" class="card-img-preview" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8IS0tIENyZWF0ZWQgd2l0aCBNZXRob2QgRHJhdyAtIGh0dHA6Ly9naXRodWIuY29tL2R1b3BpeGVsL01ldGhvZC1EcmF3LyAtLT4KCiA8Zz4KICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+CiAgPHJlY3QgZmlsbD0iI2VkZWRlZCIgaWQ9ImNhbnZhc19iYWNrZ3JvdW5kIiBoZWlnaHQ9IjIwMyIgd2lkdGg9IjIwMiIgeT0iLTEiIHg9Ii0xIi8+CiA8L2c+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPGcgc3Ryb2tlPSJudWxsIiBpZD0ic3ZnXzYiPgogICA8cGF0aCBzdHJva2U9Im51bGwiIGZpbGw9IiM3ZjdiN2IiIGlkPSJzdmdfNSIgZD0ibTEzNS44NTkwODUsNzMuODAwNzEzYzAuMTM1MTYyLC0xLjAyNTU3NCAwLjMxNzc0OSwtMi4wMzk1MiAwLjMxNzc0OSwtMy4wOTk1NDhjMCwtMTMuMDMxNDc5IC0xMC43OTI5MzgsLTIzLjU5NzA3NiAtMjQuMTE3ODU5LC0yMy41OTcwNzZjLTcuODc4NTEsMCAtMTQuODA4ODA3LDMuNzUwNDg4IC0xOS4yMDczMDYsOS40NzExM2MtMS41ODM4OTMsLTAuMzc0NDA5IC0zLjIxNDc4MywtMC42MjIxOTIgLTQuOTEwNTc2LC0wLjYyMjE5MmMtMTEuNjU4NjA3LDAgLTIxLjEwMzIxLDkuMjQwNjMxIC0yMS4xMDMyMSwyMC42NDc0MTVjMCwwLjMyMjYwMSAwLjA4MjQ4OSwwLjYxMDc1NiAwLjA5NDIwOCwwLjkzMzM5NWMtOC43NDM5NjUsMi41MTc0ODcgLTE1LjE2Nzk0NiwxMC4zNDA4MiAtMTUuMTY3OTQ2LDE5LjcxNDAwNWMwLDExLjQwNjc4NCA5LjQ0NDYxMSwyMC42NDc0NDYgMjEuMTAzMjE4LDIwLjY0NzQ0Nmw1MS4yNTA1NDIsMGMxMy4zMjUwMTIsMCAyNC4xMTc5NSwtMTAuNTU5ODc1IDI0LjExNzk1LC0yMy41OTcwNzZjMCwtOC44MzcyNSAtNS4wMjI1ODMsLTE2LjQ1MzM2OSAtMTIuMzc2NzcsLTIwLjQ5NzQ5OHptLTI5LjgyOTU5LDE0LjU5ODIzNmwwLDE3LjY5NzgxNWwtMTIuMDU4OTI5LDBsMCwtMTcuNjk3ODE1bC0xMi4wNTkwMjEsMGwxOC4wODg1MDEsLTE3LjY5Nzc4NGwxOC4wODgzNzksMTcuNjk3Nzg0bC0xMi4wNTg5MjksMHoiLz4KICA8L2c+CiAgPHRleHQgc3Ryb2tlPSIjMDAwIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1NTA0MDQyNDQ0NzUyNTgsMCwwLDEuMzM4Nzc5ODEzNzMxNDQ1NywtNDQuOTE3MjM1MTI1OTE0MzQ1LC0yMTcuNTEyNjEyOTE3MTIyNSkgIiB4bWw6c3BhY2U9InByZXNlcnZlIiB0ZXh0LWFuY2hvcj0ibGVmdCIgZm9udC1mYW1pbHk9IkhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGlkPSJzdmdfNyIgeT0iMjcwLjAwNjMzMiIgeD0iOTIuNjY4MTEyIiBzdHJva2Utb3BhY2l0eT0ibnVsbCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjNzI3MDcwIj5VcGxvYWQgYW4gaW1hZ2U8L3RleHQ+CiA8L2c+Cjwvc3ZnPg==" />
+            }
+            else
+            {
+                <img id="preview" class="card-img-preview" src="@Model.CustomerImgBase64" />
+            }
+            <div class="context context-bar-bottom">
+                @Html.LabelFor(x => x.CustomerImgBase64)
+
+                <img class="btn-upload" src="~/Content/images/upload-icon.png" onclick="$('.img-upload').click(); " />
+                
+                @Html.TextBoxFor(x => x.CustomerImg,
+                new
+                {
+                    @type = "file",
+                    @class = "hidden img-upload",
+
+                    @accept = "image/*"
+                })
+            </div>
+            @Html.HiddenFor(x => x.CustomerID)
+            <input type="submit" class="hidden img-submit" />
+        </div>
+}
+            <div class="form-group row">
+                <div class="info-col-90 fll">
+                    <div class="sub-content-title current fll">
+                        <label>User Name:</label>
+                    </div>
+                    <div class="sub-content-detail fll">
+                        <p class="user-account-info fll">@Model.CustomerFirstName @Model.CustomerLastName</p>
+                        <a id="ChangeUserName" class="direct-detail-link fll">Change</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="info-col-90 fll">
+                    <div class="sub-content-title fll">
+                        @Html.LabelFor(x => x.CustomerContact)
+                    </div>
+                    <div class="sub-content-detail fll">
+                        <p class="user-account-info fll">@Model.CustomerContact</p>
+                        <a id="AddressBook" class="direct-detail-link fll">Change</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="info-col-90 fll">
+                    <div class="sub-content-title fll">
+                        @Html.LabelFor(x => x.CustomerEmail)
+                    </div>
+                    <div class="sub-content-detail fll">
+                        <p class="user-account-info fll">@Model.CustomerEmail</p>
+                        <a id="ChangeEmail" class="direct-detail-link fll">Change</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="info-col-90 fll">
+                    <div class="sub-content-title fll">
+                        @Html.LabelFor(x => x.CustomerPassword)
+                    </div>
+                    <div class="sub-content-detail fll">
+                        <p class="user-account-info password-info fll">@Model.CustomerPassword</p>
+                        <a id="ChangePassword" class="direct-detail-link fll">Change</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+</div>
+
+<script>
+    $(function () {
+        $('.img-upload').change(function(){
+            readURL(this,'#preview'); 
+            $('.img-submit').click();
+        });
+
+        $('.direct-detail-link').click(function () {
+
+            $('.direct-detail-link').removeClass('current');
+            $(this).addClass('current');
+            //alert(this.id + "/" + $(".customer-id").val());
+            $("#tab").html("<div id='wait' style='display:block;width:69px;height:89px;border:none;position:absolute;top:50%;left:55%;padding:2px;'><img src='Content/images/ajax_loader.gif' width='64' height='64' /><br>Loading..</div>");
+            $.ajax({
+                url: "/Customer/" + this.id + "/" + $(".customer-id").val(),
+                cache: true,
+                success: function (data) {
+                    $("#tab").empty();
+                    $("#tab").append(data);
+
+                },
+                error: function (err) {
+                    $("#tab").append(data);
+                }
+            });
+        });
+
+        //**************upload photo preview**********************************
+
+        function readURL(input, divName) {
+            if (input.files && input.files[0]) {
+
+                var reader = new FileReader();
+                $(divName).css("visibility", "visible");
+                reader.onload = function (e) {
+                    $(divName)
+                        .attr('src', e.target.result)
+                        .width(200)
+                        .height(150);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    });
+</script>
+

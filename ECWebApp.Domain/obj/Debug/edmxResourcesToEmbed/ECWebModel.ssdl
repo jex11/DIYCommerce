@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ECWebSecModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ECWebSecModelStoreContainer">
+    <EntitySet Name="Addresses" EntityType="ECWebSecModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CartLists" EntityType="ECWebSecModel.Store.CartLists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Carts" EntityType="ECWebSecModel.Store.Carts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Classes" EntityType="ECWebSecModel.Store.Classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="ECWebSecModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailConfirms" EntityType="ECWebSecModel.Store.EmailConfirms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LastAccesses" EntityType="ECWebSecModel.Store.LastAccesses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleAssigns" EntityType="ECWebSecModel.Store.RoleAssigns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="ECWebSecModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="C__MigrationHistory" EntityType="ECWebSecModel.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="ECWebSecModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="ECWebSecModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Regions" EntityType="ECWebSecModel.Store.Regions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubRegions" EntityType="ECWebSecModel.Store.SubRegions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accessories" EntityType="ECWebSecModel.Store.Accessories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccessoriesTemplates" EntityType="ECWebSecModel.Store.AccessoriesTemplates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccessoriesTemplateCategories" EntityType="ECWebSecModel.Store.AccessoriesTemplateCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="ECWebSecModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colors" EntityType="ECWebSecModel.Store.Colors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomProducts" EntityType="ECWebSecModel.Store.CustomProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Folders" EntityType="ECWebSecModel.Store.Folders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Images" EntityType="ECWebSecModel.Store.Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="ECWebSecModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Promotions" EntityType="ECWebSecModel.Store.Promotions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reviews" EntityType="ECWebSecModel.Store.Reviews" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Templates" EntityType="ECWebSecModel.Store.Templates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Textures" EntityType="ECWebSecModel.Store.Textures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_CustomerAuthentication" EntityType="ECWebSecModel.Store.vw_CustomerAuthentication" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_ProductList" EntityType="ECWebSecModel.Store.vw_ProductList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_PopularAuthor" EntityType="ECWebSecModel.Store.vw_PopularAuthor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_PopularProduct" EntityType="ECWebSecModel.Store.vw_PopularProduct" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Customer_Customer_Address" Association="ECWebSecModel.Store.FK_Customer_Customer_Address">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_CartList_Cart" Association="ECWebSecModel.Store.FK_Product_CartList_Cart">
+      <End Role="Carts" EntitySet="Carts" />
+      <End Role="CartLists" EntitySet="CartLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Customer" Association="ECWebSecModel.Store.FK_Cart_Customer">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Custom__6D9742D9" Association="ECWebSecModel.Store.FK__Customer__Custom__6D9742D9">
+      <End Role="Classes" EntitySet="Classes" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmailConf__Custo__62E4AA3C" Association="ECWebSecModel.Store.FK__EmailConf__Custo__62E4AA3C">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="EmailConfirms" EntitySet="EmailConfirms" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LastAcces__Custo__2116E6DF" Association="ECWebSecModel.Store.FK__LastAcces__Custo__2116E6DF">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="LastAccesses" EntitySet="LastAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Customer_RoleAssign" Association="ECWebSecModel.Store.FK_Customer_Customer_RoleAssign">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="RoleAssigns" EntitySet="RoleAssigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomProduct_Customers" Association="ECWebSecModel.Store.FK_CustomProduct_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomProduct" EntitySet="CustomProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductReview_Customer" Association="ECWebSecModel.Store.FK_ProductReview_Customer">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleAssign_Role" Association="ECWebSecModel.Store.FK_RoleAssign_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleAssigns" EntitySet="RoleAssigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accessories_AccessoriesTemplate" Association="ECWebSecModel.Store.FK_Accessories_AccessoriesTemplate">
+      <End Role="AccessoriesTemplate" EntitySet="AccessoriesTemplates" />
+      <End Role="Accessories" EntitySet="Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accessories_Products" Association="ECWebSecModel.Store.FK_Accessories_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Accessories" EntitySet="Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccessoriesTemplate_AccessoriesTemplateCategory" Association="ECWebSecModel.Store.FK_AccessoriesTemplate_AccessoriesTemplateCategory">
+      <End Role="AccessoriesTemplateCategory" EntitySet="AccessoriesTemplateCategories" />
+      <End Role="AccessoriesTemplate" EntitySet="AccessoriesTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_Category" Association="ECWebSecModel.Store.FK_Product_Product_Category">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Colors_Products" Association="ECWebSecModel.Store.FK_Colors_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Colors" EntitySet="Colors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_Colors" Association="ECWebSecModel.Store.FK_Images_Colors">
+      <End Role="Colors" EntitySet="Colors" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomProduct_Products" Association="ECWebSecModel.Store.FK_CustomProduct_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="CustomProduct" EntitySet="CustomProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folders_Folders" Association="ECWebSecModel.Store.FK_Folders_Folders">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Folders1" EntitySet="Folders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductFolder_Folder" Association="ECWebSecModel.Store.FK_ProductFolder_Folder">
+      <End Role="Folders" EntitySet="Folders" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_Products" Association="ECWebSecModel.Store.FK_Images_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Promotion" Association="ECWebSecModel.Store.FK_Product_Promotion">
+      <End Role="Promotions" EntitySet="Promotions" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Texture" Association="ECWebSecModel.Store.FK_Product_Texture">
+      <End Role="Textures" EntitySet="Textures" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductReview_Product_MasterProduct" Association="ECWebSecModel.Store.FK_ProductReview_Product_MasterProduct">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Template" Association="ECWebSecModel.Store.FK_Products_Template">
+      <End Role="Template" EntitySet="Templates" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_CustomProduct" Association="ECWebSecModel.Store.FK_Images_CustomProduct">
+      <End Role="CustomProduct" EntitySet="CustomProducts" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartLists_CustomProduct" Association="ECWebSecModel.Store.FK_CartLists_CustomProduct">
+      <End Role="CustomProduct" EntitySet="CustomProducts" />
+      <End Role="CartList" EntitySet="CartLists" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Postcode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Contact" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="AddressCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AddressCreatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="AddressUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AddressUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Status" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CartLists">
+    <Key>
+      <PropertyRef Name="CartListId" />
+    </Key>
+    <Property Name="CartListId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CartId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CartListTotalQuantity" Type="int" Nullable="false" />
+    <Property Name="CartListTotalPrice" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CartListTotalWeight" Type="int" Nullable="false" />
+    <Property Name="CartListCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CartListCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CartListUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CartListUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="ProductColorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomProductID" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Carts">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CartStatus" Type="int" Nullable="false" />
+    <Property Name="PaymentMethod" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="PaymentTotal" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="PaymentStatus" Type="int" Nullable="true" />
+    <Property Name="PaymentCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="PaymentCreatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CartCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CartCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CartUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CartUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Classes">
+    <Key>
+      <PropertyRef Name="CustomerCategoryId" />
+    </Key>
+    <Property Name="CustomerCategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerCategoryName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CustomerCategoryPointGiven" Type="int" Nullable="false" />
+    <Property Name="CustomerCategoryStatus" Type="int" Nullable="false" />
+    <Property Name="CustomerCategoryCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CustomerCategoryCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CustomerCategoryUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomerCategoryUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerCode" Type="int" Nullable="true" />
+    <Property Name="CustomerImg" Type="varbinary(max)" Nullable="true" />
+    <Property Name="CustomerPassword" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerFirstName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerLastName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerNRIC" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerEmail" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerAddress" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerPostcode" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerCity" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerState" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerCountry" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerContact" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerPoint" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerCategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerStatus" Type="int" Nullable="true" />
+    <Property Name="CustomerCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomerCreatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomerUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerImgType" Type="varchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EmailConfirms">
+    <Key>
+      <PropertyRef Name="EmailConfirmId" />
+    </Key>
+    <Property Name="EmailConfirmId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="CustomerEmail" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="ConfirmationCode" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="ConfirmationStatus" Type="int" Nullable="true" />
+    <Property Name="EmailConfirmCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="EmailConfirmEndOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LastAccesses">
+    <Key>
+      <PropertyRef Name="LastAccessId" />
+    </Key>
+    <Property Name="LastAccessId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastAccessLocation" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="LastAccessDevice" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastAccessCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="LastAccessCreatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="LastAccessUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="LastAccessUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RoleAssigns">
+    <Key>
+      <PropertyRef Name="RoleAssignId" />
+    </Key>
+    <Property Name="RoleAssignId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleAssignCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="RoleAssignCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RoleAssignUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="RoleAssignUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RoleDescription" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RoleStatus" Type="int" Nullable="false" />
+    <Property Name="RoleCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="RoleCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RoleUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="RoleUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationID" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationID" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="SCC_FIPS" />
+    </Key>
+    <Property Name="SCC_FIPS" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CC_ISO" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="TLD" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="COUNTRY_NAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Regions">
+    <Key>
+      <PropertyRef Name="REGION1" />
+    </Key>
+    <Property Name="REGION1" Type="int" Nullable="false" />
+    <Property Name="REGION_NAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SubRegions">
+    <Key>
+      <PropertyRef Name="SUBREGION1" />
+    </Key>
+    <Property Name="SUBREGION1" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="SUBREGION_NAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Accessories">
+    <Key>
+      <PropertyRef Name="AccessoriesID" />
+    </Key>
+    <Property Name="AccessoriesID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessoriesTemplateID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessoriesX" Type="decimal" Nullable="true" Precision="5" Scale="2" />
+    <Property Name="AccessoriesY" Type="decimal" Nullable="true" Precision="5" Scale="2" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="AccessoriesCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesCreatedBy" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AccessoriesUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesUpdatedBy" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AccessoriesTemplates">
+    <Key>
+      <PropertyRef Name="AccssoriesTemplateID" />
+    </Key>
+    <Property Name="AccssoriesTemplateID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessoriesTemplateName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplateCategory" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessoriesTemplateDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="AccessoriesTemplateCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesTemplateCreatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplateUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesTemplateUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplateSource" Type="varbinary(max)" Nullable="true" />
+    <Property Name="AccessoriesTemplateType" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplatePrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="AccessoriesTemplateCode" Type="varchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AccessoriesTemplateCategories">
+    <Key>
+      <PropertyRef Name="AccessoriesTemplateCategoryID" />
+    </Key>
+    <Property Name="AccessoriesTemplateCategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessoriesTemplateCategoryName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplateCategoryDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="AccessoriesTemplateCategoryCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesTemplateCategoryCreatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccessoriesTemplateCategoryUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="AccessoriesTemplateCategoryUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ProductCategory" />
+    </Key>
+    <Property Name="ProductCategory" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CategoryDescription" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CategoryStatus" Type="int" Nullable="false" />
+    <Property Name="CategoryCreateOn" Type="datetime" Nullable="false" />
+    <Property Name="CategoryCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CategoryUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CategoryUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ProductColorId" />
+    </Key>
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductQuantity" Type="int" Nullable="true" />
+    <Property Name="IsOutOfStock" Type="int" Nullable="true" />
+    <Property Name="ProductColorCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductColorCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductColorUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ProductColorUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="ProductColorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductColorValue" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CustomProducts">
+    <Key>
+      <PropertyRef Name="CustomProductId" />
+    </Key>
+    <Property Name="CustomProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="CustomProductCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomProductCreatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CustomProductUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomProductUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Specifications" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Folders">
+    <Key>
+      <PropertyRef Name="ProductFolderId" />
+    </Key>
+    <Property Name="ProductFolderId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductFolderName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProductFolderDescription" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ProductFolderCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductFolderCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductFolderUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ProductFolderUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="ProductFolderFrom" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ProductImgId" />
+    </Key>
+    <Property Name="ProductImgId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductImageCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductImageCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductImageUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ProductImageUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="ProductColorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsPrimary" Type="int" Nullable="true" />
+    <Property Name="ProductImageType" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="ProductImageSource" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="ProductImageName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CustomProductID" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductCategory" Type="int" Nullable="false" />
+    <Property Name="ProductQuantity" Type="int" Nullable="false" />
+    <Property Name="ProductOriginalPrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="ProductRetailPrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="ProductDescription" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ProductWeight" Type="int" Nullable="true" />
+    <Property Name="ProductWidth" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductHeight" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductLength" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductScale" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="PromotionId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="ProductFolderId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="ProductStatus" Type="int" Nullable="false" />
+    <Property Name="ProductCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ProductUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="TemplateID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TemplateTextureId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promotions">
+    <Key>
+      <PropertyRef Name="PromotionId" />
+    </Key>
+    <Property Name="PromotionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PromotionName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PromotionDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PromotionImage" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PromotionBanner" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PromotionDiscountRate" Type="int" Nullable="true" />
+    <Property Name="PromotionStart" Type="datetime" Nullable="true" />
+    <Property Name="PromotionEnd" Type="datetime" Nullable="true" />
+    <Property Name="PromotionStatus" Type="int" Nullable="false" />
+    <Property Name="PromotionCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="PromotionCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PromotionUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="PromotionUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="ProductReviewId" />
+    </Key>
+    <Property Name="ProductReviewId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductReview" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProductReviewRate" Type="int" Nullable="false" />
+    <Property Name="ProductReviewCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductReviewCreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductReviewUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ProductReviewUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Templates">
+    <Key>
+      <PropertyRef Name="TemplateID" />
+    </Key>
+    <Property Name="TemplateID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TemplateSource" Type="varchar(max)" Nullable="true" />
+    <Property Name="TemplateDescription" Type="varchar(max)" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="true" />
+    <Property Name="TemplateCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="TemplateCreatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TemplatedUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="TemplateUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TemplatePrice" Type="decimal" Nullable="true" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="Textures">
+    <Key>
+      <PropertyRef Name="TextureId" />
+    </Key>
+    <Property Name="TextureId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TextureName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TextureSource" Type="varbinary(max)" Nullable="true" />
+    <Property Name="TextureType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="TextureCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="TextureCreatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TextureUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="TextureUpdatedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TextureThumbnail" Type="varbinary(max)" Nullable="true" />
+    <Property Name="TextureCode" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="TextureDescription" Type="varchar(max)" Nullable="true" />
+    <Property Name="TexturePrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="vw_CustomerAuthentication">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="CustomerCategoryName" />
+    </Key>
+    <Property Name="CustomerCode" Type="int" Nullable="true" />
+    <Property Name="CustomerPassword" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerFirstName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerLastName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerNRIC" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="CustomerImg" Type="varbinary(max)" Nullable="true" />
+    <Property Name="CustomerEmail" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerStatus" Type="int" Nullable="true" />
+    <Property Name="CustomerCreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="CustomerCreatedBy" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerContact" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ConfirmationStatus" Type="int" Nullable="true" />
+    <Property Name="CustomerCategoryName" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="vw_ProductList">
+    <Key>
+      <PropertyRef Name="ProductColor" />
+      <PropertyRef Name="ProductFolderName" />
+      <PropertyRef Name="ProductImg" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ProductCategory" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductQuantity" />
+      <PropertyRef Name="ProductStatus" />
+    </Key>
+    <Property Name="CategoryName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="ProductColor" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductFolderName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProductImg" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductCategory" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductQuantity" Type="int" Nullable="false" />
+    <Property Name="ProductOriginalPrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="ProductRetailPrice" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="IsOutOfStock" Type="int" Nullable="true" />
+    <Property Name="ProductDescription" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ProductWeight" Type="int" Nullable="true" />
+    <Property Name="ProductWidth" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductHeight" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductLength" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ProductScale" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="ProductStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_PopularAuthor">
+    <Key>
+      <PropertyRef Name="DesignerID" />
+    </Key>
+    <Property Name="DesignerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductCount" Type="int" Nullable="true" />
+    <Property Name="SoldCount" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vw_PopularProduct">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="DesignerID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="DesignerFirstName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="DesignerLastName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="SoldCount" Type="int" Nullable="true" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Customer_Customer_Address">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="Addresses" Type="ECWebSecModel.Store.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_CartList_Cart">
+    <End Role="Carts" Type="ECWebSecModel.Store.Carts" Multiplicity="1" />
+    <End Role="CartLists" Type="ECWebSecModel.Store.CartLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carts">
+        <PropertyRef Name="CartID" />
+      </Principal>
+      <Dependent Role="CartLists">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Customer">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="Carts" Type="ECWebSecModel.Store.Carts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Custom__6D9742D9">
+    <End Role="Classes" Type="ECWebSecModel.Store.Classes" Multiplicity="1" />
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classes">
+        <PropertyRef Name="CustomerCategoryId" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="CustomerCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmailConf__Custo__62E4AA3C">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="0..1" />
+    <End Role="EmailConfirms" Type="ECWebSecModel.Store.EmailConfirms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="EmailConfirms">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LastAcces__Custo__2116E6DF">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="LastAccesses" Type="ECWebSecModel.Store.LastAccesses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="LastAccesses">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Customer_RoleAssign">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="RoleAssigns" Type="ECWebSecModel.Store.RoleAssigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="RoleAssigns">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomProduct_Customers">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="CustomProduct" Type="ECWebSecModel.Store.CustomProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomProduct">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductReview_Customer">
+    <End Role="Customers" Type="ECWebSecModel.Store.Customers" Multiplicity="1" />
+    <End Role="Reviews" Type="ECWebSecModel.Store.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleAssign_Role">
+    <End Role="Roles" Type="ECWebSecModel.Store.Roles" Multiplicity="1" />
+    <End Role="RoleAssigns" Type="ECWebSecModel.Store.RoleAssigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="RoleAssigns">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accessories_AccessoriesTemplate">
+    <End Role="AccessoriesTemplate" Type="ECWebSecModel.Store.AccessoriesTemplates" Multiplicity="1" />
+    <End Role="Accessories" Type="ECWebSecModel.Store.Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessoriesTemplate">
+        <PropertyRef Name="AccssoriesTemplateID" />
+      </Principal>
+      <Dependent Role="Accessories">
+        <PropertyRef Name="AccessoriesTemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accessories_Products">
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="1" />
+    <End Role="Accessories" Type="ECWebSecModel.Store.Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Accessories">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccessoriesTemplate_AccessoriesTemplateCategory">
+    <End Role="AccessoriesTemplateCategory" Type="ECWebSecModel.Store.AccessoriesTemplateCategories" Multiplicity="1" />
+    <End Role="AccessoriesTemplate" Type="ECWebSecModel.Store.AccessoriesTemplates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessoriesTemplateCategory">
+        <PropertyRef Name="AccessoriesTemplateCategoryID" />
+      </Principal>
+      <Dependent Role="AccessoriesTemplate">
+        <PropertyRef Name="AccessoriesTemplateCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_Category">
+    <End Role="Categories" Type="ECWebSecModel.Store.Categories" Multiplicity="1" />
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ProductCategory" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Colors_Products">
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="1" />
+    <End Role="Colors" Type="ECWebSecModel.Store.Colors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Colors">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_Colors">
+    <End Role="Colors" Type="ECWebSecModel.Store.Colors" Multiplicity="1" />
+    <End Role="Images" Type="ECWebSecModel.Store.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colors">
+        <PropertyRef Name="ProductColorId" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="ProductColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomProduct_Products">
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="1" />
+    <End Role="CustomProduct" Type="ECWebSecModel.Store.CustomProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="CustomProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folders_Folders">
+    <End Role="Folders" Type="ECWebSecModel.Store.Folders" Multiplicity="1" />
+    <End Role="Folders1" Type="ECWebSecModel.Store.Folders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="ProductFolderId" />
+      </Principal>
+      <Dependent Role="Folders1">
+        <PropertyRef Name="ProductFolderFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductFolder_Folder">
+    <End Role="Folders" Type="ECWebSecModel.Store.Folders" Multiplicity="0..1" />
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folders">
+        <PropertyRef Name="ProductFolderId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductFolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_Products">
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="1" />
+    <End Role="Images" Type="ECWebSecModel.Store.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Promotion">
+    <End Role="Promotions" Type="ECWebSecModel.Store.Promotions" Multiplicity="0..1" />
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotions">
+        <PropertyRef Name="PromotionId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="PromotionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Texture">
+    <End Role="Textures" Type="ECWebSecModel.Store.Textures" Multiplicity="1" />
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Textures">
+        <PropertyRef Name="TextureId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="TemplateTextureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductReview_Product_MasterProduct">
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="1" />
+    <End Role="Reviews" Type="ECWebSecModel.Store.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Template">
+    <End Role="Template" Type="ECWebSecModel.Store.Templates" Multiplicity="1" />
+    <End Role="Products" Type="ECWebSecModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="TemplateID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="TemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_CustomProduct">
+    <End Role="CustomProduct" Type="ECWebSecModel.Store.CustomProducts" Multiplicity="0..1" />
+    <End Role="Image" Type="ECWebSecModel.Store.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomProduct">
+        <PropertyRef Name="CustomProductId" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="CustomProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartLists_CustomProduct">
+    <End Role="CustomProduct" Type="ECWebSecModel.Store.CustomProducts" Multiplicity="0..1" />
+    <End Role="CartList" Type="ECWebSecModel.Store.CartLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomProduct">
+        <PropertyRef Name="CustomProductId" />
+      </Principal>
+      <Dependent Role="CartList">
+        <PropertyRef Name="CustomProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

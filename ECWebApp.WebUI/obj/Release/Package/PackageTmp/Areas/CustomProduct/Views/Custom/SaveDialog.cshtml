@@ -1,0 +1,13 @@
+﻿@model System.Guid
+
+<md-dialog aria-label="Save Dialog">
+    <md-content>
+        <md-subheader md-theme="indigo" class="md-sticky-no-effect">Do you want to purchase what you had designed?</md-subheader>
+        <md-button ng-click="AddToCart('@Model')">
+            Yes, Please.
+        </md-button>
+        <md-button ng-click="Publish()">
+            Nope, Just publish it.
+        </md-button>
+    </md-content>
+</md-dialog>

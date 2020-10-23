@@ -1,0 +1,178 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CartViewModel
+@using System.Globalization
+
+
+@{
+    ViewBag.Title = "Customer :: My Cart";
+}
+
+<div class="ui-dialog-actionbar"><p class="Right close" /></div>
+<div class="user-sub-detail">
+    <h1>My Cart</h1>
+    <div class="form-group row">
+
+        <div class="info-col-90 Center ">
+            @if (Model.CartItems.Count != 0)
+            {
+                
+                var culture = new CultureInfo("ms-MY");
+                decimal? total = 0;
+                <table id="cart-table">
+                    <tr class="Header-Row">
+                        <th width="30">Code</th>
+                        <th width="50">Image</th>
+                        <th class="product-cart-title">Title</th>
+                        <th width="30">Price</th>
+                        <th width="30">Quantity</th>
+                        <th width="30">Total</th>
+                        <th width="30"></th>
+                    </tr>
+                    @foreach (var cartItem in Model.CartItems)
+                    {
+                        @Html.Hidden("CustomerID", @cartItem.CustomerID, new { @class = "customer-id" })
+                    <tr class="item-row-add-@cartItem.CartID">
+
+                        <td width="30" class="product-cart-title">@cartItem.ProductCode</td>
+                        <td width="50">
+                            <img class="image-2-quarter" src="@cartItem.ProductImageToBase64" />
+                        </td>
+
+                        <td class="product-cart-title">
+                            @cartItem.ProductName
+                        </td>
+
+                        <td width="30" class="product-cart-price">
+                            <p class="item-price">
+                                @{
+
+                                    @String.Format(culture, "{0 :C2}", @cartItem.ProductRetailPrice);
+
+                                }
+                                @Html.Hidden("PriceId", @cartItem.ProductRetailPrice, new { @class = "price-id" })
+                            </p>
+                        </td>
+
+                        <td width="30" class="product-cart-quantity">
+                            <input type="text" class="product-quantity" value="@cartItem.ProductQuantity" data-id="@cartItem.CartID" />
+                            @{
+                        var itemtotal = @cartItem.ProductQuantity * @cartItem.ProductRetailPrice;
+                            }
+                        </td>
+
+
+
+                        <td width="30" class="item-count-@cartItem.CartID" id="item-count">
+                            <p class="item-total">
+                                @{
+                                    @String.Format(culture, "{0 :C2}", itemtotal);
+                                                                                 total += itemtotal;
+                                }
+                            </p>
+                        </td>
+
+                        <td width="30">
+                            <div class="cart-item-close">
+                                <p class="remove-product" data-id="@cartItem.CartID" />
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    }
+                </table>
+                <div class="cart-function">
+                    <div class="cart-sum">
+                        <label class="product-cart-subtotal">Subtotal</label>
+                        <label class="PriceCol">@String.Format(culture, "{0 :C2}", total)</label>
+                    </div>
+                    <div class="cart-sum">
+              
+                        <a class="button-check-out green-tile">Check Out</a>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="Center pad-20-all">
+                    <label>You have not made any order......</label>
+                    <div class="info-col-100 Center">
+                        <input type="submit" class="button-70 green-tile" value="CONTINUE SHOPPING?" onclick="location.href='../Home/Home'"/>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+
+        $('.close').click(function () {
+            $("#show-cart-list").empty();
+            $("#show-cart-list").dialog("close");
+        });
+
+        $('.product-quantity').change(function () {
+            var CartListId = $(this).attr("data-id");
+            var quantity = $(".product-quantity").val();
+            var UpdateUrl = "../../Product/UpdateCartList";
+            $.post(UpdateUrl, { CartListID: CartListId, ProductQuantity: quantity });
+            var url = '../../Customer/MyCart/' + $(".customer-id").val();
+            $("#show-cart-list").html("<div id='wait' style='display:block;width:69px;height:89px;border:none;position:absolute;top:30%;left:45%;padding:2px;'><img src='../Content/images/ajax_loader.gif' width='64' height='64' /><br>Loading..</div>");
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function (data) {
+                    $("#show-cart-list").empty();
+                    $("#show-cart-list").append(data);
+
+                },
+                error: function (err) {
+                    $("#show-cart-list").append(data);
+                }
+            });
+
+        });
+
+        $(".remove-product").click(function () {
+
+            var RecordToDelete = $(this).attr("data-id");
+            var url = "../Product/RemoveFromCart";
+            $('.item-row-add-' + RecordToDelete).fadeOut('fast');
+            if (RecordToDelete != '') {
+
+                $.post(url,
+                    {
+                        CartID: RecordToDelete
+                    },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+
+                        
+                            var url = '../../Customer/MyCart/' + $(".customer-id").val();
+                            $("#show-cart-list").html("<div id='wait' style='display:block;width:69px;height:89px;border:none;position:absolute;top:30%;left:45%;padding:2px;'><img src='../Content/images/ajax_loader.gif' width='64' height='64' /><br>Loading..</div>");
+                            $.ajax({
+                                url: url,
+                                cache: false,
+                                success: function (data) {
+                                    $("#show-cart-list").empty();
+                                    $("#show-cart-list").append(data);
+
+                                },
+                                error: function (err) {
+                                    $("#show-cart-list").append(data);
+                                }
+                            });
+
+                        
+                    });
+            }
+        });
+    });
+</script>

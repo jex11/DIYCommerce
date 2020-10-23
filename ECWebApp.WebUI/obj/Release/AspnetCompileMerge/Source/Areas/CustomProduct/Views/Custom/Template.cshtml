@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<ECWebApp.WebUI.Areas.CustomProduct.Models.TemplateViewModel>
+<div>
+    <div>
+        @{
+            foreach (var template in Model)
+            {
+                <div class="card" ng-click="getTemplate('@template.TemplateID');">
+                    <div class="card-image active"></div>
+                    <div class="card-title">
+                        @template.TemplateName
+                    </div>
+                    <div class="card-description">
+                        @template.TemplateDescription
+                    </div>
+                </div>
+            <script>
+                UpdateImage();
+                '.card-image'.className = ele.className.replace('active', ' ');
+            </script>
+            }
+        }
+        
+        
+    </div>
+</div>
+<script>
+    var lineFunction = d3.svg.line()
+                             .x(function (d) { return d.x; })
+                             .y(function (d) { return d.y; })
+                             .interpolate("basis");
+    var linearFunction = d3.svg.line()
+                             .x(function (d) { return d.x; })
+                             .y(function (d) { return d.y; })
+                             .interpolate("linear");
+
+    //The SVG Container
+    var svgContainer = d3.select(".active").append("svg")
+                                       .attr("width", 300)
+                                        .attr("height", 300);
+    UpdateImage();
+    function UpdateImage() {
+        svgContainer.selectAll("path").remove();
+
+        var body = svgContainer.append("path")
+                                    .attr("id", $scope.lineData[0].id)
+                                    .attr("d", lineFunction($scope.lineData[0].data))
+                                    .attr("stroke", "#2a2a2a")
+                                    .attr("stroke-width", 1)
+                                    .attr("fill", "blue");
+
+        var sleeve_left = svgContainer.append("path")
+                                    .attr("id", $scope.lineData[1].id)
+                                    .attr("d", linearFunction($scope.lineData[1].data))
+                                    .attr("stroke", "#2a2a2a")
+                                    .attr("stroke-width", 1)
+                                    .attr("fill", "blue");
+        var sleeve_right = svgContainer.append("path")
+                                    .attr("id", $scope.lineData[2].id)
+                                    .attr("d", linearFunction($scope.lineData[2].data))
+                                    .attr("stroke", "#2a2a2a")
+                                    .attr("stroke-width", 1)
+                                    .attr("fill", "blue");
+    }
+</script>

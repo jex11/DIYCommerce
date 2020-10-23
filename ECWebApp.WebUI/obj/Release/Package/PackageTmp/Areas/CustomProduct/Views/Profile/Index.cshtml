@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+<div class="box">
+    <div class="box-title">
+        <span>My Profile</span>
+    </div>
+
+    <div class="box-content">
+        
+        <div class="card card-70" flex="66">
+            <h3>My Biography</h3>
+            @{Html.RenderAction("_MyInformation");}
+            @*<img class="card-image card-image-round" src="#" />
+            <div class="card-content">
+                
+            </div>*@
+        </div>
+
+        <div class="card card-20" flex="33">
+
+            @{Html.RenderAction("_MySalesDesignRatio");}
+            @*<img class="card-image card-image-round" src="#" />
+            <div class="card-content">
+
+            </div>*@
+        </div>
+
+    
+
+        <div class="card card-70" flex="33">
+            <h3>Sales History</h3>
+            @{Html.RenderAction("_SalesHistory");}
+            @*<img class="card-image card-image-round" src="#" />
+            <div class="card-content">
+
+            </div>*@
+        </div>
+
+        <div class="card card-20" flex="33">
+            <h3>Sales Analysis</h3>
+            @{Html.RenderAction("_SalesAnalysis");}
+            @*<img class="card-image card-image-round" src="#" />
+            <div class="card-content">
+
+            </div>*@
+        </div>
+        
+       
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.ViewModels.ReviewsViewModel
+
+<div class="">
+    @using (Html.BeginForm("GoodReviews", "Admin_Tailor"))
+    {
+        if (Model.OrderAssignmentList.Count != 0)
+        {
+            <ul style="list-style-type: none;">
+                @foreach (var orderreccord in Model.OrderAssignmentList)
+            {                   
+                    <li>
+                        <div style="background-color:lavender;">
+                            <div class="row">
+                                <div class="col-sm-6" align="left">
+                                    <p style="display:inline" align="left">Keyword: </p>
+                                    <p style="display:inline" align="left">@orderreccord.Keywords</p>
+                                </div>
+                                <div class="col-sm-6" align="right">
+                                    <p style="display:inline" align="right">Comment On:</p>
+                                    <p style="display:inline" align="right">@orderreccord.CommentOn</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" align="left">
+                                    <p style="display:inline" align="left">Comment:</p>
+                                    <p style="display:inline" align="left">@orderreccord.Comments</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" align="left">
+                                    <p style="display:inline" align="left">Product:</p>
+                                    <p style="display:inline" align="left">@orderreccord.ProductName</p>
+                                </div>
+                                <div class="col-sm-6" align="right">
+                                    <p style="display:inline" align="right">Comment By:</p>
+                                    <p style="display:inline" align="right">@orderreccord.CommentBy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>                    
+            }
+            </ul>
+        }
+        else
+        {
+            <div class="Center pad-20-all">
+                <label>This tailor does not have any good review......</label>
+            </div>
+        }
+    }
+</div>
+@*<div id="review-statistics-dialog">
+        <p id="title1">yes</p>
+        <p id="tailor-title">this is review-statistics-dialog</p>
+        <input id="review-textbox" type="text"><br>
+        <div id="myModalContent">
+            {
+                    foreach (var tailor in Model.TailorsInfo)
+                    {
+                        if(tailor.TailorId == $(this).data('id'))
+                        <div class="card" ng-click="getTemplate('@template.TemplateID');">
+                            <div class="card-image active"></div>
+                            <div class="card-title">
+                                @template.TemplateName
+                            </div>
+                            <div class="card-description">
+                                @template.TemplateDescription
+                            </div>
+                        </div>
+                        <script>
+                            UpdateImage();
+                            '.card-image'.className = ele.className.replace('active', ' ');
+                        </script>
+                    }
+                }
+
+
+        </div>
+    </div>*@

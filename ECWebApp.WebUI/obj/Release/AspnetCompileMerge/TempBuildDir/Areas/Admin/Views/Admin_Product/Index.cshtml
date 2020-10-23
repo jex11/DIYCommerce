@@ -1,0 +1,167 @@
+﻿@model  ECWebApp.WebUI.Models.ViewModel.ProductsListViewModel
+@using ECWebApp.WebUI.Models;
+@using System.Globalization;
+
+@*-------------------------------------------------------add new file----------------------------------------------------------*@
+@if(@Model.FolderLocation != Guid.Empty){
+    <div class="BodyDiv">
+        <a class="add-item" href="@Url.Action("Index", new { id = Model.FolderFrom})">
+
+
+            <div class="glyphicon glyphicon-log-out"></div>
+
+        </a>
+    </div>
+}
+
+@*<div id="AddNew">
+        <input type="radio" name="fileType" value="Foulder">Foulder
+        <br>
+        <input type="radio" name="fileType" value="Product">Product
+    </div>*@
+@*-------------------------------------------------------foulder----------------------------------------------------------*@
+@foreach (var item in Model.FolderInfo)
+{
+    <div class="BodyDiv">
+        <div class="folder">
+            <img src="~/images/icons/folder.png" class="AdminImage">
+            @Html.Hidden("folder-id", item.ProductFolderId.ToString(), new { @class = "folder-id" })
+            <span class="folder-name">@item.ProductFolderName</span>
+        </div>
+    </div>
+}
+
+@*-------------------------------------------------------product (TODO: foreach product..)----------------------------------------------------------*@
+
+@foreach (var item in Model.Products)
+{
+    <div class="BodyDiv" title="@item.ProductDescription">
+        <div class="productDiv">
+            <div class="Frame">
+                <input type="checkbox" class="productchck" />
+                <label class="product-name">@item.ProductName</label>
+                <a class="Xbtn glyphicon glyphicon-remove" onclick="$(this).siblings('form').children('.delete-btn').click();"></a>
+                    @using (Html.BeginForm("DeleteProduct", "Admin_Product", FormMethod.Post))
+                    {
+                        <input type="hidden" name="ProductID" value="@item.ProductID"/>
+                        <input type="hidden" name="FolderLocation" value="@Model.FolderLocation" />
+
+                    <input type="submit"  class="hidden delete-btn" value="Delete" />
+                    }
+                    @*ProductInfo product = new ProductInfo();
+                    product.FolderLocation = Model.FolderLocation;
+                    product.ProductID = item.ProductID;
+                    @Ajax.ActionLink(" ", "DeleteProduct", "Admin_Product", product, new AjaxOptions { HttpMethod = "POST" }, new { @class = "Xbtn glyphicon glyphicon-remove" })*@
+
+            </div>
+            <div class="product-content">
+                @{
+                    if (@item.ProductImageToBase64 != null)
+    {
+        <img src="@item.ProductImageToBase64" class="AdminImage">
+    }
+    else
+    {
+        <img src="~/images/icons/product.jpg" class="AdminImage">
+    }
+                }
+            </div>
+            <div class="hiddenDiv">
+                <p class="DescFont">Code:  @item.ProductCode</p>
+                <p class="DescFont">
+                    Retail Price:
+                    @{
+                        var culture = new CultureInfo("ms-MY");
+                         @String.Format(culture, "{0 :C2}", @item.ProductRetailPrice);
+                    }
+                </p>
+
+                <p class="DescFont">Description:  @item.ProductDescription</p>
+
+
+                <div class="buttonDiv">
+                    <a class="button-Infoicon" title="More Info"></a>
+                    @Html.ActionLink(" ", "UpdateProduct", "Admin_Product", new { id = @item.ProductID }, new { @class = "button-Editicon" })
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+<div id="show-cart-list"></div>
+
+@*Context Menu*@
+<div id="default-menu" class="context-menu">
+    <ul class="items">
+        <li>@Html.ActionLink("New Item", "AddProduct", "Admin_Product", new { id = @Model.FolderLocation }, new { @class = "context-menu-link" })</li>
+        <li class="add-folder">New Folder</li>
+    </ul>
+</div>
+
+
+@*Add /Update Folder*@
+<div id="dialog-form" title="Create new folder">
+    @{
+        FolderInfo folder = new FolderInfo()
+        {
+            ProductFolderId = Guid.NewGuid(),
+            ProductFolderFrom = Model.FolderLocation
+        };
+       Html.RenderPartial("AddFolder", folder);
+    }
+</div>
+    <script>
+        $(function () {
+            var createDialog = $("#dialog-form").dialog({
+                autoOpen: false,
+                height: 300,
+                width: 500,
+                modal: true,
+            });
+
+            $('.AdminBody').bind('contextmenu', function (e) {
+                e.preventDefault();                 // To prevent the default context menu.
+                $('#default-menu').css('left', e.pageX);   // For updating the menu position.
+                $('#default-menu').css('top', e.pageY);    //
+                $('#default-menu').css('z-index', '999');
+                $('#default-menu').fadeIn(100, startFocusOut()); //  For bringing the context menu in picture.
+            });
+
+            $('.folder').bind('contextmenu', function (e) {
+                e.preventDefault();                 // To prevent the default context menu.
+                $(this).addClass("folder-active");
+                var url = $(".folder-active .folder-id").val();
+                $('#default-menu ul').append('<li class="link-optional"><a class="context-menu-link " href="/Admin/Admin_Product/DeleteFolder/' + url + '">Delete Folder</a></li>');
+                $('#default-menu').css('left', e.pageX);   // For updating the menu position.
+                $('#default-menu').css('top', e.pageY);    //
+                $('#default-menu').css('z-index', '999');
+                $('#default-menu').fadeIn(100, startFocusOut()); //  For bringing the context menu in picture.
+            });
+
+            function startFocusOut() {
+                $(document).on('click', function () {
+                    $('.link-optional').remove();
+                    $('.context-menu').hide(100);              // To hide the context menu
+                    $('.folder').removeClass("active");
+                    
+                    $(document).off('click');
+                });
+            }
+
+            $('.add-folder').on('click', function () {
+                createDialog.dialog("open");
+            });
+
+            $('.folder').dblclick(function (e) {
+                e.preventDefault();
+                $(this).addClass("active");
+                var folderId = $('.active .folder-id').val();
+                var url = '/Admin/Admin_Product/Index/'+ folderId;
+                window.location.href = url;
+            });
+
+           
+        });
+    </script>
+

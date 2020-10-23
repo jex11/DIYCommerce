@@ -1,0 +1,155 @@
+﻿@model ECWebApp.WebUI.Models.ProductInfo
+@using (Html.BeginForm("UpdateProduct", "Admin_Product", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.ProductID)
+    @Html.HiddenFor(x => x.FolderID)
+    <div class="Center">
+        <div class="Center">
+            <div class="card">
+                
+                @if (@Model.ProductImageToBase64 != null)
+                {
+                    <img id="preview" class="card-img-preview" src="@Model.ProductImageToBase64" />
+                }
+                else
+                {
+                    <img id="preview" class="card-img-preview" src="~/images/item.jpg" />
+                }
+                <div class="context context-bar-bottom">
+
+                    @Html.LabelFor(x => x.ProductImage)
+                    <img class="btn-upload" src="~/Content/images/upload-icon.png" onclick="$('.img-upload').click();" />
+                </div>
+                @Html.TextBoxFor(x => x.ProductImage,
+                new
+                {
+                    @type = "file",
+                    @class = "hidden img-upload",
+                    @onchange = "readURL(this,'#preview');",
+                    @accept = "image/*"
+                });
+            </div>
+
+        </div>
+        <div class="circleDiv">
+            <div class="circle_left">
+                <label class="lbl_in_circle">Product</label>
+            </div>
+            <div class="circle_right">
+                <label class="lbl_in_circle" onclick="$('#submit-btn').click();">Save</label>
+                <input type="submit" id="submit-btn" class="hidden lbl_in_circle" value="Save" />
+            </div>
+            <div class="circle_right">
+                <label class="lbl_in_circle" onclick="window.location.href = '/Admin/Admin_Product';">Cancel</label>
+            </div>
+        </div>
+
+        <table class="form">
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductCode)
+                </td>
+                <td class="space-20">
+                    @Html.EditorFor(x => x.ProductCode)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductHeight)
+                </td>
+                <td class="space-10">
+                    @Html.EditorFor(x => x.ProductHeight)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductName)
+                </td>
+                <td class="space-20">
+                    @Html.EditorFor(x => x.ProductName)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductWidth)
+                </td>
+                <td class="space-10">
+                    @Html.EditorFor(x => x.ProductWidth)
+                </td>
+                <td class="space-5">
+                    @Html.DropDownListFor(x => x.ProductScale, Model.ScaleList)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductCategory)
+                </td>
+                <td class="space-20">
+                    @Html.DropDownListFor(x => x.ProductCategory, Model.CategoryList, "-- Select Category --")
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductLength)
+                </td>
+                <td class="space-10">
+                    @Html.EditorFor(x => x.ProductLength)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductOriginalPrice)
+                </td>
+                <td class="space-20">
+                    @Html.EditorFor(x => x.ProductOriginalPrice)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductWeight)
+                </td>
+                <td class="space-10">
+                    @Html.EditorFor(x => x.ProductWeight)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductRetailPrice)
+                </td>
+                <td class="space-20">
+                    @Html.EditorFor(x => x.ProductRetailPrice)
+                </td>
+                <td class="space-10"></td>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductStatus)
+                </td>
+                <td class="space-10">
+                    @Html.EditorFor(x => x.ProductStatus)
+                </td>
+            </tr>
+            <tr>
+                <td class="space-20">
+                    @Html.LabelFor(x => x.ProductDescription)
+                </td>
+                <td colspan="5" class="space-20">
+                    @Html.TextAreaFor(x => x.ProductDescription, new { @rows = "5" })
+                </td>
+
+            </tr>
+
+        </table>
+        <div>
+
+        </div>
+    </div>
+
+}
+
+<script>
+
+    $(document).ready(function () {
+        //****************breadcrumb function *************************
+        var Newhref = $("<a id = 'UpdateProduct' class= 'breadCrumb' href =''></a>").text(" > Update Product ");
+        $('#AdminHome').after(Newhref);
+    });
+</script>
+
+

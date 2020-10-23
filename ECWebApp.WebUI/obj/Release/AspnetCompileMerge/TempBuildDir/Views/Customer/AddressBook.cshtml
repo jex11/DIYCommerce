@@ -1,0 +1,156 @@
+﻿@model List<ECWebApp.WebUI.Models.ViewModel.AddressViewModel>
+
+    <div class="user-sub-detail">
+        <h1>Address Book</h1>
+        <div class="user-group-detail">
+            <div class="user-address-detail add-new-address fll">
+                <a class="plus-icon"></a>
+                <label class="label-add-new-address">Add new address</label>
+            </div>
+            @foreach (var item in Model){
+           
+            <div class="user-address-detail fll">
+                
+                <label>@item.CustomerAddressName</label>
+                <br />
+
+                <div class="pad-30-right get-address">
+                    <label>@item.CustomerAddress</label>
+                    <label>@item.CustomerCity, @item.CustomerPostcode</label>
+                    <label>@item.CustomerState</label>
+                    <label>@item.CustomerCountry</label>
+                </div>
+                <label>@item.CustomerContact</label>
+
+                <div class="form-group button-at-last-row">
+                    <div class="button-45 pull-left padding-no margin-5-right ">
+                        <button class="button-submit green-tile edit-button">
+                            Edit
+                            @*<p class="hidden address-id">@item.AddressId</p>*@
+                            @Html.Hidden("AddressId", @item.AddressId, new { @class = "address-id" })
+                        </button>
+
+                    </div>
+
+                    <div class="button-45 pull-right padding-no margin-5-left">
+                        <button class="button-submit green-tile delete-button">
+                            Delete
+                            @Html.Hidden("AddressId", @item.AddressId, new { @class = "address-id" })
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            }
+           
+        </div>
+    </div>
+    <div id="delete-dialog">
+        <p>Confirm delete this address?</p>
+    </div>
+    <div id="address-details"></div>
+    <div id="create-address"></div>
+<script>
+    $(function () {
+
+        $('.delete-button').on('click', function () {
+            $('.delete-button').removeClass('active');
+            $(this).addClass('active');
+            $("#delete-dialog").dialog("open");
+            
+        });
+
+        $('#delete-dialog').dialog({
+            autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+            buttons: {
+                "Delete": function () {
+                    var url = '../../Customer/DeleteAddressBook';
+                    console.log($(".delete-button input[type='hidden']").val());
+                    var address = $(".active input[type='hidden']").val();
+                    $.post(url, { AddressID: address});
+                    $(this).dialog("close");
+                },
+                "No": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $('.edit-button').on('click', function () {
+            
+            $('.edit-button').removeClass('active');
+            $(this).addClass('active');
+            $("#address-details").dialog("open");
+            
+        });
+    
+
+        $("#address-details").dialog({
+            autoOpen: false,
+            position: { my: "center bottom", at: "center top", of: window },
+            width: 700,
+            resizable: false,
+            modal: true,
+            open: function () {
+                
+                var url = '../../Customer/UpdateAddressBook/' + $(".customer-id").val() + '/' + $(".active input[type='hidden']").val();
+                console.log($(".edit-button input[type='hidden']").val());
+                $.ajax({
+                    url: url,
+                    //data: "AddressId=" + $(".active input[type='hidden']").val(),
+                    cache: false,
+                    success: function (data) {
+                        $("#address-details").html(data);
+                    },
+                    error: function (err) {
+                        $("#address-details").html(err);
+                    },
+                    close: function (event, ui) {
+                        $("#address-details").dialog("close");
+                    }
+
+                });
+            }
+        });
+        $('.close').click(function () {
+            $("#create-address").empty();
+            $("#create-address").dialog("close");
+        });
+
+
+        $('.plus-icon').on('click', function () {
+            $('.plus-icon').removeClass('active');
+            $(this).addClass('active');
+            $("#create-address").dialog("open");
+            
+        });
+
+        $("#create-address").dialog({
+            autoOpen: false,
+            position: { my: "center bottom", at: "center top", of: window },
+            width: 700,
+            resizable: false,
+            modal: true,
+            open: function () {
+                var url = '../../Customer/CreateAddressBook/' + $(".customer-id").val();
+                console.log($(".plus-icon input[type='hidden']").val());
+                $.ajax({
+                    url: url,
+                    cache: false,
+                    success: function (data) {
+                        $("#create-address").html(data);
+                    },
+                    error: function (err) {
+                        $("#create-address").html(err);
+                    },
+                    close: function (event, ui) {
+                        $("#create-address").dialog("close");
+                    }
+
+                });
+            }
+        });
+
+    });
+
+</script>

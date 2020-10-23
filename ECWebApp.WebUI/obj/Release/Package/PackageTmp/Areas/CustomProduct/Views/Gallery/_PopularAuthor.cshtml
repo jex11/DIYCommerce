@@ -1,0 +1,19 @@
+﻿
+@model List<ECWebApp.WebUI.Models.ViewModel.CustomerViewModel>
+@{
+    Layout = null;
+}
+
+
+@foreach (var author in Model)
+{
+    <div class="list" id="@author.CustomerID">
+        <img class="list-image" src="@author.CustomerImgBase64" />
+        <div class="list-content">
+            <span class="list-title">@author.CustomerFirstName @author.CustomerLastName</span><br />
+            <span class="list-productcount">@author.ProductCount Products</span>
+            <span class="list-soldcount">@author.PurchasedCount Sold</span><br />
+
+        </div>
+    </div>
+}

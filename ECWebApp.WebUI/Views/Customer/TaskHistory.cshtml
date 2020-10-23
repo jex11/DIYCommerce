@@ -1,0 +1,150 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.TaskHistoryViewModel
+@using System.Globalization
+
+@{
+    ViewBag.Title = "Customer :: Task History";
+}
+
+<div class="ui-dialog-actionbar"><p class="Right close" /></div>
+<div class="user-sub-detail">
+    <h1>Task History</h1>
+
+    <div class="">
+        @Html.Hidden("TailorID", @Model.TailorID, new { @class = "tailor-id" })
+        @if (Model.TaskRecords.Count != 0)
+        {
+            <table id="cart-table">
+                <tr class="Header-Row">
+                    <th width="30">Order ID</th>
+                    <th width="30">Title</th>
+                    <th width="50">Image</th>
+                    <th width="30">Date</th>
+                    <th width="30">Deadline</th>
+                    <th width="30">Quantity</th>
+                    <th width="30">Status</th>
+                </tr>
+                @foreach (var taskrecord in Model.TaskRecords)
+                {
+                    <tr class="item-row-add-@taskrecord.OrderNo">
+                        <td width="30">@taskrecord.OrderNo</td>
+                        <td width="30">@taskrecord.Title</td>
+                        <td width="50">
+                            <img class="image-2-quarter" src="@taskrecord.ProductImageToBase64" />
+                        </td>
+                        <td width="30">@taskrecord.OrderDate</td>
+                        <td width="30">
+                            @if ((@taskrecord.Deadline - DateTime.Now).TotalDays < 0 && @taskrecord.OrderStatus == 2)
+                            {
+                                <span id="deadline-@taskrecord.OrderNo" style="color:red">@taskrecord.Deadline.Date.ToString("dd/MM/yyyy")</span>
+                            }
+                            else
+                            {
+                                 <span>@taskrecord.Deadline.Date.ToString("dd/MM/yyyy")</span>
+                            }
+                        </td>
+                        <td width="30">@taskrecord.OrderQuantity</td>
+                        <td width="30">
+                            @if (@taskrecord.OrderStatus == 2)
+                            {
+                                <button class="complete-order" id="complete-order-@taskrecord.OrderNo" data-id="@taskrecord.OrderNo" data-order-quantity="@taskrecord.OrderQuantity">
+                                    <span class="ui-button-text">Complete</span>
+                                </button>
+                            }
+                            else
+                            {
+                                <button disabled>Done</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="Center pad-20-all">
+                <label>You have not assign any order......</label>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="dialog" title="CompleteOrder">
+    Are you complete this order?
+</div>
+
+<script>
+    $('.close').click(function () {
+        $("#show-task-list").empty();
+        $("#show-task-list").dialog("close");
+    });
+
+    $(document).on("click", ".complete-order", function () {
+        var orderNo = $(this).data('id');
+        var orderQuantity = $(this).data('order-quantity');
+        $("#dialog").data("id", orderNo);
+        $("#dialog").data("order-quantity", orderQuantity);
+        $('#dialog').dialog('open');
+        return false;
+    });
+
+    //$('#complete-order').on('click', function () {
+    //    $('#complete-order').removeClass('active');
+    //    $(this).addClass('active');
+    //    $("#show-confirmation-popup").dialog("open");
+    //});
+
+    $("#dialog").dialog({
+        autoOpen: false,
+        position: { my: "center bottom", at: "center top", of: window },
+        width: 400,
+        height: 210,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Yes": function () {
+                var url = '../../Customer/CompleteOrder/' + $(".order-id").val();
+                var orderNo = $(this).data('id');
+                var orderQuantity = $(this).data('order-quantity');
+                var tailorID = $('.tailor-id').val();
+                console.log(orderNo + orderQuantity);
+                $.ajax({
+                    url: 'Customer/CompleteOrder',
+                    data: { 'OrderID': orderNo, 'TailorID': tailorID, 'OrderQuantity': orderQuantity },
+                    type: "get",
+                    cache: false,
+                    success: function (data) {
+                        $("#dialog").dialog("close");
+                        $('#complete-order-' + orderNo).prop('disabled', true);
+                        $("#complete-order-" + orderNo + " span").text("Done");
+                        $("#deadline-" + orderNo).css('color', 'black');
+                        //$("#complete-order").close;
+                        //$('#lblCommentsNotification').text(savingStatus);
+                    },
+                    error: function (err) {
+                        $("#dialog").html(err);
+                    }
+                });
+            },
+            "No": function () {
+                $("#dialog").dialog("close");
+            }
+        }
+    });
+
+    //$(function () {
+    //    $("#dialog").dialog({
+    //        autoOpen: false,
+    //        buttons: {
+    //            "Yes": function () {
+    //                alert("a Post to :/Booking.aspx/Cancel/10 would be so nice here instead of the alert");
+    //            },
+    //            "No": function () { $(this).dialog("close"); }
+    //        },
+    //        modal: true,
+    //        overlay: {
+    //            opacity: 0.5,
+    //            background: "black"
+    //        }
+    //    });
+    //});
+</script>

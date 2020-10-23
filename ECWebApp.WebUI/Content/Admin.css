@@ -1,0 +1,711 @@
+﻿body {
+    overflow-y:hidden;
+}
+
+a:active{
+    color: rgba(18, 18, 18, 0.84) !important;
+}
+
+a:hover{
+    color: rgba(18, 18, 18, 0.84) !important;
+}
+
+.Center_Hidden {
+    text-align: center;
+    margin: auto;
+    visibility: hidden;
+}
+
+.Footer-Hidden {
+    visibility: hidden;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.hiddenDiv {
+    visibility: hidden;
+    position: absolute;
+    width: 150px;
+    height:140px;
+    top: 0;
+    right: -150px;
+    z-index: 999;
+    background-color:rgba(18, 18, 18, 0.84);
+    color: #fff;
+}
+
+.hiddenDiv .visible {
+    visibility: visible;
+}
+
+.margin-3-right {
+    margin-right:3%;
+}
+
+input {
+    -moz-box-radius: 5px;
+    -webkit-border-image: 5px;
+    border-radius:5px;
+}
+
+select {
+    -moz-box-radius: 5px;
+    -webkit-border-image: 5px;
+    border-radius:5px;
+}
+
+/**********Layout Widget****************/
+/*****Card*******/
+.card{
+    width: 15%;
+    /*min-height: 200px;*/
+    height: 50%;
+    min-width: 200px;
+    box-shadow: #808080 4px 10px 27px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 13px;
+
+}
+
+    .card .card-img-preview{
+        width: 100%;
+        height:100%;
+    }
+
+    .card .context-bar-bottom{
+        position:absolute;
+        width:100%;
+        height: 30px;
+        bottom: 0;
+        background-color: rgba(219, 216, 216, 0.75);
+    }
+   
+        .card .context label{
+            font-size: 1.0em;
+            color:black;
+            position: absolute;
+            left: 15px;
+            top: 4px;
+        }
+
+        .card .context .btn-upload{
+            cursor: pointer;
+            right: 15px;
+            position: absolute;
+            top: 4px;
+            height: 60%;
+        }
+
+/*****Spacing*******/
+.space-5{
+    width: 5%;
+}
+
+.space-10{
+    width: 10%;
+}
+
+.space-20{
+    width: 20%;
+}
+
+/******Form*******/
+.form td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-width: 70px;
+}
+.form label{
+    font-size: 1.0em;
+}
+
+.form select{
+    float: left;
+    width: 100%;
+    height: 29px;
+}
+
+.form textarea{
+    float: left;
+    width: 100%;
+}
+
+/***********************************************_AdminLayout.cshtml*******************************************************************/
+
+.body {
+    height: 100%;
+    overflow-y:auto;
+}
+
+.AdminFooter {
+    clear: both;
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    bottom: 0;
+
+}
+
+.Footer_Icon_Div {
+    opacity: 0.8;
+    height: 45%;
+    background-color: black;
+}
+
+.Footer_Logo_Div {
+    height: 55%;
+    background-color: #272727;
+}
+
+.FooterImg {
+    width: 3%;
+    height: 3%;
+    margin: 1% 1% 0.2%;
+}
+
+
+/********Header Bar Style*********/
+/*Bar color*/
+.nav-white{
+    background-color: rgba(219, 216, 216, 0.75);
+}
+
+.header{
+    background-color: #272727;
+    color: #E9E8E8;
+    height:100%;
+    max-height: 85px;
+    position: absolute;
+    width: 100%;
+}
+
+.nav-right{
+    float: right;
+    padding: 0.25%;
+}
+
+    .header .nav {
+        width: 100%;
+        max-height: 40px;
+        height: 100%;
+        font-family: "Browallia New";
+        font-size: 1.2em;
+    }
+
+        .header .nav .nav-right {
+            margin-left: 0.5%;
+        }
+
+.sub-nav{
+    width: 100%;
+    height: 100%;
+    max-height: 40px;
+    padding-bottom: 5px;
+    position: relative;
+    padding:0px 20px 0px 20px;
+}
+
+    .header .sub-nav {
+        font-family: "Century Gothic";
+        font-size: 1.5em;
+        margin-top: 3px;
+        
+    }
+
+        .header .sub-nav div nav .nav-link{
+            color: #fff;
+            font-size: 0.6em;
+        }
+
+        .header .sub-nav div nav .nav-link:hover,
+        .header .nav .nav-right .a-header:hover
+        {
+            color: #d1d1d1 !important;
+        }
+
+            .header .sub-nav .nav-right {
+            margin-right: 2%;
+        }
+
+        .nav-right .nav-icon{
+            float: left;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .nav-right .nav-input{
+            float: left;
+            color: #191919;
+            font: normal 12px arial, verdana;
+            margin-top: 10px;
+            margin-right: 5px;
+            height: 20px;
+            width: 120px;
+        }
+
+
+
+/****BreadCrumb Bar****/
+.breadCrumb {
+    font-size: 1.2em;
+    font-family: Georgia !important;
+    color: #29ABE2;
+    margin-top:4%;
+}
+
+
+.nav-left {
+    float: left;
+    padding: 0.25%;
+}
+
+
+
+.Header_SearchRight_sortBy {
+    float: right;
+    padding: 0.25%;
+    margin-right: 6%;
+}
+
+
+
+
+
+
+
+.Header_Nav_Icon {
+    display: inline;
+    padding: 0.5%;
+    margin-right: 6%;
+}
+
+.ImgIcon {
+    width: 20%;
+    height: 20%;
+}
+
+
+.AdminBody {
+    padding: 5% 5% 0% 5%;
+    position: relative;
+    width: 100%;
+    height: 64%;
+    top: 126px;
+    overflow-y: auto;
+}
+
+.BodyDiv {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    display: inline;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.AdminImage {
+    width: 100%;
+    max-width: 150px;
+    max-height: 112px;
+}
+ 
+.add-item {
+    cursor: pointer;
+    position: relative;
+}
+
+.add-item div{
+    height: 150px;
+    width: 150px;
+    color: #808080;
+    font-size: 48px;
+    background-color: rgba(219, 216, 216, 0.75);
+    border-radius: 5px;
+    padding: 50px;
+}
+
+    .BodyDiv .folder{
+        margin: 30px;
+        text-align: center;
+    }
+
+     .BodyDiv .folder .folder-name{
+        font-size: 12px;
+    }
+
+.Frame {
+    color: #fff;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.87);
+}
+
+.productchck {
+    margin: 5%!important
+}
+
+.Xbtn {
+    display: inline;
+    float: right;    
+    font-size: 14px;
+    font-weight: normal;
+    margin: 5px 5px 5px !important;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+.Xbtn:hover{
+    color: #bf1919 !important;
+}
+
+.product-name {
+    font-size: 0.8em;
+}
+
+.product-content {
+    height: 112px;
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 1.2em;
+    font-style: italic;
+    color: #fff;
+    box-shadow: -5px 3px 10px #888888;
+}
+
+.DescFont {
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
+.buttonDiv {
+    position: absolute;
+    bottom: 3px;
+    height: 100%;
+    width: 100%;
+}
+
+.button-Editicon {
+    cursor: pointer; /* make the cursor like hovering over an <a> element */
+    vertical-align: middle; /* align the text vertically centered */
+    width: 25px;
+    height: 25px;
+    background-image: url("/images/icons/edit-small-icon.png");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+}
+
+.button-Infoicon {
+    cursor: pointer; /* make the cursor like hovering over an <a> element */
+    vertical-align: middle; /* align the text vertically centered */
+    width: 25px;
+    height: 25px;
+    background-image: url("/images/icons/info-small-icon.png");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+}
+
+.FooterLeft {
+    margin-right: 20%;
+}
+
+.FooterRight {
+    margin-left: 20%;
+}
+
+.FooterMiddle {
+    margin-left: 20%;
+}
+
+
+.button-Infoicon:hover {
+    background-image: url('images/new-info-icon.png');
+}
+
+.button-Editicon:hover {
+    background-image: url('images/new-edit-icon.png');
+}
+
+/**Context Menu*/
+.items
+{
+  list-style: none;     
+  padding: 0px;
+  margin-top: 5px;
+  font-size: 16px;   
+   
+}
+
+.context-menu
+{
+  display: none;       
+  position: fixed;       
+  border: none;
+  width: 150px;
+  background: white;
+  box-shadow: 2px 2px 10px #272727;
+}
+li,
+li a
+{
+  border: none;
+  font-size: 15px;
+  color: rgba(18, 18, 18, 1) !important;
+  padding: 5px 10px 5px 5px;
+  cursor: pointer;
+}
+
+.items :hover               
+{
+  background: rgba(112, 123, 246, 1);     
+  
+}
+
+/***********************************************AdminProduct.cshtml************************************************************************************/
+
+.AddNew_Left {
+    width: 40%;
+    display: inline;
+    float: left;
+    padding: 2px 2px 2px 2px;
+    margin-left: 14%;
+}
+
+.addNew_Right {
+    width: 40%;
+    display: inline;
+    float: left;
+    padding: 2px 2px 2px 2px;
+}
+
+.addNew_oneRow {
+    margin-left: 14%;
+    padding: 2px 2px 2px 2px;
+}
+
+.formLabel {
+    font-size: 0.8em;
+    color: black;
+}
+
+.inputDiv {
+    display: inline;
+    float: left;
+}
+
+.labelDiv {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.labelDiv_oneRow {
+    display: inline;
+    float: left;
+    width: 11.5%;
+}
+
+.circleDiv {
+    width:100%; 
+    height:93px;
+}
+
+.circle_left {
+    
+
+    width: 81px;
+    height: 80px;
+    border: solid 1px;
+    border-color: #29ABE2;
+    background: #29ABE2;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 82px;
+    font-family: 'Century Gothic';
+    font-size: 0.9em;
+    color: black;
+    padding: 9px 0px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 2%;
+    cursor: pointer;
+    
+}
+
+.lbl_in_circle {
+    text-align:center;
+    margin-top:25%;
+    margin-left:5%;
+    cursor: pointer;
+}
+
+.circle_right {
+    width: 81px;
+    height: 80px;
+    border: solid 1px;
+    border-color: #29ABE2;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 82px;
+    font-family: 'Century Gothic';
+    font-size: 0.9em;
+    color: black;
+    padding: 11px 5px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+#Inputpicker {
+    width:15%;
+}
+
+#btnAdd{
+    cursor:pointer;
+}
+
+.addNewProduct {
+    width:90%;
+}
+
+.productFrame {
+    background-color:#D4D4D4;
+    width:100%;
+    margin-bottom:1%;
+}
+
+#selected_colorPreview {
+    width:15px;
+    min-height:15px;
+     display: inline;
+    float: left;
+    padding: 1px 1px 1px 1px;
+    margin: 5px 5px 5px !important;
+} 
+
+.add-category{
+    float:left;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    background: #CFCECE;
+    border-radius: 3px;
+    border: 1px #fff solid ;
+}
+
+.add-category:hover{
+    background: #191919;
+    color: #fff;
+}
+
+/******Popup Dialog******/
+
+.form-group .col-md-10 select{
+    width: 94%;
+    height: 33px;
+    margin-right: 5px;
+    float: left;
+}
+
+.form-close,
+.dialog-close{
+    position: absolute;
+    right: 31px;
+    top: 23px;
+    outline: none !important;
+    color: #272727 !important;
+    text-decoration: none !important;
+}
+
+.form-close:hover{
+    outline: none !important;
+    color: rgba(18, 18, 18, 0.84) !important;
+}
+
+.form-close:active{
+    outline: none !important;
+}
+
+.form-close:visited{
+    outline: none !important;
+}
+
+
+
+.form-job-done{
+      position: absolute;
+  right: 83px;
+  top: 23px;
+  outline: none !important;
+  color: #4ED955 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.form-job-done:hover{
+    outline: none !important;
+    color: #25d138 !important;
+}
+
+.form-job-done:active{
+    outline: none !important;
+}
+
+.form-job-done:visited{
+    outline: none !important;
+}
+
+.form-group button
+{
+    margin-right: 1px;
+}
+
+.ui-dialog-content 
+{
+    background: white!important;
+    border-radius: 10px;
+    font-family: Century Gothic;
+    text-align: center;
+    overflow: hidden;
+    min-height: 150px!important;
+}
+/******Table******/
+.table-titlebar{
+    position: relative;
+}
+
+.table-titlebar .accessories-add,
+.table-titlebar .textures-add{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+table tbody tr td a{
+    color: black;
+}
+
+table tbody tr td img{
+    width: 40%;
+
+}

@@ -1,0 +1,19 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+
+<p class="card-title">
+    <label class="card-large blue">@Html.DisplayFor(x => x.SDRatio)</label>
+    <span class="card-small ">
+        @Html.LabelFor(x => x.SDRatio)
+    </span>
+</p>
+<label class="card-normal">
+    @Html.DisplayFor(x => x.ProductCount)
+    <span>
+        @Html.LabelFor(x => x.ProductCount)
+    </span>
+
+    @Html.DisplayFor(x => x.PurchasedCount)
+    <span>
+        @Html.LabelFor(x => x.PurchasedCount)
+    </span>
+</label>

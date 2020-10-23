@@ -1,0 +1,173 @@
+﻿
+<div>
+    @*<md-input-container flex="66">
+        <label >Name :</label>
+        <input md-maxlength="30" required ng-model="specification.ProductName">
+        <div ng-messages="projectForm.description.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+        </div>
+    </md-input-container>*@
+    
+    <md-input-container>
+        <label>Name :</label>
+        <input md-maxlength="30" required ng-model="specification.ProductName">
+        <div ng-messages="specification.ProductName.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+        </div>
+    </md-input-container>
+    <div id="product" flex>
+        
+    </div>
+    
+        <ang-accordion draggable icon-position="left" close-icon-url="~/Content/images/ic_expand_less_18px.svg" open-icon-url="~/Content/images/ic_expand_more_18px.svg">
+            <collapsible-item title="Measuring Option">
+                <div>
+
+                    <div>
+                        <div flex="10" layout layout-align="center center">
+                            <span>Body Length : {{specification.Measurements.BodyLength}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.BodyLength" min="30" max="45" aria-label="BodyLength" id="BodyLength-slider" class="md-primary">
+                        </md-slider>
+
+                        <div flex="10" layout="column" layout-align="center center">
+                            <span>Neck : {{specification.Measurements.Neck}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Neck" min="8" max="15" aria-label="Neck" id="Neck-slider" class="md-primary ">
+                        </md-slider>
+
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Sleeves : {{specification.Measurements.Sleeve}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Sleeve" min="15" max="30" aria-label="Sleeve" id="Sleeve-slider" class="md-primary">
+                        </md-slider>
+
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Shoulders : {{specification.Measurements.Shoulders}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Shoulders" min="14" max="20" aria-label="Shoulders" id="Shoulders-slider" class="md-primary">
+                        </md-slider>
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Sleeve Opening : {{specification.Measurements.SleeveOpening}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.SleeveOpening" min="8" max="12" aria-label="SleeveOpening" id="SleeveOpening-slider" class="md-primary">
+                        </md-slider>
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Armpit : {{specification.Measurements.Armpit}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Armpit" min="9" max="14" aria-label="Armpit" id="Armpit-slider" class="md-primary">
+                        </md-slider>
+
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Breast : {{specification.Measurements.Breast}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Breast" min="20" max="40" aria-label="Breast" id="Breast-slider" class="md-primary">
+                        </md-slider>
+
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Waist : {{specification.Measurements.Waist}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Waist" min="20" max="50" aria-label="Waist" id="Waist-slider" class="md-primary">
+                        </md-slider>
+
+
+                        <div flex="10" layout layout-align="center center">
+                            <span>Hip : {{specification.Measurements.Hip}} inch</span>
+                        </div>
+                        <md-slider flex ng-model="specification.Measurements.Hip" min="20" max="50" aria-label="Hip" id="Hip-slider" class="md-primary">
+                        </md-slider>
+
+
+                    </div>
+
+
+                </div>
+            </collapsible-item>
+            <collapsible-item title="Texture Option">
+                <div>
+                    <label>Selected: </label>
+                    <img id="texture-image-selected" ng-src="{{specification.Textures.TextureThumbnailBase64}}" />
+                    <div ng-repeat="Texture in Textures" ng-click="TextureSelected(Texture.TextureId)">
+                        <img class="texture-image" src="{{Texture.TextureThumbnailBase64}}" />
+                    </div>
+                </div>
+            </collapsible-item>
+            <collapsible-item title="Accessories Option">
+                <div>
+                    <div ng-repeat="Accessory in Accessories" ng-click="AccessorySelected(Accessory.AccessoriesTemplateId)">
+                        <img class="accessory-image" src="{{Accessory.AccessoriesThumbnailBase64}}" />
+                    </div>
+                </div>
+            </collapsible-item>
+            <collapsible-item title="Color Option">
+                <div>
+
+                    <button colorpicker type="button" class="" colorpicker-position="top" ng-model="specification.Color" ng-change="UpdateImage()">Select Color</button>
+                </div>
+            </collapsible-item>
+
+
+        </ang-accordion>
+     
+
+    <table id="priceDisplay">
+        <thead>
+            <tr>
+                <th width="60" align="center" valign="middle">Code</th>
+                <th width="120" align="center" valign="middle">Name</th>
+                <th width="80" align="center" valign="middle">Quantity</th>
+                <th width="60" align="center" valign="middle">Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-titlebar" colspan="4"><b>Template Price</b></td>
+            </tr>
+            @*Generate Price*@
+            <tr ng-repeat="templatePrice in Price.Template">
+                <td width="60" align="center" valign="middle">{{templatePrice.Code}}</td>
+                <td width="120" align="center" valign="middle">{{templatePrice.Name}}</td>
+                <td width="60" align="center" valign="middle">{{templatePrice.Quantity}}</td>
+                <td width="60" align="center" valign="middle">RM {{templatePrice.Price}}</td>
+            </tr>
+
+            <tr>@*spacing*@
+                <td> <br /></td>
+            </tr>
+            
+            <tr>
+                <td class="table-titlebar" colspan="4"><b> Accessories Price</b></td>
+            </tr>
+            @*Generate Price*@
+            <tr ng-repeat="AccessoryPrice in Price.Accessories">
+                <td width="60" align="center" valign="middle">{{AccessoryPrice.Code}}</td>
+                <td width="120" align="center" valign="middle">{{AccessoryPrice.Name}}</td>
+                <td width="60" align="center" valign="middle">{{AccessoryPrice.Quantity}}</td>
+                <td width="60" align="center" valign="middle">RM {{AccessoryPrice.Price}}</td>
+            </tr>
+
+            <tr>@*spacing*@
+                <td> <br /></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right" valign="middle"><em>Subtotal : </em></td>
+                <td align="center" valign="middle"><b>RM <span ng-bind="PriceSubtotal()"></span> </b></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <md-button class="md-fab md-primary btn-bottom-right " ng-click="submit()" value="Done" aria-label="Done">
+        <span>Done</span>
+    </md-button>
+
+</div>

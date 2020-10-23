@@ -1,0 +1,21 @@
+﻿@model ECWebApp.WebUI.Models.ViewModel.CustomerViewModel
+@using System.Globalization
+
+@using ECWebApp.Domain
+
+
+@{
+    ViewBag.Title = "Sign Up Success";
+}
+
+<div class="content-page Center">
+    <div class="content-left fll">
+        <img class="image-horizontal" src="#" />
+        <p class="about-us-page-content pad-30-horizontal">
+            Congratulations, the sign up process is done. Please proceed to your email inbox to confirm your account. If you do not receive any email from us, kindly click 
+            @Html.ActionLink("here", "RequestConfirmationEmailGet", "Customer", new { CustomerID = Model.CustomerID }) to resend the email.
+        </p>
+    </div>
+
+</div>
+

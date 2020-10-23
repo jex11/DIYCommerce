@@ -1,0 +1,76 @@
+﻿
+<div id="tabs">
+    <ul>
+        <li><a href="#customProducts">Custom Products</a></li>
+        <li><a href="#textures">Textures</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+    </ul>
+    <div id="customProducts">
+        
+    </div>
+    <div id="textures">
+        
+    </div>
+    <div id="accessories">
+        
+    </div>
+</div>
+
+
+
+<div id="dialog-form">
+
+</div>
+<script>
+    $(function () {
+        $("#tabs").tabs({
+            collapsible: true,
+            beforeLoad: function( event, ui ) {
+                ui.jqXHR.fail(function() {
+                    ui.panel.html(
+                      "Couldn't load this tab. We'll try to fix this as soon as possible. ");
+                });
+            }
+    });
+
+        $.ajax({
+            url: "/Admin/Admin_CustomProduct/CustomProducts",
+            cache: false,
+            success: function (data) {
+                $("#customProducts").append(data);
+            },
+            error: function (data) {
+
+            }
+
+        });
+
+        $.ajax({
+            url: "/Admin/Admin_CustomProduct/Textures",
+            cache: false,
+            success: function (data) {
+                $("#textures").append(data);
+            },
+            error: function (data) {
+
+            }
+
+        });
+
+        $.ajax({
+            url: "/Admin/Admin_CustomProduct/Accessories",
+            cache: false,
+            success: function (data) {
+                $("#accessories").append(data);
+            },
+            error: function (data) {
+
+            }
+
+        });
+
+
+
+    });
+    
+</script>

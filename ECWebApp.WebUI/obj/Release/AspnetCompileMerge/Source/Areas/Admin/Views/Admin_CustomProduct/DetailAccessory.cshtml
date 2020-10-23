@@ -1,0 +1,139 @@
+﻿@model ECWebApp.WebUI.Areas.Admin.Models.AccessoriesInfo
+
+
+    <div class="form-horizontal">
+        <h4>Accessory Details</h4>
+        <a href="#" class="right glyphicon glyphicon-remove form-close"></a>
+        <hr />
+
+
+        <div class="left">
+            <div class="card">
+                @if (Model.AccessoriesThumbnailBase64 == null)
+                {
+                    <img id="preview" class="card-img-preview" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8IS0tIENyZWF0ZWQgd2l0aCBNZXRob2QgRHJhdyAtIGh0dHA6Ly9naXRodWIuY29tL2R1b3BpeGVsL01ldGhvZC1EcmF3LyAtLT4KCiA8Zz4KICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+CiAgPHJlY3QgZmlsbD0iI2VkZWRlZCIgaWQ9ImNhbnZhc19iYWNrZ3JvdW5kIiBoZWlnaHQ9IjIwMyIgd2lkdGg9IjIwMiIgeT0iLTEiIHg9Ii0xIi8+CiA8L2c+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPGcgc3Ryb2tlPSJudWxsIiBpZD0ic3ZnXzYiPgogICA8cGF0aCBzdHJva2U9Im51bGwiIGZpbGw9IiM3ZjdiN2IiIGlkPSJzdmdfNSIgZD0ibTEzNS44NTkwODUsNzMuODAwNzEzYzAuMTM1MTYyLC0xLjAyNTU3NCAwLjMxNzc0OSwtMi4wMzk1MiAwLjMxNzc0OSwtMy4wOTk1NDhjMCwtMTMuMDMxNDc5IC0xMC43OTI5MzgsLTIzLjU5NzA3NiAtMjQuMTE3ODU5LC0yMy41OTcwNzZjLTcuODc4NTEsMCAtMTQuODA4ODA3LDMuNzUwNDg4IC0xOS4yMDczMDYsOS40NzExM2MtMS41ODM4OTMsLTAuMzc0NDA5IC0zLjIxNDc4MywtMC42MjIxOTIgLTQuOTEwNTc2LC0wLjYyMjE5MmMtMTEuNjU4NjA3LDAgLTIxLjEwMzIxLDkuMjQwNjMxIC0yMS4xMDMyMSwyMC42NDc0MTVjMCwwLjMyMjYwMSAwLjA4MjQ4OSwwLjYxMDc1NiAwLjA5NDIwOCwwLjkzMzM5NWMtOC43NDM5NjUsMi41MTc0ODcgLTE1LjE2Nzk0NiwxMC4zNDA4MiAtMTUuMTY3OTQ2LDE5LjcxNDAwNWMwLDExLjQwNjc4NCA5LjQ0NDYxMSwyMC42NDc0NDYgMjEuMTAzMjE4LDIwLjY0NzQ0Nmw1MS4yNTA1NDIsMGMxMy4zMjUwMTIsMCAyNC4xMTc5NSwtMTAuNTU5ODc1IDI0LjExNzk1LC0yMy41OTcwNzZjMCwtOC44MzcyNSAtNS4wMjI1ODMsLTE2LjQ1MzM2OSAtMTIuMzc2NzcsLTIwLjQ5NzQ5OHptLTI5LjgyOTU5LDE0LjU5ODIzNmwwLDE3LjY5NzgxNWwtMTIuMDU4OTI5LDBsMCwtMTcuNjk3ODE1bC0xMi4wNTkwMjEsMGwxOC4wODg1MDEsLTE3LjY5Nzc4NGwxOC4wODgzNzksMTcuNjk3Nzg0bC0xMi4wNTg5MjksMHoiLz4KICA8L2c+CiAgPHRleHQgc3Ryb2tlPSIjMDAwIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1NTA0MDQyNDQ0NzUyNTgsMCwwLDEuMzM4Nzc5ODEzNzMxNDQ1NywtNDQuOTE3MjM1MTI1OTE0MzQ1LC0yMTcuNTEyNjEyOTE3MTIyNSkgIiB4bWw6c3BhY2U9InByZXNlcnZlIiB0ZXh0LWFuY2hvcj0ibGVmdCIgZm9udC1mYW1pbHk9IkhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGlkPSJzdmdfNyIgeT0iMjcwLjAwNjMzMiIgeD0iOTIuNjY4MTEyIiBzdHJva2Utb3BhY2l0eT0ibnVsbCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjNzI3MDcwIj5VcGxvYWQgYW4gaW1hZ2U8L3RleHQ+CiA8L2c+Cjwvc3ZnPg==" />
+                }
+                else
+                {
+                    <img id="preview" class="card-img-preview" src="@Model.AccessoriesThumbnailBase64" />
+                }
+
+                <div class="context context-bar-bottom">
+                    @Html.DisplayFor(x => x.AccessoriesImage)
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right width-77">
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessoriesCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.AccessoriesCode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessoriesTemplateName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.AccessoriesTemplateName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessoriesTemplatePrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.AccessoriesTemplatePrice)
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessoriesTemplateCategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(x => x.AccessoriesTemplateCategoryName)
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessoriesTemplateDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.AccessoriesTemplateDescription, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <button pid="@Model.AccessoriesTemplateId" class="btn btn-primary accessories-edit left">Edit</button>
+                <button pid="@Model.AccessoriesTemplateId" class="btn btn-danger accessories-delete left">Delete</button>
+                <div class="col-md-10">
+                    @Html.ActionLink("Cancel", "Index", null, new { @class = "right btn btn-default" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+<div id="dialog"></div>
+<script>
+    $(function () {
+
+
+        var deleteDialog = $("#dialog").dialog({
+            autoOpen: false,
+            height: 50,
+            width: 400,
+            modal: true,
+            buttons: {
+                "Yes": function () {
+                    $.ajax({
+                        url: "/Admin/Admin_CustomProduct/DeleteAccessory/" + "@Model.AccessoriesTemplateId",
+                        cache: false
+                    });
+                    $(this).dialog('close');
+                    
+                    
+                },
+                "No": function () {
+                    $(this).dialog('close');
+                }
+            }
+        });
+
+        $('.accessories-edit').on('click', function () {
+            var id = $(this).attr('pid');
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/EditAccessory/" + id,
+                cache: false,
+                success: function (data) {
+                    $("#dialog-form").empty();
+                    $("#dialog-form").append(data);
+                    createDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.accessories-delete').on('click', function () {
+            var id = $(this).attr('pid');
+            $.ajax({
+                url: "/Admin/Admin_CustomProduct/ConfirmationDeleteAccessory/"+ "@Model.AccessoriesTemplateId",
+                cache: false,
+                success: function (data) {
+                    $("#dialog").empty();
+                    $("#dialog").append(data);
+                    deleteDialog.dialog("open");
+                }
+            });
+        });
+
+        $('.form-close').on('click', function () {
+            var Dialog = $(this).parents('.ui-dialog-content');
+            Dialog.dialog('close');
+        });    
+});
+</script>
+
+
+
+
+
+
+

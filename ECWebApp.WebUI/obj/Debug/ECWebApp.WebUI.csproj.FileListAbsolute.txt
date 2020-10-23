@@ -1,0 +1,223 @@
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll.config
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\ECWebApp.WebUI.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\EntityFramework.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\EntityFramework.SqlServer.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\log4net.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Microsoft.Web.Infrastructure.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Moq.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Common.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Mvc.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Helpers.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Mvc.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\WebActivator.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\EntityFramework.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\EntityFramework.SqlServer.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\log4net.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Moq.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Common.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Common.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Mvc.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Ninject.Web.Mvc.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Helpers.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Mvc.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.csprojResolveAssemblyReference.cache
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Postal.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\RazorEngine.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\Postal.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\RazorEngine.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.WebUI\bin\RazorEngine.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll.config
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\log4net.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Microsoft.Web.Infrastructure.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Moq.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Newtonsoft.Json.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Postal.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\WebActivator.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\log4net.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Moq.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\Postal.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.csprojResolveAssemblyReference.cache
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll.config
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\log4net.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Moq.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Postal.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\WebActivator.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\log4net.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Moq.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Postal.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll.config
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\log4net.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Moq.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Postal.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\WebActivator.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\log4net.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Moq.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\Postal.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll.config
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.WebUI.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\log4net.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Microsoft.Web.Infrastructure.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Moq.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Postal.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\WebActivator.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\ECWebApp.Domain.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\EntityFramework.SqlServer.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\log4net.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Moq.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Common.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Ninject.Web.Mvc.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\Postal.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\RazorEngine.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Helpers.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Mvc.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.Razor.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Deployment.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\bin\System.Web.WebPages.Razor.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.csprojResolveAssemblyReference.cache
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.WebUI\obj\Debug\ECWebApp.WebUI.pdb

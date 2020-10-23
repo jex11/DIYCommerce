@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FYP2015.com:: Welcome to DIY-Commerce</title>
+    @*<script src="~/Scripts/jquery-1.9.1.min.js"></script>*@
+    
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-animate.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-aria.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/hammer.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-messages.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-material.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-material-icon.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-ui-router.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/ng-table.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/d3.v3.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/Chart.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/angular-chart.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/_reference/bootstrap-colorpicker-module.min.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/config.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Directives/accordion.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Directives/draggable.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Directives/navigation.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Services/GarmentService.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Services/MathService.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/HomeCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/ProfileCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/TemplateCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/ProductCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/GalleryCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/VaultCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/DialogCtrl.js"></script>
+    <script src="~/Areas/CustomProduct/Scripts/Controllers/ExistingProductCtrl.js"></script>
+
+    <link href="~/Content/customproduct.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ng-table.min.css" rel="stylesheet" />
+    <link href="~/Content/angular-chart.css" rel="stylesheet" />
+
+    <link href="~/Content/colorpicker.min.css" rel="stylesheet" />
+    <script src="~/Areas/CustomProduct/Scripts/_reference/aui-min.js"></script>
+</head>
+<body ng-app="DIYCommerce">
+    <div ng-controller="HomeCtrl">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img src="@Url.Content("~/Content/images/newlogo.png")" height="14" />
+                    </a>
+                </div>
+                    <div id="message"></div>
+                    <div class="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li id="primary-menu">
+                                <a id="trigger" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+                                <ul class="dropdown-menu"></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </nav>
+
+        <div class="navbar-vertical">
+            <ul>
+                <li ng-click="OnLoad()" ui-sref="Gallery">
+                    <span class="glyphicon glyphicon-globe "></span><br />
+                    <span>Gallery</span>
+                </li>
+                <li ng-click ="OnLoad()" ui-sref="Profile">
+                    <span class="glyphicon glyphicon-user "></span><br />
+                    <span>Profile</span>
+                </li>
+                @*<li ng-click="OnLoad()" ui-sref="Category">
+                    <span class="glyphicon glyphicon-star"></span><br />
+                    <span>Categories</span>
+                </li>
+                <li ng-click="OnLoad()" ui-sref="Search">
+                    <span class="glyphicon glyphicon-search"></span><br />
+                    <span>Search</span>
+                </li>*@
+                <li ng-click="OnLoad()" ui-sref="Vault">
+                    <span class="glyphicon glyphicon-hdd"></span><br />
+                    <span>My Vault</span>
+                </li>
+                @*<li ng-click="OnLoad()" ui-sref="Favourite">
+                    <span class="glyphicon glyphicon-heart"></span><br />
+                    <span>Favourites</span>
+                </li>*@
+                <li ng-click="OnLoad()">
+                    <a href="/">
+                        <span class="glyphicon glyphicon-log-out"></span><br />
+                        <span>Back</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div  class="overlay ng-class:loading;">
+            <md-progress-circular layout-align="space-around" md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div ui-view class="body">
+            
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll.config
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\EntityFramework.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Helpers.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Mvc.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\EntityFramework.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Helpers.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Mvc.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.csprojResolveAssemblyReference.cache
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\Postal.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\RazorEngine.dll
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\Postal.xml
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\RazorEngine.pdb
+E:\My Workspace\Visual Studio\Development\Razor\ECWebApp\ECWebApp.Domain\bin\Debug\RazorEngine.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll.config
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.dll
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.pdb
+E:\My Workspace\Visual Studio\Development\Razor\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.csprojResolveAssemblyReference.cache
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll.config
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.pdb
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.csprojResolveAssemblyReference.cache
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.dll
+C:\Users\JexKhor\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll.config
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.dll
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.pdb
+C:\Users\Jex\Documents\Visual Studio 2013\Projects\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.csprojResolveAssemblyReference.cache
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll.config
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\ECWebApp.Domain.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Mvc.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\EntityFramework.SqlServer.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\Postal.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.pdb
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\RazorEngine.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Helpers.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Mvc.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.Razor.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.csprojResolveAssemblyReference.cache
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.dll
+F:\D\Z Drive\DIYCommerce\ECWebApp.Domain\obj\Debug\ECWebApp.Domain.pdb
